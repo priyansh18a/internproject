@@ -9,7 +9,7 @@ import Additem from './components/Additems';
 import Addtext from './components/Addtext';
 import Addimage from './components/Addimage';
 import Addquestion from './components/Addquestion';
-
+import Addcode from './components/Addcode';
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
         </Route>
         <Route path="/question" exact>
           <Addquestion />
+        </Route>
+        <Route path="/code" exact>
+          <Addcode />
         </Route>
     </Switch>
     </Router>

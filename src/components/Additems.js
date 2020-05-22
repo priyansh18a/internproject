@@ -47,7 +47,7 @@ const Additem = () => {
             <Link className="btn btn-success mx-3" to="/question" >
               Question
             </Link>
-            <Link className="btn btn-success mx-3"  >
+            <Link className="btn btn-success mx-3" to="/code"  >
               Code
             </Link>
       </Modal>
