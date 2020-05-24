@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState  } from 'react';
 import add from '../image/add.png';
 import Modal from '../UIElements/Modal';
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
+import fire from '../custom/Fire'
 import './Additems.css'
 
 const Additem = () => {
-
+    const history = useHistory(); 
     const [showConfirmModal , setShowConfirmModal] = useState(false);
+    
+    const logout = () => {
+        fire.auth().signOut();
+        history.push("/");
+
+    }
 
     const cancelDeleteHandler = () => {
         setShowConfirmModal(false);
@@ -18,12 +25,18 @@ const Additem = () => {
 
     return (
         <React.Fragment>
-        
-        <div className="addform container">
+        <nav   class="navbar navbar-light bg-light justify-content-between">
+          <Link to='/' class="navbar-brand">TheFeynmanschool</Link>
+          <button class="btn btn-outline-success my-2 my-sm-0" onClick={logout} >Logout </button>
+        </nav>
+        <div className="addform container"> 
+            
             <img src={add} id="add_img" alt="add" onClick={showoptionModel}/>
             <button  className="btn btn-primary mt-3" onClick={showoptionModel}>
               Add Media
             </button>
+            
+            
         </div>
         <Modal
             show={showConfirmModal}
@@ -38,16 +51,16 @@ const Additem = () => {
            
          }
         >
-        <Link className="btn btn-success mx-3" to="/text" >
+        <Link className="btn btn-success m-3 " to="/text" >
               Text
             </Link>
-            <Link className="btn btn-success mx-3" to="/image" >
+            <Link className="btn btn-success m-3" to="/image" >
               Image
             </Link>
-            <Link className="btn btn-success mx-3" to="/question" >
+            <Link className="btn btn-success m-3" to="/question" >
               Question
             </Link>
-            <Link className="btn btn-success mx-3" to="/code"  >
+            <Link className="btn btn-success m-3" to="/code "  >
               Code
             </Link>
       </Modal>

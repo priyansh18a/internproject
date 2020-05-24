@@ -1,4 +1,4 @@
-import React from 'react';
+import React  , { useState } from 'react';
 import {
   HashRouter as Router,
   Route,
@@ -10,12 +10,17 @@ import Addtext from './components/Addtext';
 import Addimage from './components/Addimage';
 import Addquestion from './components/Addquestion';
 import Addcode from './components/Addcode';
+import Check from './custom/Check';
 
-function App() {
+const App = () => {
+  
   return (
     <Router>
     <Switch>
         <Route path="/" exact>
+          <Check />
+        </Route>
+        <Route path="/add" exact>
           <Additem />
         </Route>
         <Route path="/text" exact>
