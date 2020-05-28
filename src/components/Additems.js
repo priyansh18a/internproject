@@ -25,9 +25,9 @@ const Additem = () => {
 
     return (
         <React.Fragment>
-        <nav   class="navbar navbar-light bg-light justify-content-between">
-          <Link to='/' class="navbar-brand">TheFeynmanschool</Link>
-          <button class="btn btn-outline-success my-2 my-sm-0" onClick={logout} >Logout </button>
+        <nav   className="navbar navbar-light bg-light justify-content-between">
+          <Link to='/' className="navbar-brand">TheFeynmanschool</Link>
+          <button className="btn btn-outline-success my-2 my-sm-0" onClick={logout} >Logout </button>
         </nav>
         <div className="addform container"> 
             
@@ -54,7 +54,7 @@ const Additem = () => {
         <Link className="btn btn-success m-3 " to="/text" >
               Text
             </Link>
-            <Link className="btn btn-success m-3" to="/image" >
+            <Link className="btn btn-success m-3" to="/image/1" >
               Image
             </Link>
             <Link className="btn btn-success m-3" to="/question" >

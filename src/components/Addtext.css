@@ -1,5 +1,5 @@
 .files input {
-    outline: 2px dashed #92b0b3;
+    
     outline-offset: -10px;
     -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
     transition: outline-offset .15s ease-in-out, background-color .15s linear;
@@ -8,7 +8,8 @@
     margin: 0;
     width: 100% !important;
 }
-.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+.files input:focus{ 
+     outline-offset: -10px;
     -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
     transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
  }
@@ -27,7 +28,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.color input{ background-color:#f1f1f1;}
+
 .files:before {
     position: absolute;
     bottom: 10px;

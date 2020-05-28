@@ -1,4 +1,4 @@
-import React  , { useState } from 'react';
+import React  from 'react';
 import {
   HashRouter as Router,
   Route,
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/text" exact>
           <Addtext />
         </Route>
-        <Route path="/image" exact>
+        <Route path="/image/:screenId" exact>
           <Addimage />
         </Route>
         <Route path="/question" exact>
