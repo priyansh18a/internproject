@@ -58,3 +58,8 @@
   opacity: 0;
   transition: all 200ms;
 }
+
+.modal__content img {
+  width: 500px;
+  height: 300px;
+}

@@ -54,7 +54,7 @@ const Additem = () => {
         <Link className="btn btn-success m-3 " to="/text" >
               Text
             </Link>
-            <Link className="btn btn-success m-3" to="/image/1" >
+            <Link className="btn btn-success m-3" to="/image/0" >
               Image
             </Link>
             <Link className="btn btn-success m-3" to="/question" >

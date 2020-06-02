@@ -26,6 +26,7 @@ const App = () => {
         <Route path="/text" exact>
           <Addtext />
         </Route>
+        
         <Route path="/image/:screenId" exact>
           <Addimage />
         </Route>

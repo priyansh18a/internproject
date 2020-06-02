@@ -2,7 +2,10 @@ import React,{useState, useEffect} from 'react';
 import './Addtext.css'
 import './Addimage.css'
 import firebase from 'firebase';
-import { useParams, useHistory } from 'react-router-dom';
+import SideNav from './sidenav' 
+import SideNavButton from './sidenavbutton'
+// import { useParams, useHistory } from 'react-router-dom';
+
 
 
 const storage = firebase.storage()
@@ -10,44 +13,56 @@ const storage = firebase.storage()
 
 
 const Addimage = () => {
-       
-        const history = useHistory();
-        // const [screenid, setScreenId] = useState(1)
-        const [files , setFiles] = useState([]);
-
-        let nextscreen = useParams().screenId;
         
+      const [imageAsUrl, setImageAsUrl] = useState([])
+      const [files , setFiles] = useState([]);
+      const [navIsHidden, setNavIsHidden]= useState(true);
 
-        useEffect(() => {
-         setFiles([]);
-        }, [nextscreen]);
-
-        const redirectHandler = () => {
-          nextscreen++;
-          // console.log(nextscreen);
-          history.push(`/image/${nextscreen}`);
+      const closesidenav = () => {
+          setNavIsHidden(true)
         }
-        
-         
+
+        const opensidenav = () => {
+          setNavIsHidden(false)
+        }
+
         const fileuploadhandler = e => {
           // document.getElementById("parents").style.display ="none";
           for (let i = 0; i < e.target.files.length; i++) {
                const newFile = e.target.files[i];
                newFile["id"] = Math.random();
                console.log(newFile)
-               handleFiles(newFile)
+              handleFiles(newFile)
             // add an "id" property to each File object
                setFiles(prevState => [...prevState, newFile]);
              }
+             
            };
-         
 
+        const handleFiles = file => {
+           
+            const preview = document.getElementById("preview");
+            const img = document.createElement("img");
+            img.classList.add("obj");
+            img.classList.add("mt-3");
+            img.file = file;
+            preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
+            
+            const reader = new FileReader();
+            reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+            if (file && file.type.match('image.*')) {
+              reader.readAsDataURL(file);
+            }
+           
+          
+        }
+        
         const onUploadSubmission = e => {
           e.preventDefault(); // prevent page refreshing
             const promises = [];
             files.forEach(file => {
              const uploadTask = 
-              storage.ref().child(`images/${nextscreen}/${file.name}`).put(file);
+              storage.ref().child(`images/${file.name}`).put(file);
                 promises.push(uploadTask);
                 uploadTask.on(
                    firebase.storage.TaskEvent.STATE_CHANGED,
@@ -59,42 +74,29 @@ const Addimage = () => {
                        }
                      },
                      error => console.log(error.code),
-                     async () => {
-                          const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
-                        // do something with the url
+                    () => {
+                           uploadTask.snapshot.ref.getDownloadURL()
+                           .then(fireBaseUrl => {
+                            setImageAsUrl(prevState => [...prevState, fireBaseUrl])
+                          })
+                          // .then(showimagemodal)
+                       
                       }
                      );
                    });
-               Promise.all(promises)
-                .then(() => alert('All files uploaded'))
-                .catch(err => console.log(err.code));
+              
          }
-        
-        const handleFiles = file => {
-           
-              const preview = document.getElementById("preview");
-              const img = document.createElement("img");
-              img.classList.add("obj");
-              img.classList.add("m-2");
-              img.file = file;
-              preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
-              
-              const reader = new FileReader();
-              reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-              if (file && file.type.match('image.*')) {
-                reader.readAsDataURL(file);
-              }
-             
+        return (
+            <React.Fragment>
+                  <div>
+            <SideNavButton onClick={opensidenav}/>
+            <SideNav 
+            isHidden={navIsHidden} 
+            onClick={closesidenav}/>
             
-          }
-
-          return (
+            </div>
             <div className="container">
-              
-             <button className="btn btn-primary m-3 " onClick={redirectHandler} >Add New Screen</button> 
-           
-            
-           <div className="col-md-6" id="parents" >
+            <div className="col-md-6" id="parents" >
               <form method="post" action="#" id="#">
                  <div className="form-group files color" >
                     <label>Upload Your File </label>
@@ -107,6 +109,9 @@ const Addimage = () => {
         </div>
         <div  id="preview"> </div>
             </div>
+
+       </React.Fragment>
+
         )
     
     };
