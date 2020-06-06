@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import ReactDOM from 'react-dom';
 import SideNavListElement from './sidenavlistelement'
 import SideNavCloseButton from './sidenavclosebutton'
 import AddSideNavListElement from './addsidenavlistelement'
@@ -17,33 +18,43 @@ const sidenavstyle = {
 }
 
 export default function SideNav(props) {
-    
+    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:0, text: 'Screen 0', href: '/0'}];
+    const storedcount = localStorage.getItem('elementCount') || 1 ;
     const [style, setStyle] = useState(sidenavstyle)
-    const [elements, updateElements] = useState([{key:0, text: "Screen 0", href: `#image/0`}])
-    const [elementCount, updateElementCount]  = useState(1)
+    const [elements, updateElements] = useState(storedelements)
+    const [elementCount, updateElementCount]  = useState(storedcount)
+    
 
     useEffect(() => {
         var newWidth
         props.isHidden ? newWidth = "0px" : newWidth = "250px"
         setStyle(style =>({...style, width: newWidth }))
     }, [props.isHidden])
+    
 
     function AddListElement() {
-        updateElementCount(prevCount => (prevCount+1))
+        updateElementCount(prevCount => (++prevCount));
+        localStorage.setItem('elementCount',elementCount);
         console.log(elementCount)
-        var newElement = {key: {elementCount}, text: `Screen ${elementCount}`, href: `#image/${elementCount}`}
+        var newElement = {key: `${elementCount}`, text: `Screen ${elementCount}`, href: `/${elementCount}`}
         updateElements(elements=>([...elements, newElement])
         )
+         localStorage.setItem('elements',JSON.stringify(elements));
     }
+    
 
-    return (
+    const content = (
         <div style={style}>
             <SideNavCloseButton onClick={props.onClick}/>
             <ul>
-                {elements.map(element => (<SideNavListElement text={element.text} href={element.href}/>))}
+                {storedelements.map(element => (<SideNavListElement text={element.text} href={element.href}/>))}
                 <AddSideNavListElement onClick={()=>AddListElement()}/>
             </ul>
         </div>
-    )
+
+    );
+
+    return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
+
 }
   
