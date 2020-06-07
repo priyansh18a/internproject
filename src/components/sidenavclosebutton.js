@@ -14,12 +14,12 @@ const navclosebutton = {
 export default function SideNavCloseButton(props) {
     
         return (
-            <a 
-            href="javascript:void(0)"
+            <button 
+           
             onClick={props.onClick}
             style={navclosebutton}
             >
                 &times;
-            </a>
+            </button>
         )
 }

@@ -13,12 +13,12 @@ const navscreenaddbutton = {
 export default function AddSideNavListElement(props) {
     
         return (
-            <a 
-            href="javascript:void(0)"
+            <button
+           
             onClick={props.onClick}
             style={navscreenaddbutton}
             >
             +
-            </a>
+            </button>
         )
 }

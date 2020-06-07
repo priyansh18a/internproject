@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import './Addtext.css'
 import './Addimage.css'
 import firebase from 'firebase';
-import SideNav from './sidenav' 
+import SideNav from './sidenav' ;
 import SideNavButton from './sidenavbutton'
 // import { useParams, useHistory } from 'react-router-dom';
 
@@ -137,7 +137,7 @@ const Addimage = () => {
              </form>
              
         </div>
-        <div  id="preview">  </div>
+        
             </div>
 
        </React.Fragment>
