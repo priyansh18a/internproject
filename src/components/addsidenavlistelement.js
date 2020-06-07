@@ -7,7 +7,8 @@ const navscreenaddbutton = {
     display: "block",
     backgroundColor: "#111",
     textDecoration: "none",
-    color: "grey" /* Black*/
+    color: "grey" /* Black*/,
+    border:"none"
   }
 
 export default function AddSideNavListElement(props) {
