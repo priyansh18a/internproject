@@ -1,18 +1,12 @@
 import React from 'react'
-
-const navbutton = {
-    fontSize: "30px",
-    cursor: "pointer",
-    margin: "10px"
-}
-
+import './sidenavbutton.scss'
 export default function SideNavButton(props) {
     
         return (
             <span 
-            style={navbutton}
+            className="sidenavbutton mx-3"
             onClick={props.onClick}
-            className="m-3">
+            >
                 &#9776;
             </span>
         )
