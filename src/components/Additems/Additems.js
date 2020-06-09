@@ -1,18 +1,18 @@
 import React, { useState  } from 'react';
-import SideNavButton from './sidenavbutton'
-import SideNav from './sidenav' ;
+import SideNavButton from '../Sidenavbutton/sidenavbutton'
+import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
-import eye from '../image/eye.png';
-import Stormtrooper from '../image/Stormtrooper.png';
-import Delete from '../image/delete.png'
-import Arrowdown from '../image/arrowdown.png'
-import './Additems.css'
+import eye from '../../image/eye.png';
+import Stormtrooper from '../../image/Stormtrooper.png';
+import Delete from '../../image/delete.png'
+import Arrowdown from '../../image/arrowdown.png'
+import './Additems.scss'
 import { Link } from 'react-router-dom';
 
 const Additem = () => {
  
     const [navIsHidden, setNavIsHidden]= useState(true);
-    // const [imagecount,setImagecount] = useState(1);
+    const [imagecount,setImagecount] = useState(1);
     const [files , setFiles] = useState([]);
 
     const closesidenav = () => {
@@ -32,11 +32,13 @@ const Additem = () => {
            handleFiles(newFile)
         // add an "id" property to each File object
            setFiles(prevState => [...prevState, newFile]);
+           
          }
+         setImagecount(prevState => prevState +1 );
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
- 
-       };
+      
+      };
 
     const handleFiles = file => {
         const preview = document.getElementById("resize");
@@ -51,7 +53,7 @@ const Additem = () => {
         if (file && file.type.match('image.*')) {
           reader.readAsDataURL(file);
         }
-      } 
+    } 
 
     const addtext = () =>{
         document.getElementById("hide").style.display ="none";
@@ -60,7 +62,7 @@ const Additem = () => {
           resize.innerHTML= document.getElementById("text").innerHTML;
         
     
-      } 
+    } 
 
     const addquestion = () =>{
         document.getElementById("hide").style.display ="none";
@@ -69,21 +71,20 @@ const Additem = () => {
         document.getElementById("option-redirect").style.display ="block"; 
         const resize = document.getElementById("resize");
           resize.innerHTML= document.getElementById("question").innerHTML;
-        
-    
       } 
 
     const addimage = () => {
+        document.getElementById("resize").innerHTML = '';
         document.getElementById("hide").style.display ="block";
         document.getElementById("preview").style.display ="none"; 
         document.getElementById("create-quest").style.display ="block";
         document.getElementById("option-redirect").style.display ="none"; 
         document.getElementById("question").style.display = "none";
-      }
+    }
 
     const addOptions = () => {
             // complete it later
-      }
+    }
 
     
     return (
@@ -106,26 +107,33 @@ const Additem = () => {
               <p>ADD MEDIA TYPE</p>
               <button className="add" onClick={addtext}>+ Add Text</button>
               <button className="add" onClick={addquestion}>+ Add Question</button>
-              <button className="add" onClick={addimage}>+ Add Image</button>
+              <div id="after-upload">
+                    <input type="file" name="file" id="file2" className="inputfile" multiple onChange={fileuploadhandler}/>
+                    <label htmlFor="file2">
+                    <div className="add btn" id="add-image" onClick={addimage}>Add Image</div>
+                  </label>
+              </div>
               <button className="add last-btn">+ Add Code</button>
             </div>
             
              
-              <div className="course-screen" id="parents" >
-              <p>COURSE SCREEN</p>
+            <div className="course-screen" id="parents">
+              <div className="course-top">
+                <p>COURSE SCREEN</p>
+              
+            </div>
+              
               <form method="post" action="#" id="#">
-
-                 <div className="form-group files color" id="hide" >
-                    
-                 <input type="file" name="file" id="file" className="inputfile" multiple onChange={fileuploadhandler}/>
-                 <label htmlFor="file" id="upload">
-                   <img  className="trooper" src={Stormtrooper} alt=""/>
-                <p>Select images from computer or add<br/>media type to start.</p>
-                </label>
-                
+                <div className="form-group files color" id="hide" >
+                  <input type="file" name="file" id="file1" className="inputfile" multiple onChange={fileuploadhandler}/>
+                  <label htmlFor="file1" id="upload">
+                    <img  className="trooper" src={Stormtrooper} alt=""/>
+                    <p>Select images from computer or add<br/>media type to start.</p>
+                  </label>
                 </div>
-                <div  id="preview" className="imagebox">
-                  <Rnd
+                
+              <div  id="preview" className="imagebox"> 
+              <Rnd
                 id="resize"
                 default={{
                   x: 150,
@@ -190,13 +198,9 @@ const Additem = () => {
               <li>Option 2</li>
               <Link className="add-option" href={addOptions}> <span style={{ fontSize : '20px',marginRight:'5px'}}> + </span> Add options</Link>
             </ul>
-            
-            </div>
+           </div>
          </div>
-
-
-            
-        </div>
+    </div>
     </React.Fragment>
     );
 };

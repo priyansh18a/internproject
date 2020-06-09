@@ -5,8 +5,8 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
-import './App.css';
-import Additem from './components/Additems';
+import './App.scss';
+import Additem from './components/Additems/Additems';
 
 
 const App = () => {

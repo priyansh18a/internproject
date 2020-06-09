@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import SideNavListElement from './sidenavlistelement'
-import SideNavCloseButton from './sidenavclosebutton'
-import AddSideNavListElement from './addsidenavlistelement'
+import SideNavListElement from './listelement/sidenavlistelement';
+import SideNavCloseButton from './closenav/sidenavclosebutton';
+import AddSideNavListElement from './addlistelement/addsidenavlistelement';
+import './sidenav.scss'
 
+// Exception to be moved into ./styles.scss
 const sidenavstyle = {
     height: "100%", /* 100% Full-height */
     width: "0", /* 0 width - change this with JavaScript */
