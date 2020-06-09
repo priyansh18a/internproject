@@ -1,0 +1,341 @@
+@import url('https://fonts.cdnfonts.com/css/nimbus-sans-d-ot');
+//Grid System////////////////
+.row{
+    display: flex;
+    width: 100%;
+}
+.row::after{
+    display: block;
+    clear: both;
+    content:"";
+}
+.col-1 {width:8.33%;}
+.col-2 {width:16.66%;}
+.col-3 {width:25%;}
+.col-4 {width:33.33%;}
+.col-5 {width:41.66%;}
+.col-6 {width:50%;}
+.col-7 {width:58.33%;}
+.col-8 {width:66.66%;}
+.col-9 {width:75%;}
+.col-10 {width:83.33%;}
+.col-11 {width:91.66%;}
+.col-12 {width:100%;}
+
+* {
+    box-sizing: border-box;
+}
+
+////////////////////////////////
+
+/////all <a> tags///////
+a:link { 
+    //text-decoration: underline; 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+}
+////////
+.container1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    // overflow: hidden;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+}
+.container2{
+    background-color: #E5E5E5;
+    height: 1030px;
+    width: 100vw;
+    position: relative;
+    // overflow: hidden;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+}
+.header{
+    float: left;
+    height:100px;
+    width: 50vw;
+}
+.sign-up-btn{
+    text-align: center;
+    width:12.03vw;
+    background-color: #16852E;
+    border-radius: 8px;
+}
+
+.link-txt{
+    float: left;
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 10%;
+    font-family: DINPro;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    /* identical to box height, or 24px */
+
+    letter-spacing: 0.06em;
+
+    color: #013EA6;
+}
+.section1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.logo{
+    position: absolute;
+    margin-left: 150px;
+    float: left;
+    margin-top: 26px;
+    width:1.51%;
+}
+
+.btn-txt{
+    position: relative;
+    font-family: Renner;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.p_obj{
+    position: absolute;
+    margin-top: 245px;
+    width:34.53vw;
+}
+
+.pg2-txt{
+    width: 100%;
+    height: 400px;
+    padding: 0px;
+    position: relative;
+}
+.mg{
+    position: relative;
+    margin-top: 139px;
+    margin-left: 482px;
+}
+.mg1{
+    position: relative;
+    margin-top: 15px;
+    margin-left: 750px;
+}
+.main_learn{
+    position: absolute;
+    width: 33.17vw;
+}
+.lft-block{
+    float: left;
+    width: 50%;
+    background-color: #E5E5E5;
+}
+.pen{
+    position: absolute;
+    width:1.66vw;
+    left: 640px;
+    top: 240px;
+}
+
+.star{
+    position: absolute;;
+    width: 2.48vw;
+    left: 400px;
+    top: 390px;
+}
+
+.key{
+    position: absolute;;
+    width: 1.93vw;
+    left: 590px;
+    top: 610px;
+}
+
+.torch{
+    position: absolute;
+    width: 2.48vw;
+    left: 670px;
+    top: 465px;
+}
+
+.text1{
+    float: left;
+    height:100%;
+    width: 50%;
+}
+
+.learn_combined{
+    position: absolute;
+    margin-top: 150px;
+    width:48.8vw;
+}
+
+.css_cpp{
+    position: absolute;
+    margin-top: 150px;
+    width:50.26vw;
+}
+
+.practical_for_student{
+    position: absolute;
+    margin-top: 150px;
+    width:49.09vw;
+}
+
+.experienced_teachers{
+    position: absolute;
+    margin-top: 150px;
+    width:46.23vw;
+}
+
+.scholarship{
+    position: absolute;
+    margin-top: 150px;
+    width:45.46vw;
+}
+.person{
+    position: absolute;
+    margin-top: 150px;
+    width:2.91vw;
+}
+//Footer Page/////////////////////////
+.footer-page{
+    width:100vw;
+    height:auto;
+    background: #212121;
+}
+
+.upper-half{
+    position: relative;
+    width:100vw;
+    height:auto;
+    text-align: center;
+}
+
+.lower-half{
+    width:100vw;
+    display: block; 
+    height:auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.astronaut{
+    width:33vw;
+}
+.big-text-footer-pg{
+    display: block;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 100%;
+    /* identical to box height, or 80px */
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+.small-text-footer-pg{
+    margin-top: 12px;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 110%;
+    /* or 35px */
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+.button-footer-pg{
+    margin-top: 62px;
+    display: block;
+    height: 134px;
+    width:39%;
+    background: #16852E;
+    border-radius: 8px;
+}
+
+.button-text-footer-pg{
+    font-family: Renner;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 100%;
+    /* identical to box height, or 52px */
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+//Footer/////////////////////////////////////////
+.footer{
+    display: flex;
+    width:100vw;
+    height:280px;
+    background: #212121;
+}
+
+.facebook{
+    width:34px;
+    height:34px;
+    margin-top: 23px;
+}
+
+.youtube{
+    width:49px;
+    height:34px;
+    margin-left: 17px;
+}
+
+.Feynman{
+    position: relative;
+    width:50%;
+    padding-left: 9.375%;
+    padding-top: 48px;
+}
+.head-text{
+    font-family: Nimbus Sans D OT;
+    font-style: Nimbus Sans D OT;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    /* or 24px */
+    text-transform: uppercase; 
+    color: #DDE3E2;
+    //margin-bottom: 2px;
+}
+
+.Contact{
+    position: relative;
+    width:25%;
+    padding-left: 5.05%;
+    padding-top: 48px;
+}
+
+.About{
+    position: relative;
+    width:25%;
+    padding-left: 13.3%;
+    padding-top: 48px;
+}
+
+.Simple-Text{
+    display: block;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 22px;
+    color: #DDE3E2;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,24 +1,25 @@
-import React  from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-import './App.scss';
-import Additem from './components/Additems/Additems';
-
+import React from 'react';
+import './App.css';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import Learn from './Components/Learn/Learn'
+import Teach from './Components/Teach/Teach'
+import Choose from './Components/Choose/Choose'
 
 const App = () => {
-  
+
   return (
     <Router>
-    <Switch>
-        <Route path="/" exact>
-          <Additem/>
+      <Switch>
+        <Route exact path='/'>
+          <Choose/>
         </Route>
-        <Redirect to="/" />
-    </Switch>
+        <Route exact path='/learn'>
+          <Learn/>
+        </Route>
+        <Route exact path='/teach'>
+          <Teach/>
+        </Route>
+      </Switch>
     </Router>
   );
 }
