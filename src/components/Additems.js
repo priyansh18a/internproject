@@ -6,19 +6,14 @@ import eye from '../image/eye.png';
 import Stormtrooper from '../image/Stormtrooper.png';
 import Delete from '../image/delete.png'
 import Arrowdown from '../image/arrowdown.png'
-// import fire from '../custom/Fire'
-// import {useHistory} from 'react-router-dom';
 import './Additems.css'
 import { Link } from 'react-router-dom';
 
 const Additem = () => {
-    // const history = useHistory(); 
+ 
     const [navIsHidden, setNavIsHidden]= useState(true);
-    const [imagecount,setImagecount] = useState(1);
+    // const [imagecount,setImagecount] = useState(1);
     const [files , setFiles] = useState([]);
-
-    
-   
 
     const closesidenav = () => {
       setNavIsHidden(true)
@@ -43,7 +38,7 @@ const Additem = () => {
  
        };
 
-     const handleFiles = file => {
+    const handleFiles = file => {
         const preview = document.getElementById("resize");
         const img = document.createElement("img");
         img.classList.add("obj");
@@ -58,9 +53,7 @@ const Additem = () => {
         }
       } 
 
-      
-      
-      const addtext = () =>{
+    const addtext = () =>{
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
         const resize = document.getElementById("resize");
@@ -69,7 +62,7 @@ const Additem = () => {
     
       } 
 
-      const addquestion = () =>{
+    const addquestion = () =>{
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
         document.getElementById("create-quest").style.display ="none";
@@ -80,7 +73,7 @@ const Additem = () => {
     
       } 
 
-      const addimage = () => {
+    const addimage = () => {
         document.getElementById("hide").style.display ="block";
         document.getElementById("preview").style.display ="none"; 
         document.getElementById("create-quest").style.display ="block";
@@ -88,7 +81,7 @@ const Additem = () => {
         document.getElementById("question").style.display = "none";
       }
 
-      const addOptions = () => {
+    const addOptions = () => {
             // complete it later
       }
 
@@ -204,10 +197,6 @@ const Additem = () => {
 
             
         </div>
-    
-    
-     
-        
     </React.Fragment>
     );
 };

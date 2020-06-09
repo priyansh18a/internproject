@@ -17,7 +17,7 @@ const Addimage = () => {
       const [imageAsUrl, setImageAsUrl] = useState([])
       const [files , setFiles] = useState([]);
       const [navIsHidden, setNavIsHidden]= useState(true);
-      const [imagecount,setImagecount] = useState(1);
+      
  
       const closesidenav = () => {
           setNavIsHidden(true)
@@ -54,31 +54,7 @@ const Addimage = () => {
             return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
         }
 
-        const handleFiles = file => {
-           
-            const preview = document.getElementById("preview");
-            const img = document.createElement("img");
-            img.classList.add("obj");
-            img.classList.add("mt-3");
-            img.setAttribute("id", `image_${imagecount}`);
-            img.file = file;
-            preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
-            
-           const Image = document.getElementById(`image_${imagecount}`);
-           const imgData = getBase64Image(Image);
-            localStorage.setItem(`image_${imagecount}`, imgData);
-            setImagecount(prevCount => (++prevCount));
-
-            const reader = new FileReader();
-            reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-            if (file && file.type.match('image.*')) {
-              reader.readAsDataURL(file);
-            }
-
-         
-           
-          
-        }
+        
         
         const onUploadSubmission = e => {
           e.preventDefault(); // prevent page refreshing
