@@ -1,4 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/nimbus-sans-d-ot');
+@font-face {
+    font-family: 'Renner*';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Renner* Book'), url('./../../fonts/Renner_\ 400\ Book.ttf') format('woff');
+}
 //Grid System////////////////
 .row{
     display: flex;
@@ -31,47 +37,70 @@ body{
     overflow-x: hidden;
 }
 /////all <a> tags///////
-a:link { 
-    //text-decoration: underline; 
-    text-decoration: none; 
-} 
-a:hover { 
-    text-decoration: none; 
+// a:link { 
+//     //text-decoration: underline; 
+//     text-decoration: none; 
+// } 
+// a:hover { 
+//     text-decoration: none; 
+// }
+
+//HOMEPAGE/////////////////
+
+.link-txt > text{
+    text-decoration: underline;
+    text-decoration-color: red($color: #000000);
 }
-////////
+
 .container1{
     height: 100vh;
     width: 100vw;
     position: relative;
+    background: #FFFFFF;
     // overflow: hidden;
     // overflow-x: hidden;
-    // overflow-y: hidden;
+    overflow-y: hidden;
 }
-.container2{
-    background-color: #E5E5E5;
-    height: 1030px;
-    width: 100vw;
-    position: relative;
-    // overflow: hidden;
-    // overflow-x: hidden;
-    // overflow-y: hidden;
-}
+
 .header{
-    float: left;
-    height:100px;
-    width: 50vw;
+    height:150px;
+    width: 100vw;
+    display:flex;
+}
+.signup-btn-homepage{
+    display: flex;
+    position: relative;
+    width: 50.66%;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.signin-btn-homepage{
+    display: flex;
+    position: relative;
+    // width: 50.66%;
+    padding-top: 30px;
+    padding-left: 50vw;
 }
 .sign-up-btn{
+    position: relative;
     text-align: center;
-    width:12.03vw;
+    width:12vw;
+    height: 82px;
     background-color: #16852E;
+    border-radius: 8px;
+}
+.sign-in-btn{
+    position: relative;
+    text-align: center;
+    width:12vw;
+    height: 82px;
+    background: #FFFFFF;
+    border: 3px solid #16852E;
+    box-sizing: border-box;
     border-radius: 8px;
 }
 
 .link-txt{
-    float: left;
-    margin-top: 50px;
-    margin-left: 10%;
     width: 10%;
     font-family: DINPro;
     font-style: normal;
@@ -79,30 +108,68 @@ a:hover {
     font-size: 24px;
     line-height: 100%;
     /* identical to box height, or 24px */
-
     letter-spacing: 0.06em;
-
     color: #013EA6;
 }
-.section1{
-    height: 100vh;
-    width: 100%;
+.home-main{
+    width: 100vw;
+    height: auto;
+    display: flex;
+}
+.main-para-cont{
+    display: block;
+    width:50vw;
+}
+.main-para-cont{
     position: relative;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    padding-left: 6.25%;
+    padding-right: 13%;
+    padding-top: 100px;
+}
+.main-image-cont{
+    padding-top: 70px;
+    width:50vw;
+}
+.main-learn{
+    position: relative;
+    width: 33vw;
+}
+.main-text{
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 115%;
+    letter-spacing: -0.05em;
+    color: #013EA6;
 }
 .logo{
-    position: absolute;
-    margin-left: 150px;
-    float: left;
-    margin-top: 26px;
-    width:1.51%;
-}
-
-.btn-txt{
     position: relative;
-    font-family: Renner;
+}
+.homepage-logo{
+    width:8.33vw;
+    padding-left:6.25%;
+    padding-top:40px;
+}
+.homepage-head-text{
+    width:8.33vw;
+    padding-left:4%;
+    padding-top:65px;
+}
+.signin-btn-txt{
+    position: relative;
+    font-family: 'Renner*';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+    letter-spacing: -0.02em;
+    color: #16852E;
+}
+.signup-btn-txt{
+    position: relative;
+    font-family: 'Renner*';
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
@@ -112,94 +179,26 @@ a:hover {
     color: #FFFFFF;
 }
 
-.p_obj{
-    position: absolute;
-    margin-top: 245px;
-    width:34.53vw;
-}
-
-.pg2-txt{
-    width: 100%;
-    height: 400px;
-    padding: 0px;
-    position: relative;
-}
-.mg{
-    position: relative;
-    margin-top: 139px;
-    margin-left: 482px;
-}
-.mg1{
-    position: relative;
-    margin-top: 15px;
-    margin-left: 750px;
-}
-.main_learn{
-    position: absolute;
-    width: 33.17vw;
-}
-.lft-block{
-    float: left;
-    width: 50%;
-    background-color: #E5E5E5;
-}
 .pen{
-    position: absolute;
+    position: relative;
     width:1.66vw;
-    left: 640px;
-    top: 240px;
 }
 
 .star{
-    position: absolute;;
+    position: relative;
     width: 2.48vw;
-    left: 400px;
-    top: 390px;
 }
 
 .key{
-    position: absolute;;
+    position: relative;
     width: 1.93vw;
-    left: 590px;
-    top: 610px;
 }
 
 .torch{
-    position: absolute;
+    position: relative;
     width: 2.48vw;
-    left: 670px;
-    top: 465px;
 }
 
-.text1{
-    float: left;
-    height:100%;
-    width: 50%;
-}
-
-.css_cpp{
-    position: absolute;
-    margin-top: 150px;
-    width:50.26vw;
-}
-
-.practical_for_student{
-    position: absolute;
-    margin-top: 150px;
-    width:49.09vw;
-}
-
-.experienced_teachers{
-    position: absolute;
-    margin-top: 150px;
-    width:46.23vw;
-}
-
-.scholarship{
-    position: absolute;
-    margin-top: 150px;
-    width:45.46vw;
-}
 //Middle Page-1//////////////////////////////
 
 .middle-pg-1{
@@ -379,6 +378,7 @@ a:hover {
     background: #FFFFFF;
     border-radius: 32px;
     text-align: center;
+    justify-content: center;
 }
 
 .box-head{
@@ -410,40 +410,42 @@ a:hover {
     color: rgba(77, 77, 77, 0.8);
 }
 
+.grid-img-container{
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .game-pic{
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 .text-pic{ 
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 .code-pic{
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 .arvr-pic{
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 .video-pic{
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 .comic-pic{
     position: relative;
-    display: block;
-    width:100%;
+    width:90%;
 }
 
 //Footer Page/////////////////////////
@@ -451,6 +453,8 @@ a:hover {
     width:100vw;
     height:auto;
     background-image: url('./../../Graphics/black_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .upper-half{

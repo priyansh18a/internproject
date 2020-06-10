@@ -8,10 +8,7 @@ import pen from './../../Graphics/pen.svg';
 import star from './../../Graphics/star.svg';
 import torch from './../../Graphics/torch.svg';
 import key from './../../Graphics/key.svg';
-import mg from './../../Graphics/mg.svg';
-import quote_learn from './../../Graphics/quote_learn.svg';
 import learn_combined from './../../Graphics/learn_combined.svg';
-import p_with_object from './../../Graphics/p_with_object.svg';
 import person from './../../Graphics/person.svg';
 import css_cpp from './../../Graphics/css_cpp.svg';
 import practical_for_student from './../../Graphics/practical_for_student.svg';
@@ -32,28 +29,36 @@ import tick from './../../Graphics/tick.svg';
 //imported the scss file
 import './style.scss';
 
-//Bootstrap
-import { Container, Row, Col, Button } from 'react-bootstrap'
-
 const Homepage = () => {
     return (
         <div className="container1">
             <div className="header">
-                <img className="logo" src={logo} alt="Feynman School" />
-                <a className="link-txt" href='/#/learn'>Learn</a>
-                <a className="link-txt" href='/#/teach'>Teach</a>
+                <div className="homepage-logo">
+                    <img className="logo" src={logo} alt="Feynman School" />
+                </div>
+                <div className="homepage-head-text">
+                    <a className="link-txt" href='/#/learn'>Learn</a>
+                </div>
+                <div className="homepage-head-text">
+                    <a className="link-txt" href='/#/teach'>Teach</a>
+                </div>
+                <div className="signin-btn-homepage">
+                    <button onclick={() => { console.log('yay') }} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
+                </div>
+                <div className="signup-btn-homepage">
+                    <button onclick={() => { console.log('yay') }} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
+                </div>
             </div>
-            <div className="header">
-                <Button onclick={() => { console.log('yay') }} className="sign-up-btn"><span className="btn-txt">Sign Up</span></Button>
+            <div className="home-main">
+                <div className="main-para-cont">
+                    <div className="text-para">
+                        <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts. Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
+                    </div>
+                </div>
+                <div className="main-image-cont">
+                    <img className="main-learn" src={main_learn} alt="" />
+                </div>
             </div>
-            <div className="text1">
-                <img className="pen" src={pen} alt="" />
-                <img className="star" src={star} alt="" />
-                <img className="torch" src={torch} alt="" />
-                <img className="key" src={key} alt="" />
-                <img className="p_obj" src={p_with_object} alt="" />
-            </div>
-            {/* <img className="main_learn" src={main_learn} alt="" /> */}
         </div>
     )
 }
@@ -109,34 +114,34 @@ const GridPage = () => {
                 <div className="box1">
                     <text className="box-head">Games</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="game-pic" src={game} alt="" />
+                    <div className="grid-img-container"><img class="game-pic" src={game} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Text</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="text-pic" src={text} alt="" />
+                    <div className="grid-img-container"><img class="text-pic" src={text} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Code</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="code-pic" src={code} alt="" />
+                    <div className="grid-img-container"><img class="code-pic" src={code} alt="" /></div>
                 </div>
             </div>
             <div className="grid-page-row2">
                 <div className="box1">
                     <text className="box-head">AR/VR</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="arvr-pic" src={ar_vr} alt="" />
+                    <div className="grid-img-container"><img class="arvr-pic" src={ar_vr} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Video</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="video-pic" src={video} alt="" />
+                    <div className="grid-img-container"><img class="video-pic" src={video} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Comic</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <img class="comic-pic" src={comic} alt="" />
+                    <div className="grid-img-container"><img class="comic-pic" src={comic} alt="" /></div>
                 </div>
             </div>
         </React.Fragment>
@@ -261,6 +266,7 @@ const Middle_Page5 = () => {
 const Learn = () => {
     return (
         <React.Fragment>
+            <Homepage />
             <GridPage />
             <Middle_Page1 />
             <Middle_Page2 />
