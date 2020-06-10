@@ -27,6 +27,7 @@ import ar_vr from './../../Graphics/ar_vr.svg';
 import video from './../../Graphics/video.svg';
 import comic from './../../Graphics/comic.svg';
 
+
 //imported the scss file
 import './style.scss';
 
@@ -93,7 +94,7 @@ const FooterPage = () => {
                 <text className="big-text-footer-pg">Coming Soon</text>
                 <text className="small-text-footer-pg">Sign up to stay notified</text>
                 <div className="footer-submit-btn">
-                <button className="button-footer-pg" type="button"><text className="button-text-footer-pg">Sign Up for Demo</text></button>
+                    <button className="button-footer-pg" type="button"><text className="button-text-footer-pg">Sign Up for Demo</text></button>
                 </div>
             </div>
         </div>
@@ -103,95 +104,108 @@ const FooterPage = () => {
 const GridPage = () => {
     return (
         <React.Fragment>
-        <div className="grid-page-row1">
-            <div className="box1">
-                <text className="box-head">Games</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="game-pic" src={game} alt="" />
+            <div className="grid-page-row1">
+                <div className="box1">
+                    <text className="box-head">Games</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="game-pic" src={game} alt="" />
+                </div>
+                <div className="box1">
+                    <text className="box-head">Text</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="text-pic" src={text} alt="" />
+                </div>
+                <div className="box1">
+                    <text className="box-head">Code</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="code-pic" src={code} alt="" />
+                </div>
             </div>
-            <div className="box1">
-                <text className="box-head">Text</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="text-pic" src={text} alt="" />
+            <div className="grid-page-row2">
+                <div className="box1">
+                    <text className="box-head">AR/VR</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="arvr-pic" src={ar_vr} alt="" />
+                </div>
+                <div className="box1">
+                    <text className="box-head">Video</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="video-pic" src={video} alt="" />
+                </div>
+                <div className="box1">
+                    <text className="box-head">Comic</text>
+                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                    <img class="comic-pic" src={comic} alt="" />
+                </div>
             </div>
-            <div className="box1">
-                <text className="box-head">Code</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="code-pic" src={code} alt="" />
-            </div>
-        </div>
-        <div className="grid-page-row2">
-            <div className="box1">
-                <text className="box-head">AR/VR</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="arvr-pic" src={ar_vr} alt="" />
-            </div>
-            <div className="box1">
-                <text className="box-head">Video</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="video-pic" src={video} alt="" />
-            </div>
-            <div className="box1">
-                <text className="box-head">Comic</text>
-                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                <img class="comic-pic" src={comic} alt="" />
-            </div>
-        </div>
         </React.Fragment>
+    )
+}
+
+const Middle_Page1 = () => {
+    return (
+        <div className="middle-pg-1">
+            <div className="middle-pg-1-lft">
+                <img src={person} alt="" />
+                <text className="middle-pg1-head">Every person learns through a different path</text>
+                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <ul>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                </ul>
+            </div>
+            <div className="middle-pg-1-rgt">
+                <img src={learn_combined} alt="" />
+            </div>
+        </div>
+    )
+}
+
+const Middle_Page3 = () => {
+    return (
+        <div className="middle-pg-1">
+            <div className="middle-pg-1-lft">
+                <img src={person} alt="" />
+                <text className="middle-pg1-head">Pratical projects for every student</text>
+                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <ul>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                </ul>
+            </div>
+            <div className="middle-pg-1-rgt">
+                <img src={practical_for_student} alt="" />
+            </div>
+        </div>
+    )
+}
+
+const Middle_Page5 = () => {
+    return (
+        <div className="middle-pg-1">
+            <div className="middle-pg-1-lft">
+                <img src={person} alt="" />
+                <text className="middle-pg1-head">Feynman scholarship for the brightest talents</text>
+                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <ul>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
+                </ul>
+            </div>
+            <div className="middle-pg-1-rgt">
+                <img src={scholarship} alt="" />
+            </div>
+        </div>
     )
 }
 
 const Learn = () => {
     return (
         <React.Fragment>
-            {/* <Homepage /> */}
-            {/* <div className="container2">
-                <div className="pg2-txt">
-                    <img className="mg" src={quote_learn} alt="" />
-                    <img className="mg1" src={mg} alt="" />
-                </div>
-            </div> */}
-            {/* <div className="container2">
-                <div className="lft-block">
-                    <img class="person" src={person} alt="" />
-                </div>
-                <div className="lft-block">
-                    <img className="learn_combined" src={learn_combined} alt="" />
-                </div>
-            </div>
-            <div className="container2">
-                <div className="lft-block">
-                    <img className="css_cpp" src={css_cpp} alt="" />
-                </div>
-                <div className="lft-block">
-                    <img class="person" src={person} alt="" />
-                </div>
-            </div>
-            <div className="container2">
-                <div className="lft-block">
-                    <img class="person" src={person} alt="" />
-                </div>
-                <div className="lft-block">
-                    <img className="practical_for_student" src={practical_for_student} alt="" />
-                </div>
-            </div>
-            <div className="container2">
-                <div className="lft-block">
-                    <img className="experienced_teachers" src={experienced_teachers} alt="" />
-                </div>
-                <div className="lft-block">
-                    <img class="person" src={person} alt="" />
-                </div>
-            </div>
-            <div className="container2">
-                <div className="lft-block">
-                    <img src={person} alt="" />
-                </div>
-                <div className="lft-block">
-                    <img class="person" className="scholarship" src={scholarship} alt="" />
-                </div>
-            </div> */}
             <GridPage />
+            <Middle_Page1 />
+            <Middle_Page3 />
+            <Middle_Page5 />
             <FooterPage />
             <Footer />
         </React.Fragment>
