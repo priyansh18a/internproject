@@ -27,7 +27,9 @@
 }
 
 ////////////////////////////////
-
+body{
+    overflow-x: hidden;
+}
 /////all <a> tags///////
 a:link { 
     //text-decoration: underline; 
@@ -209,6 +211,104 @@ a:hover {
     margin-top: 150px;
     width:2.91vw;
 }
+//Grid Page//////////////////////
+.grid-page-row1{
+    display: flex;
+    width: 100vw;
+    position: relative;
+    background: #E5E5E5;
+    justify-content: space-around;
+    padding-top: 28px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.grid-page-row2{
+    display: flex;
+    width: 100vw;
+    position: relative;
+    background: #E5E5E5;
+    justify-content: space-around;
+    padding-top: 28px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 200px;
+}
+
+.box1{
+    display: block;
+    height:542px;
+    width:28.22vw;
+    background: #FFFFFF;
+    border-radius: 32px;
+    text-align: center;
+}
+
+.box-head{
+    padding-top: 24px;
+    display: block;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: -0.02em;
+    color: #3D3D3D;
+}
+
+.simple-text-grid{
+    position: relative;
+    padding-top: 28px;
+    padding-right: 12%;
+    padding-left: 12%;
+    text-align: left;
+    display: block;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+    letter-spacing: 0.02em;
+    color: rgba(77, 77, 77, 0.8);
+}
+
+.game-pic{
+    position: relative;
+    display: block;
+    width:100%;
+}
+
+.text-pic{ 
+    position: relative;
+    display: block;
+    width:100%;
+}
+
+.code-pic{
+    position: relative;
+    display: block;
+    width:100%;
+}
+
+.arvr-pic{
+    position: relative;
+    display: block;
+    width:100%;
+}
+
+.video-pic{
+    position: relative;
+    display: block;
+    width:100%;
+}
+
+.comic-pic{
+    position: relative;
+    display: block;
+    width:100%;
+}
+
 //Footer Page/////////////////////////
 .footer-page{
     width:100vw;
@@ -221,6 +321,7 @@ a:hover {
     width:100vw;
     height:auto;
     text-align: center;
+    padding-top: 141px;
 }
 
 .lower-half{
@@ -229,6 +330,7 @@ a:hover {
     height:auto;
     text-align: center;
     justify-content: center;
+    padding-top: 109px;
 }
 
 .astronaut{
@@ -255,11 +357,10 @@ a:hover {
     /* or 35px */
     letter-spacing: -0.03em;
     color: #FFFFFF;
+    padding-top: 12px;
 }
 
 .button-footer-pg{
-    margin-top: 62px;
-    display: block;
     height: 134px;
     width:39%;
     background: #16852E;
@@ -275,6 +376,15 @@ a:hover {
     /* identical to box height, or 52px */
     letter-spacing: -0.02em;
     color: #FFFFFF;
+}
+
+.footer-submit-btn{
+    position: relative;
+    width: 100vw;
+    padding-top: 62px;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 201px;
 }
 
 //Footer/////////////////////////////////////////

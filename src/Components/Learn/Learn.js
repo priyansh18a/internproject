@@ -83,8 +83,8 @@ const Footer = () => {
     )
 }
 
-const FooterPage=()=>{
-    return(
+const FooterPage = () => {
+    return (
         <div className="footer-page">
             <div className="upper-half">
                 <img class="astronaut" src={astronaut} alt="" />
@@ -92,15 +92,58 @@ const FooterPage=()=>{
             <div className="lower-half">
                 <text className="big-text-footer-pg">Coming Soon</text>
                 <text className="small-text-footer-pg">Sign up to stay notified</text>
+                <div className="footer-submit-btn">
                 <button className="button-footer-pg" type="button"><text className="button-text-footer-pg">Sign Up for Demo</text></button>
+                </div>
             </div>
         </div>
     )
 }
 
+const GridPage = () => {
+    return (
+        <React.Fragment>
+        <div className="grid-page-row1">
+            <div className="box1">
+                <text className="box-head">Games</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="game-pic" src={game} alt="" />
+            </div>
+            <div className="box1">
+                <text className="box-head">Text</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="text-pic" src={text} alt="" />
+            </div>
+            <div className="box1">
+                <text className="box-head">Code</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="code-pic" src={code} alt="" />
+            </div>
+        </div>
+        <div className="grid-page-row2">
+            <div className="box1">
+                <text className="box-head">AR/VR</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="arvr-pic" src={ar_vr} alt="" />
+            </div>
+            <div className="box1">
+                <text className="box-head">Video</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="video-pic" src={video} alt="" />
+            </div>
+            <div className="box1">
+                <text className="box-head">Comic</text>
+                <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
+                <img class="comic-pic" src={comic} alt="" />
+            </div>
+        </div>
+        </React.Fragment>
+    )
+}
+
 const Learn = () => {
     return (
-        <React.Fragment className="full-page">
+        <React.Fragment>
             {/* <Homepage /> */}
             {/* <div className="container2">
                 <div className="pg2-txt">
@@ -148,7 +191,8 @@ const Learn = () => {
                     <img class="person" className="scholarship" src={scholarship} alt="" />
                 </div>
             </div> */}
-            <FooterPage/>
+            <GridPage />
+            <FooterPage />
             <Footer />
         </React.Fragment>
     )
