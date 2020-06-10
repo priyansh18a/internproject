@@ -26,6 +26,7 @@ import code from './../../Graphics/code.svg';
 import ar_vr from './../../Graphics/ar_vr.svg';
 import video from './../../Graphics/video.svg';
 import comic from './../../Graphics/comic.svg';
+import tick from './../../Graphics/tick.svg';
 
 
 //imported the scss file
@@ -149,13 +150,40 @@ const Middle_Page1 = () => {
                 <img src={person} alt="" />
                 <text className="middle-pg1-head">Every person learns through a different path</text>
                 <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
-                <ul>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                </ul>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
             </div>
             <div className="middle-pg-1-rgt">
                 <img src={learn_combined} alt="" />
+            </div>
+        </div>
+    )
+}
+
+const Middle_Page2 = () => {
+    return (
+        <div className="middle-pg-2">
+            <div className="middle-pg-2-lft">
+                <img src={css_cpp} alt="" />
+            </div>
+            <div className="middle-pg-2-rgt">
+                <img src={person} alt="" />
+                <text className="middle-pg2-head">Interact with the content for better visualisation</text>
+                <text className="middle-pg2-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
             </div>
         </div>
     )
@@ -168,13 +196,40 @@ const Middle_Page3 = () => {
                 <img src={person} alt="" />
                 <text className="middle-pg1-head">Pratical projects for every student</text>
                 <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
-                <ul>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                </ul>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
             </div>
             <div className="middle-pg-1-rgt">
                 <img src={practical_for_student} alt="" />
+            </div>
+        </div>
+    )
+}
+
+const Middle_Page4 = () => {
+    return (
+        <div className="middle-pg-2">
+            <div className="middle-pg-2-lft">
+                <img src={experienced_teachers} alt="" />
+            </div>
+            <div className="middle-pg-2-rgt">
+                <img src={person} alt="" />
+                <text className="middle-pg2-head">Experienced teachers for perfect learning</text>
+                <text className="middle-pg2-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
             </div>
         </div>
     )
@@ -187,10 +242,14 @@ const Middle_Page5 = () => {
                 <img src={person} alt="" />
                 <text className="middle-pg1-head">Feynman scholarship for the brightest talents</text>
                 <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
-                <ul>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                    <li className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</li>
-                </ul>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                </div>
             </div>
             <div className="middle-pg-1-rgt">
                 <img src={scholarship} alt="" />
@@ -204,7 +263,9 @@ const Learn = () => {
         <React.Fragment>
             <GridPage />
             <Middle_Page1 />
+            <Middle_Page2 />
             <Middle_Page3 />
+            <Middle_Page4 />
             <Middle_Page5 />
             <FooterPage />
             <Footer />
