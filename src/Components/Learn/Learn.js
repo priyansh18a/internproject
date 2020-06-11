@@ -37,7 +37,7 @@ const Homepage = () => {
                     <img className="logo" src={logo} alt="Feynman School" />
                 </div>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/#/learn'>Learn</a>
+                    <a className="link-txt" href='/#/learn'><text>Learn</text></a>
                 </div>
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/#/teach'>Teach</a>
@@ -52,8 +52,12 @@ const Homepage = () => {
             <div className="home-main">
                 <div className="main-para-cont">
                     <div className="text-para">
-                        <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts. Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
+                        <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts.</text><text className="main-text-light"> Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
                     </div>
+                    {/* <form>
+                        <input type="text" id="phoneno" name="phoneno" placeholder="Phone Number"></input>
+                        <input className="submit-btn"type="submit" value="Submit"/>
+                    </form> */}
                 </div>
                 <div className="main-image-cont">
                     <img className="main-learn" src={main_learn} alt="" />
@@ -110,6 +114,11 @@ const FooterPage = () => {
 const GridPage = () => {
     return (
         <React.Fragment>
+            <div className="grid-head">
+                <img src={person} alt="" />
+                <text className="grid-head-bold-text">Learn as you build</text>
+                <text className="grid-head-light-text">Use a variety of mediums to learn the most difficult of concepts with ease</text>
+            </div>
             <div className="grid-page-row1">
                 <div className="box1">
                     <text className="box-head">Games</text>

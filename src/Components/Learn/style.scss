@@ -73,6 +73,7 @@ body{
     width: 50.66%;
     padding-top: 30px;
     padding-left: 30px;
+    padding-right: 20px;
 }
 .signin-btn-homepage{
     display: flex;
@@ -88,6 +89,7 @@ body{
     height: 82px;
     background-color: #16852E;
     border-radius: 8px;
+    padding-right: 20px;
 }
 .sign-in-btn{
     position: relative;
@@ -116,16 +118,55 @@ body{
     height: auto;
     display: flex;
 }
+
 .main-para-cont{
     display: block;
     width:50vw;
-}
-.main-para-cont{
     position: relative;
     padding-left: 6.25%;
     padding-right: 13%;
     padding-top: 100px;
+    margin: auto;
 }
+
+.main-para-cont>form{
+    display: block;
+}
+
+#phoneno{
+    position: relative;
+    border: 3px solid #8899A6;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 82px;
+    width: 20vw;
+    padding-top: 10px;
+}
+.submit-btn{
+    display: flex;
+}
+
+#phoneno::placeholder {
+    font-family: 'Renner*';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 100%;
+    /* or 33px */
+    letter-spacing: -0.02em;
+    color: #8899A6;
+    padding-top: 200px;
+}
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
 .main-image-cont{
     padding-top: 70px;
     width:50vw;
@@ -142,6 +183,15 @@ body{
     line-height: 115%;
     letter-spacing: -0.05em;
     color: #013EA6;
+}
+.main-text-light{
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 115%;
+    letter-spacing: -0.05em;
+    color:#71A5FF;
 }
 .logo{
     position: relative;
@@ -348,6 +398,49 @@ body{
   }
 
 //Grid Page//////////////////////
+.grid-head{
+    display: block;
+    position: relative;
+    width:100vw;
+    height: 350px;
+    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+    text-align: center;
+    padding-top: 50px;
+}
+
+.grid-head-bold-text{
+    position: relative;
+    padding-left: 40vw;
+    padding-right: 40vw;
+    padding-top: 20px;
+    display: block;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 100%;
+    /* or 56px */
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #29364A;
+}
+
+.grid-head-light-text{
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 38vw;
+    padding-right: 38vw;
+    font-family: Nimbus Sans D OT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: rgba(33, 33, 33, 0.6);
+}
+
 .grid-page-row1{
     display: flex;
     width: 100vw;
