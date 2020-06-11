@@ -14,10 +14,10 @@ const App = () => {
   return (
     <Router>
     <Switch>
-        <Route path="/" exact>
+        <Route path="/:screenId" exact>
           <Additem/>
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/0" />
     </Switch>
     </Router>
   );

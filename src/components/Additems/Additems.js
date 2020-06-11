@@ -1,4 +1,4 @@
-import React, { useState  } from 'react';
+import React, { useState , useEffect} from 'react';
 import SideNavButton from '../Sidenavbutton/sidenavbutton'
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
@@ -8,12 +8,21 @@ import Delete from '../../image/delete.png'
 import Arrowdown from '../../image/arrowdown.png'
 import './Additems.scss'
 import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+import fire from '../../custom/Fire';
+import { useParams} from 'react-router-dom';
+
+const storage = firebase.storage()
 
 const Additem = () => {
  
     const [navIsHidden, setNavIsHidden]= useState(true);
-    const [imagecount,setImagecount] = useState(1);
+    // const [imagecount,setImagecount] = useState(1);
     const [files , setFiles] = useState([]);
+    const screenId = useParams().screenId;
+
+
+    useEffect(() => { uploadfilehandler() }, [files] );
 
     const closesidenav = () => {
       setNavIsHidden(true)
@@ -33,19 +42,43 @@ const Additem = () => {
         // add an "id" property to each File object
            setFiles(prevState => [...prevState, newFile]);
            
-         }
-         setImagecount(prevState => prevState +1 );
+        }
+       
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
-      
       };
+
+      const uploadfilehandler = () => {
+        fire.auth().signInWithEmailAndPassword('priyansh18a@iitg.ac.in','123456').then((u)=>{
+          console.log('loginsuccessful') ;
+          files.forEach(file => {
+            console.log('it work') ;
+            const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file);
+            uploadTask.on(
+                  firebase.storage.TaskEvent.STATE_CHANGED,
+                  snapshot => {
+                    const progress = 
+                      ((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                      if (snapshot.state === firebase.storage.TaskState.RUNNING) {
+                        console.log(`Progress: ${progress}%`);
+                      }
+                    },
+                    error => console.log(error.code)
+                    );
+                  });
+
+        }).catch((error) => {
+            console.log(error);
+        });
+      
+        };
 
     const handleFiles = file => {
         const preview = document.getElementById("resize");
         const img = document.createElement("img");
         img.classList.add("obj");
         // img.setAttribute("id", `image_${imagecount}`);
-        img.file = file;
+        img.file = file;  
         preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
         
         const reader = new FileReader();
@@ -54,6 +87,8 @@ const Additem = () => {
           reader.readAsDataURL(file);
         }
     } 
+
+ 
 
     const addtext = () =>{
         document.getElementById("hide").style.display ="none";
@@ -71,7 +106,7 @@ const Additem = () => {
         document.getElementById("option-redirect").style.display ="block"; 
         const resize = document.getElementById("resize");
           resize.innerHTML= document.getElementById("question").innerHTML;
-      } 
+    } 
 
     const addimage = () => {
         document.getElementById("resize").innerHTML = '';
@@ -165,19 +200,19 @@ const Additem = () => {
                 </div>
                 <div className="options">
                   <p>Option 1</p>
-                  <Link className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
+                  <Link to="" className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
                 </div>
                 <div className="options">
                   <p>Option 2</p>
-                  <Link className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
+                  <Link to="" className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
                 </div>
                 <div className="options">
                   <p>Option 3</p>
-                  <Link className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
+                  <Link to="" className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
                 </div>
                 <div className="options">
                   <p>Option 4</p>
-                  <Link className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
+                  <Link to="" className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
                 </div>
               </div>
             </div>
@@ -196,7 +231,7 @@ const Additem = () => {
             <ul>
               <li>Option 1</li>
               <li>Option 2</li>
-              <Link className="add-option" href={addOptions}> <span style={{ fontSize : '20px',marginRight:'5px'}}> + </span> Add options</Link>
+              <Link to="" className="add-option" href={addOptions}> <span style={{ fontSize : '20px',marginRight:'5px'}}> + </span> Add options</Link>
             </ul>
            </div>
          </div>
