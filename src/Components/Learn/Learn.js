@@ -27,7 +27,7 @@ import tick from './../../Graphics/tick.svg';
 
 
 //imported the scss file
-import './style.scss';
+import './learn.scss';
 
 const Homepage = () => {
     return (
@@ -50,7 +50,7 @@ const Homepage = () => {
                 </div>
             </div>
             <div className="home-main">
-                <div className="main-para-cont">
+                <div className="l-main-para-cont">
                     <div className="text-para">
                         <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts.</text><text className="main-text-light"> Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
                     </div>
@@ -60,7 +60,7 @@ const Homepage = () => {
                     </form> */}
                 </div>
                 <div className="main-image-cont">
-                    <img className="main-learn" src={main_learn} alt="" />
+                    <img className="l-main-learn" src={main_learn} alt="" />
                 </div>
             </div>
         </div>

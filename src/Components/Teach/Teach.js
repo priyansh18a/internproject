@@ -8,12 +8,12 @@ import pen from './../../Graphics/pen.svg';
 import star from './../../Graphics/star.svg';
 import torch from './../../Graphics/torch.svg';
 import key from './../../Graphics/key.svg';
-import learn_combined from './../../Graphics/learn_combined.svg';
+import teach_combined from './../../Graphics/teach_combined.svg';
 import person from './../../Graphics/person.svg';
-import css_cpp from './../../Graphics/css_cpp.svg';
-import practical_for_student from './../../Graphics/practical_for_student.svg';
-import experienced_teachers from './../../Graphics/experienced_teachers.svg';
-import scholarship from './../../Graphics/scholarship.svg';
+import next_gen_vis_tools from './../../Graphics/next_gen_vis_tools.svg';
+import individual_profile from './../../Graphics/individual_profile.svg';
+import course_analytics from './../../Graphics/course_analytics.svg';
+import multiple_learning_paths from './../../Graphics/multiple_learning_paths.svg';
 import astronaut from './../../Graphics/astronaut.svg';
 import facebook from './../../Graphics/facebook.svg';
 import youtube from './../../Graphics/youtube.svg';
@@ -27,7 +27,7 @@ import tick from './../../Graphics/tick.svg';
 
 
 //imported the scss file
-import './style.scss';
+import './teach.scss';
 
 const Homepage = () => {
     return (
@@ -174,7 +174,7 @@ const Middle_Page1 = () => {
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
-                <img src={learn_combined} alt="" />
+                <img src={multiple_learning_paths} alt="" />
             </div>
         </div>
     )
@@ -184,7 +184,7 @@ const Middle_Page2 = () => {
     return (
         <div className="middle-pg-2">
             <div className="middle-pg-2-lft">
-                <img src={css_cpp} alt="" />
+                <img src={next_gen_vis_tools} alt="" />
             </div>
             <div className="middle-pg-2-rgt">
                 <img src={person} alt="" />
@@ -220,7 +220,7 @@ const Middle_Page3 = () => {
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
-                <img src={practical_for_student} alt="" />
+                <img src={individual_profile} alt="" />
             </div>
         </div>
     )
@@ -230,7 +230,7 @@ const Middle_Page4 = () => {
     return (
         <div className="middle-pg-2">
             <div className="middle-pg-2-lft">
-                <img src={experienced_teachers} alt="" />
+                <img src={course_analytics} alt="" />
             </div>
             <div className="middle-pg-2-rgt">
                 <img src={person} alt="" />
@@ -266,7 +266,7 @@ const Middle_Page5 = () => {
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
-                <img src={scholarship} alt="" />
+                <img src={teach_combined} alt="" />
             </div>
         </div>
     )
