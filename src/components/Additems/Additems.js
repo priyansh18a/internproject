@@ -21,7 +21,7 @@ const Additem = () => {
     const [files , setFiles] = useState([]);
     const screenId = useParams().screenId;
 
-
+    useEffect(() => { getimages() }, [] );
     useEffect(() => { uploadfilehandler() }, [files] );
 
     const closesidenav = () => {
@@ -31,6 +31,7 @@ const Additem = () => {
     const opensidenav = () => {
       setNavIsHidden(false)
     }
+
 
     const fileuploadhandler = e => {
       
@@ -42,18 +43,39 @@ const Additem = () => {
         // add an "id" property to each File object
            setFiles(prevState => [...prevState, newFile]);
            
-        }
-       
+      }
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
       };
+      
+    const handleFiles = file => {
+        const preview = document.getElementById("resize");
+        const img = document.createElement("img");
+        img.classList.add("obj");
+        img.file = file;  
+        preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
+        const  imgwidth = document.getElementById('resize').style.width;
+        console.log(imgwidth);
+        const reader = new FileReader();
+        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+        if (file && file.type.match('image.*')) {
+          reader.readAsDataURL(file);
+        }
+    } 
 
-      const uploadfilehandler = () => {
-        fire.auth().signInWithEmailAndPassword('priyansh18a@iitg.ac.in','123456').then((u)=>{
-          console.log('loginsuccessful') ;
-          files.forEach(file => {
-            console.log('it work') ;
-            const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file);
+    const uploadfilehandler = () => {
+          const  imgwidth = document.getElementById('resize').style.width;
+          console.log(imgwidth);
+
+          const metadata = {
+            customMetadata: {
+              'resizeWidth': imgwidth,
+            }
+            
+          };
+
+      files.forEach(file => {
+          const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
                   snapshot => {
@@ -66,29 +88,42 @@ const Additem = () => {
                     error => console.log(error.code)
                     );
                   });
+          // }).catch((error) => {
+        //     console.log(error);
+      // });
+    };
 
-        }).catch((error) => {
+    const getimages = () =>{
+      const uploadTask = storage.ref().child(`images/${screenId}`);
+
+      uploadTask.listAll().then(res => {
+        if(res.items.length === 0 ){
+              // if no image found then do nothing
+        }else{
+          console.log(res)
+          res.items.forEach(itemRef => {
+            itemRef.getMetadata().then(metadata => {
+             var  fetchimagewidth  = metadata.customMetadata.resizeWidth;
+              // console.log(fetchimagewidth);
+           
+            itemRef.getDownloadURL().then(url => {
+              document.getElementById('resize').innerHTML +=   '<img src=" '+ url +'" alt="not found"/>  ';
+              console.log(fetchimagewidth);
+              document.getElementById('resize').style.width = fetchimagewidth;
+              // document.getElementById('resize').style.height = '600px';
+             
+            })
+          })
+            });
+          document.getElementById("hide").style.display ="none";
+          document.getElementById("preview").style.display ="block";  
+          }
+          }).catch( error => {
             console.log(error);
-        });
-      
-        };
+          });
+      }
 
-    const handleFiles = file => {
-        const preview = document.getElementById("resize");
-        const img = document.createElement("img");
-        img.classList.add("obj");
-        // img.setAttribute("id", `image_${imagecount}`);
-        img.file = file;  
-        preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
-        
-        const reader = new FileReader();
-        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-        if (file && file.type.match('image.*')) {
-          reader.readAsDataURL(file);
-        }
-    } 
-
- 
+    
 
     const addtext = () =>{
         document.getElementById("hide").style.display ="none";
@@ -235,6 +270,7 @@ const Additem = () => {
             </ul>
            </div>
          </div>
+         
     </div>
     </React.Fragment>
     );

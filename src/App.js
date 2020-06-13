@@ -9,15 +9,19 @@ import './App.scss';
 import Additem from './components/Additems/Additems';
 
 
+
 const App = () => {
   
   return (
     <Router>
     <Switch>
-        <Route path="/:screenId" exact>
+        <Route path="/user/:screenId" exact>
           <Additem/>
         </Route>
-        <Redirect to="/0" />
+        {/* <Route path="/check" exact>
+          <Retrivefile/>
+        </Route> */}
+        <Redirect to="user/0" />
     </Switch>
     </Router>
   );
