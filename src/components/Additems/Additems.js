@@ -22,7 +22,7 @@ const Additem = () => {
     const screenId = useParams().screenId;
 
     useEffect(() => { getimages() }, [] );
-    useEffect(() => { uploadfilehandler() }, [files] );
+    // useEffect(() => { uploadfilehandler() }, [files] );
 
     const closesidenav = () => {
       setNavIsHidden(true)
@@ -65,6 +65,7 @@ const Additem = () => {
 
     const uploadfilehandler = () => {
           const  imgwidth = document.getElementById('resize').style.width;
+          
           console.log(imgwidth);
 
           const metadata = {
@@ -104,7 +105,7 @@ const Additem = () => {
           res.items.forEach(itemRef => {
             itemRef.getMetadata().then(metadata => {
              var  fetchimagewidth  = metadata.customMetadata.resizeWidth;
-              // console.log(fetchimagewidth);
+              // console.log(fetchimagewidth);b
            
             itemRef.getDownloadURL().then(url => {
               document.getElementById('resize').innerHTML +=   '<img src=" '+ url +'" alt="not found"/>  ';
@@ -166,6 +167,7 @@ const Additem = () => {
                 isHidden={navIsHidden} 
                 onClick={closesidenav}/>
               <p className="course-num">Course 1</p>
+              <button className="preview-course" style={{right:'194px'}} onClick={uploadfilehandler}>  Save Image </button>
               <button className="preview-course"><img src={eye} alt=""/> Preview Course </button>
             </div>
             <p className="scene-num">Scene 1</p> 
