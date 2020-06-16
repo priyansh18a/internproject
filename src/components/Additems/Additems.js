@@ -17,9 +17,10 @@ const storage = firebase.storage()
 const Additem = () => {
  
     const [navIsHidden, setNavIsHidden]= useState(true);
-    // const [imagecount,setImagecount] = useState(1);
-    const [files , setFiles] = useState([]);
+    const [imagecount, setImagecount] = useState(1);
+    const [files, setFiles] = useState([]);
     const screenId = useParams().screenId;
+    let i = 1;
 
     useEffect(() => { getimages() }, [] );
     // useEffect(() => { uploadfilehandler() }, [files] );
@@ -41,41 +42,40 @@ const Additem = () => {
            console.log(newFile)
            handleFiles(newFile)
         // add an "id" property to each File object
-           setFiles(prevState => [...prevState, newFile]);
+           setFiles(prevState => [...prevState , newFile]);
            
       }
+        setImagecount(prevState => prevState + 1);
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
       };
       
     const handleFiles = file => {
-        const preview = document.getElementById("resize");
-        const img = document.createElement("img");
-        img.classList.add("obj");
-        img.file = file;  
-        preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
-        const  imgwidth = document.getElementById('resize').style.width;
-        console.log(imgwidth);
-        const reader = new FileReader();
-        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-        if (file && file.type.match('image.*')) {
-          reader.readAsDataURL(file);
-        }
+      console.log(imagecount);
+      const img = document.createElement("img");
+      img.classList.add("obj");
+      img.file = file;  
+      const preview = document.getElementById(`resize${imagecount}`)
+      preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
+      
+      const reader = new FileReader();
+      reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+      if (file && file.type.match('image.*')) {
+         reader.readAsDataURL(file);
+       }
     } 
 
     const uploadfilehandler = () => {
-          const  imgwidth = document.getElementById('resize').style.width;
-          
+         files.forEach(file => {
+        
+          const imgwidth = document.getElementById(`resize${i}`).style.width;
+           i++;
           console.log(imgwidth);
-
           const metadata = {
             customMetadata: {
               'resizeWidth': imgwidth,
             }
-            
           };
-
-      files.forEach(file => {
           const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
@@ -88,33 +88,31 @@ const Additem = () => {
                     },
                     error => console.log(error.code)
                     );
-                  });
-          // }).catch((error) => {
-        //     console.log(error);
-      // });
-    };
+            });
+      };
 
     const getimages = () =>{
       const uploadTask = storage.ref().child(`images/${screenId}`);
-
+      
       uploadTask.listAll().then(res => {
+        
         if(res.items.length === 0 ){
               // if no image found then do nothing
         }else{
-          console.log(res)
+          console.log(res);
           res.items.forEach(itemRef => {
+            
             itemRef.getMetadata().then(metadata => {
              var  fetchimagewidth  = metadata.customMetadata.resizeWidth;
-              // console.log(fetchimagewidth);b
-           
-            itemRef.getDownloadURL().then(url => {
-              document.getElementById('resize').innerHTML +=   '<img src=" '+ url +'" alt="not found"/>  ';
+             itemRef.getDownloadURL().then(url => {
+              document.getElementById(`resize${i}`).innerHTML +=   '<img src=" '+ url +'" alt="not found"/>  ';
               console.log(fetchimagewidth);
-              document.getElementById('resize').style.width = fetchimagewidth;
-              // document.getElementById('resize').style.height = '600px';
-             
+              document.getElementById(`resize${i}`).style.width = fetchimagewidth;
+              document.getElementById('resize1').style.height = '600px';
+              i++;
             })
           })
+            
             });
           document.getElementById("hide").style.display ="none";
           document.getElementById("preview").style.display ="block";  
@@ -129,8 +127,8 @@ const Additem = () => {
     const addtext = () =>{
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
-        const resize = document.getElementById("resize");
-          resize.innerHTML= document.getElementById("text").innerHTML;
+        const resize1 = document.getElementById("resize1");
+          resize1.innerHTML= document.getElementById("text").innerHTML;
         
     
     } 
@@ -140,12 +138,12 @@ const Additem = () => {
         document.getElementById("preview").style.display ="block"; 
         document.getElementById("create-quest").style.display ="none";
         document.getElementById("option-redirect").style.display ="block"; 
-        const resize = document.getElementById("resize");
-          resize.innerHTML= document.getElementById("question").innerHTML;
+        const resize1 = document.getElementById("resize1");
+          resize1.innerHTML= document.getElementById("question").innerHTML;
     } 
 
     const addimage = () => {
-        document.getElementById("resize").innerHTML = '';
+        // document.getElementById("resize1").innerHTML = '';
         document.getElementById("hide").style.display ="block";
         document.getElementById("preview").style.display ="none"; 
         document.getElementById("create-quest").style.display ="block";
@@ -153,9 +151,12 @@ const Additem = () => {
         document.getElementById("question").style.display = "none";
     }
 
+
     const addOptions = () => {
             // complete it later
     }
+
+         
 
     
     return (
@@ -182,7 +183,7 @@ const Additem = () => {
               <div id="after-upload">
                     <input type="file" name="file" id="file2" className="inputfile" multiple onChange={fileuploadhandler}/>
                     <label htmlFor="file2">
-                    <div className="add btn" id="add-image" onClick={addimage}>Add Image</div>
+                    <div className="add btn" id="add-image" onClick={addimage}>+ Add Image</div>
                   </label>
               </div>
               <button className="add last-btn">+ Add Code</button>
@@ -205,22 +206,84 @@ const Additem = () => {
                 </div>
                 
               <div  id="preview" className="imagebox"> 
-              <Rnd
-                id="resize"
-                default={{
-                  x: 150,
-                  y: 150,
-                  width: 400,
-                  height: 300,
-                }}
-                minWidth={400}
-                minHeight={300}
-                max-width={1200}
-                max-height={550}
-                bounds="parent"
-            >
-            </Rnd> </div>
-           </form>
+                  <Rnd
+                        id="resize1"
+                        default={{
+                        
+                          x: 150,
+                          y: 150,
+                          width: 400,
+                          height: 300,
+                        }}
+                        minWidth={400}
+                        minHeight={300}
+                        max-width={1200}
+                        max-height={550}
+                        bounds="parent"
+                    >
+                    </Rnd>
+                    <Rnd
+                    id="resize2"
+                    default={{
+                      x: 300,
+                      y: 150,
+                      width: 400,
+                      height: 300,
+                    }}
+                    minWidth={400}
+                    minHeight={300}
+                    max-width={1200}
+                    max-height={550}
+                    bounds="parent"
+                >
+                </Rnd> <Rnd
+                    id="resize3"
+                    default={{
+                      x: 300,
+                      y: 150,
+                      width: 400,
+                      height: 300,
+                    }}
+                    minWidth={400}
+                    minHeight={300}
+                    max-width={1200}
+                    max-height={550}
+                    bounds="parent"
+                >
+                </Rnd>
+                <Rnd
+                    id="resize4"
+                    default={{
+                      x: 300,
+                      y: 150,
+                      width: 400,
+                      height: 300,
+                    }}
+                    minWidth={400}
+                    minHeight={300}
+                    max-width={1200}
+                    max-height={550}
+                    bounds="parent"
+                >
+                </Rnd>
+                <Rnd
+                    id="resize5"
+                    default={{
+                      x: 300,
+                      y: 150,
+                      width: 400,
+                      height: 300,
+                    }}
+                    minWidth={400}
+                    minHeight={300}
+                    max-width={1200}
+                    max-height={550}
+                    bounds="parent"
+                >
+                </Rnd>
+
+              </div>
+              </form>
          
              </div>
             <div className="interactions-div">

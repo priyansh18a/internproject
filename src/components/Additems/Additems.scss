@@ -12,7 +12,7 @@
   line-height: 100%;
   color: #212121;
   margin-top: 8px;
-  
+
 }
 .preview-course{
   border: 2px solid #16852E;
@@ -63,7 +63,6 @@
   width: 10vw;
   cursor: pointer;
   min-width: 173px;
-
 }
 
 button.add.last-btn {
@@ -72,7 +71,6 @@ button.add.last-btn {
 #add-image{
   padding-top: 8px;
 }
-
 
 .course-screen > p {
   font-weight: 600;
@@ -101,6 +99,7 @@ button.add.last-btn {
   border-radius: 16px;
   text-align: center;
 }
+
 #preview{
   display: none;
   width: 64vw;
@@ -118,14 +117,16 @@ button.add.last-btn {
   margin-bottom: 25px;
 }
 
-#resize{
+#resize1, #resize2, #resize3, #resize4, #resize5  {
   overflow: hidden;
   text-align: left;
 }
-#resize img {
+#resize1 img , #resize2 img, #resize3 img , #resize4 img , #resize5 img {
   width: 100%;
 
 }
+
+
 
 .inputfile {
 	width: 0.1px;
@@ -135,9 +136,11 @@ button.add.last-btn {
 	position: absolute;
 	z-index: -1;
 }
+
 .inputfile + label {
 	cursor: pointer; /* "hand" cursor */
 }
+
 .interactions-div > p{
   font-weight: 600;
   font-size: 18px;
@@ -244,15 +247,15 @@ a:hover {
   line-height: 100%;
   color: #1C632C;
   margin-top: 11px;
-  
+
 }
 .question-header img {
   position: absolute;
   right: 50px;
- 
+
 }
 .options{
-  
+
   margin-left: 16px;
   display: flex;
   align-items: center;
@@ -281,4 +284,3 @@ a:hover {
   text-transform: uppercase;
   color: #1C632C;
 }
-
