@@ -3,6 +3,7 @@ import SideNavButton from '../Sidenavbutton/sidenavbutton'
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
 import eye from '../../image/eye.png';
+import add from '../../image/add.png';
 import Stormtrooper from '../../image/Stormtrooper.png';
 import Delete from '../../image/delete.png'
 import Arrowdown from '../../image/arrowdown.png'
@@ -15,10 +16,11 @@ import { useParams} from 'react-router-dom';
 const storage = firebase.storage()
 
 const Additem = () => {
- 
+    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: '/user/0'}];
     const [navIsHidden, setNavIsHidden]= useState(true);
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
+    const [onclick, setOnclick] = useState([]);
     const screenId = useParams().screenId;
     let i = 1;
 
@@ -33,9 +35,7 @@ const Additem = () => {
       setNavIsHidden(false)
     }
 
-
     const fileuploadhandler = e => {
-      
       for (let i = 0; i < e.target.files.length; i++) {
            const newFile = e.target.files[i];
            newFile["id"] = Math.random();
@@ -67,15 +67,16 @@ const Additem = () => {
 
     const uploadfilehandler = () => {
          files.forEach(file => {
-        
-          const imgwidth = document.getElementById(`resize${i}`).style.width;
-           i++;
+         const imgwidth = document.getElementById(`resize${i}`).style.width;
           console.log(imgwidth);
+          console.log(onclick[i-1]);
           const metadata = {
             customMetadata: {
               'resizeWidth': imgwidth,
+              'onclick': onclick[i-1],
             }
           };
+          i++;
           const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
@@ -87,21 +88,18 @@ const Additem = () => {
                       }
                     },
                     error => console.log(error.code)
-                    );
+                  );
             });
       };
 
     const getimages = () =>{
       const uploadTask = storage.ref().child(`images/${screenId}`);
-      
       uploadTask.listAll().then(res => {
-        
         if(res.items.length === 0 ){
               // if no image found then do nothing
         }else{
           console.log(res);
           res.items.forEach(itemRef => {
-            
             itemRef.getMetadata().then(metadata => {
              var  fetchimagewidth  = metadata.customMetadata.resizeWidth;
              itemRef.getDownloadURL().then(url => {
@@ -112,8 +110,7 @@ const Additem = () => {
               i++;
             })
           })
-            
-            });
+        });
           document.getElementById("hide").style.display ="none";
           document.getElementById("preview").style.display ="block";  
           }
@@ -129,14 +126,12 @@ const Additem = () => {
         document.getElementById("preview").style.display ="block"; 
         const resize1 = document.getElementById("resize1");
           resize1.innerHTML= document.getElementById("text").innerHTML;
-        
-    
-    } 
+     } 
 
     const addquestion = () =>{
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
-        document.getElementById("create-quest").style.display ="none";
+        // document.getElementsByClassName("create-quest").style.display ="none";
         document.getElementById("option-redirect").style.display ="block"; 
         const resize1 = document.getElementById("resize1");
           resize1.innerHTML= document.getElementById("question").innerHTML;
@@ -146,7 +141,7 @@ const Additem = () => {
         // document.getElementById("resize1").innerHTML = '';
         document.getElementById("hide").style.display ="block";
         document.getElementById("preview").style.display ="none"; 
-        document.getElementById("create-quest").style.display ="block";
+        // document.getElementsByClassName("create-quest").style.display ="block";
         document.getElementById("option-redirect").style.display ="none"; 
         document.getElementById("question").style.display = "none";
     }
@@ -155,10 +150,46 @@ const Additem = () => {
     const addOptions = () => {
             // complete it later
     }
-
+   
+    const interactionbox1 = () => {
+        document.getElementById('interactionbox1').style.display ="block";
+    }
+    const interactionbox2 = () => {
+      document.getElementById('interactionbox2').style.display ="block";
+    } 
+    const interactionbox3 = () => {
+      document.getElementById('interactionbox3').style.display ="block";
+    }  
+    const interactionbox4 = () => {
+      document.getElementById('interactionbox4').style.display ="block";
+    }
+    const interactionbox5 = () => {
+     document.getElementById('interactionbox5').style.display ="block";
+    }
+    const showselectbox1 = () => {
+     document.getElementById('selectbox1').style.display ="block";
+    }
+    const showselectbox2 = () => {
+     document.getElementById('selectbox2').style.display ="block";
+    }
+    const showselectbox3 = () => {
+      document.getElementById('selectbox3').style.display ="block";
+    }
+    const showselectbox4 = () => {
+      document.getElementById('selectbox4').style.display ="block";
+    }
+    const showselectbox5 = () => {
+      document.getElementById('selectbox5').style.display ="block";
+    }
+    const setonclick1 = e => {
+       const  onclickon1 = e.target.value;
+       setOnclick(prevState => [...prevState , onclickon1]);
+    }
+  
          
 
-    
+    // const Rndcount  =  [{ id: 'resize1', number: 1 },{ id: 'resize2', number: 2 },{ id: 'resize3', number: 3  },{ id: 'resize4' , number: 4 },{ id:'resize5', number: 5 }];
+
     return (
         <React.Fragment>
          <div className="container-box">
@@ -174,9 +205,7 @@ const Additem = () => {
             <p className="scene-num">Scene 1</p> 
             <hr className="line"/>
             <div className="row-div">
-
-           
-            <div className="add-media-div">
+              <div className="add-media-div">
               <p>ADD MEDIA TYPE</p>
               <button className="add" onClick={addtext}>+ Add Text</button>
               <button className="add" onClick={addquestion}>+ Add Question</button>
@@ -189,13 +218,10 @@ const Additem = () => {
               <button className="add last-btn">+ Add Code</button>
             </div>
             
-             
             <div className="course-screen" id="parents">
               <div className="course-top">
                 <p>COURSE SCREEN</p>
-              
-            </div>
-              
+              </div>
               <form method="post" action="#" id="#">
                 <div className="form-group files color" id="hide" >
                   <input type="file" name="file" id="file1" className="inputfile" multiple onChange={fileuploadhandler}/>
@@ -206,94 +232,139 @@ const Additem = () => {
                 </div>
                 
               <div  id="preview" className="imagebox"> 
-                  <Rnd
-                        id="resize1"
-                        default={{
-                        
-                          x: 150,
-                          y: 150,
-                          width: 400,
-                          height: 300,
-                        }}
-                        minWidth={400}
-                        minHeight={300}
-                        max-width={1200}
-                        max-height={550}
-                        bounds="parent"
-                    >
-                    </Rnd>
-                    <Rnd
-                    id="resize2"
-                    default={{
-                      x: 300,
-                      y: 150,
-                      width: 400,
-                      height: 300,
-                    }}
-                    minWidth={400}
-                    minHeight={300}
-                    max-width={1200}
-                    max-height={550}
-                    bounds="parent"
-                >
-                </Rnd> <Rnd
-                    id="resize3"
-                    default={{
-                      x: 300,
-                      y: 150,
-                      width: 400,
-                      height: 300,
-                    }}
-                    minWidth={400}
-                    minHeight={300}
-                    max-width={1200}
-                    max-height={550}
-                    bounds="parent"
-                >
-                </Rnd>
-                <Rnd
-                    id="resize4"
-                    default={{
-                      x: 300,
-                      y: 150,
-                      width: 400,
-                      height: 300,
-                    }}
-                    minWidth={400}
-                    minHeight={300}
-                    max-width={1200}
-                    max-height={550}
-                    bounds="parent"
-                >
-                </Rnd>
-                <Rnd
-                    id="resize5"
-                    default={{
-                      x: 300,
-                      y: 150,
-                      width: 400,
-                      height: 300,
-                    }}
-                    minWidth={400}
-                    minHeight={300}
-                    max-width={1200}
-                    max-height={550}
-                    bounds="parent"
-                >
-                </Rnd>
-
-              </div>
+                   <Rnd
+                       id="resize5"
+                       onClick={interactionbox5}
+                       default={{
+                       
+                         x: 150,
+                         y: 150,
+                         width: 400,
+                         height: 300,
+                       }}
+                       minWidth={400}
+                       minHeight={300}
+                       max-width={1200}
+                       max-height={550}
+                       bounds="parent"
+                   >
+                   </Rnd>
+                   <Rnd
+                       id="resize4"
+                       onClick={interactionbox4}
+                       default={{
+                       
+                         x: 150,
+                         y: 150,
+                         width: 400,
+                         height: 300,
+                       }}
+                       minWidth={400}
+                       minHeight={300}
+                       max-width={1200}
+                       max-height={550}
+                       bounds="parent"
+                   >
+                   </Rnd>
+                   <Rnd
+                       id="resize3"
+                       onClick={interactionbox3}
+                       default={{
+                       
+                         x: 150,
+                         y: 150,
+                         width: 400,
+                         height: 300,
+                       }}
+                       minWidth={400}
+                       minHeight={300}
+                       max-width={1200}
+                       max-height={550}
+                       bounds="parent"
+                   >
+                   </Rnd>
+                   <Rnd
+                       id="resize2"
+                       onClick={interactionbox2}
+                       default={{
+                       
+                         x: 150,
+                         y: 150,
+                         width: 400,
+                         height: 300,
+                       }}
+                       minWidth={400}
+                       minHeight={300}
+                       max-width={1200}
+                       max-height={550}
+                       bounds="parent"
+                   >
+                   </Rnd>
+                   <Rnd
+                       id="resize1"
+                       onClick={interactionbox1}
+                       default={{
+                       
+                         x: 150,
+                         y: 150,
+                         width: 400,
+                         height: 300,
+                       }}
+                       minWidth={400}
+                       minHeight={300}
+                       max-width={1200}
+                       max-height={550}
+                       bounds="parent"
+                   >
+                   </Rnd>
+                </div>
               </form>
-         
-             </div>
+            </div>
             <div className="interactions-div">
               <p>INTERACTIONS</p>
-              <div id="create-quest">
-                <img src={Stormtrooper} alt=""/>
-                <p>Create question in your course <br/> screen to add interaction</p>
+              <div className="create-quest" id="interactionbox1">
+                <h5>Add interaction on this image</h5>
+                <button className="btn btn-warning" onClick={showselectbox1}><img src={add} alt=''/></button>
+                <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox1" style={{display:"none"}}>
+                    <option selected>Select</option>
+                     {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+               </select>
+             </div>
+             <div className="create-quest" id="interactionbox2">
+                <h5>Add interaction on this image</h5>
+                <button className="btn btn-warning" onClick={showselectbox2}><img src={add} alt=''/></button>
+                <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox2" style={{display:"none"}}>
+                    <option selected>Select</option>
+                     {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+               </select>
+                  
               </div>
-            
-              <div id="option-redirect">
+              <div className="create-quest" id="interactionbox3">
+                  <h5>Add interaction on this image</h5>
+                  <button className="btn btn-warning" onClick={showselectbox3}><img src={add} alt=''/></button>
+                  <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox3" style={{display:"none"}}>
+                      <option selected>Select</option>
+                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                </select>
+              </div>
+              <div className="create-quest" id="interactionbox4">
+                  <h5>Add interaction on this image</h5>
+                  <button className="btn btn-warning" onClick={showselectbox4}><img src={add} alt=''/></button>
+                  <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox4" style={{display:"none"}}>
+                      <option selected>Select</option>
+                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                </select>
+              </div>
+              <div className="create-quest" id="interactionbox5">
+                  <h5>Add interaction on this image</h5>
+                  <button className="btn btn-warning" onClick={showselectbox5}><img src={add} alt=''/></button>
+                  <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox5" style={{display:"none"}}>
+                      <option selected>Select</option>
+                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                </select>
+              </div>
+             
+            <div id="option-redirect">
                 <div className="question-header">
                   <p>Question 1</p>
                   <img src={Delete} alt='' />

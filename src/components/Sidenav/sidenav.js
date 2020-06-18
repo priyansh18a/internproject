@@ -19,6 +19,7 @@ const sidenavstyle = {
     transition: "0.5s" /* 0.5 second transition effect to slide in the sidenav */
 }
 
+
 export default function SideNav(props) {
     const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: '/user/0'}];
     const storedcount = localStorage.getItem('elementCount') || 1 ;
@@ -49,7 +50,7 @@ export default function SideNav(props) {
         <div style={style}>
             <SideNavCloseButton onClick={props.onClick}/>
             <ul>
-                {storedelements.map(element => (<SideNavListElement text={element.text} href={element.href} key={element.key}/>))}
+                {elements.map(element => (<SideNavListElement text={element.text} href={element.href} key={element.key}/>))}
                 <AddSideNavListElement onClick={()=>AddListElement()}/>
             </ul>
         </div>

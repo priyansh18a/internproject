@@ -1,14 +1,15 @@
 import React from 'react'
 import './addsidenavlist.scss'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 export default function AddSideNavListElement(props) {
     
         return (
-            <button
+            <Link
             onClick={props.onClick}
             className="navscreenaddbutton"
             >
             +
-            </button>
+            </Link>
         )
 }

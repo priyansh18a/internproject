@@ -72,7 +72,7 @@ button.add.last-btn {
   padding-top: 8px;
 }
 
-.course-screen > p {
+.course-top > p {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -150,27 +150,32 @@ button.add.last-btn {
   color: #212121;
   margin-bottom: 25px;
 }
-#create-quest{
+.create-quest{
   border: 3px solid #C7EACF;
   box-sizing: border-box;
   border-radius: 8px;
-  height: 570px;
+  height: 200px;
   width: 20vw;
-  padding-top: 153px;
+  padding-top: 20px;
   text-align: center;
+  margin-bottom: 10px;
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#create-quest img{
-  width: 104px;
-  margin-bottom: 25px;
+.create-quest img {
+  width: 21px;
+  margin-bottom: 3px;
 }
 
-#create-quest p {
+.create-quest p {
   font-size: 12px;
   line-height: 140%;
   text-align: center;
   color: #4B4B4B;
 }
+
 
 #text {
   display:none;
@@ -283,4 +288,7 @@ a:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #1C632C;
+}
+.btn{
+  margin-bottom: 10px;
 }
