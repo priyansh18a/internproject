@@ -2,16 +2,15 @@ import React, { useState , useEffect} from 'react';
 import SideNavButton from '../Sidenavbutton/sidenavbutton'
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
-import eye from '../../image/eye.png';
-import add from '../../image/add.png';
-import Stormtrooper from '../../image/Stormtrooper.png';
-import Delete from '../../image/delete.png'
-import Arrowdown from '../../image/arrowdown.png'
+import eye from '../../Graphics/eye.png';
+import add from '../../Graphics/add.png';
+import Stormtrooper from '../../Graphics/Stormtrooper.png';
+import Delete from '../../Graphics/delete.png'
+import Arrowdown from '../../Graphics/arrowdown.png'
 import './Additems.scss'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import firebase from 'firebase';
 import fire from '../../custom/Fire';
-import { useParams} from 'react-router-dom';
 
 const storage = firebase.storage()
 

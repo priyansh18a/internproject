@@ -21,7 +21,7 @@ const sidenavstyle = {
 
 
 export default function SideNav(props) {
-    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: '/user/0'}];
+    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: '/teach/user/0'}];
     const storedcount = localStorage.getItem('elementCount') || 1 ;
     const [style, setStyle] = useState(sidenavstyle)
     const [elements, updateElements] = useState(storedelements)
@@ -39,7 +39,7 @@ export default function SideNav(props) {
         updateElementCount(prevCount => (++prevCount));
         localStorage.setItem('elementCount',elementCount);
         console.log(elementCount)
-        var newElement = {key: `${elementCount}`, text: `Screen ${elementCount}`, href: `/user/${elementCount}`}
+        var newElement = {key: `${elementCount}`, text: `Screen ${elementCount}`, href: `/teach/user/${elementCount}`}
         updateElements(elements=>([...elements, newElement])
         )
          localStorage.setItem('elements',JSON.stringify(elements));
@@ -50,7 +50,7 @@ export default function SideNav(props) {
         <div style={style}>
             <SideNavCloseButton onClick={props.onClick}/>
             <ul>
-                {elements.map(element => (<SideNavListElement text={element.text} href={element.href} key={element.key}/>))}
+                {storedelements.map(element => (<SideNavListElement text={element.text} href={element.href} key={element.key}/>))}
                 <AddSideNavListElement onClick={()=>AddListElement()}/>
             </ul>
         </div>
