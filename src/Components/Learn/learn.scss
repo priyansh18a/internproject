@@ -268,12 +268,14 @@ input[type=text]{
     position: relative;
     width: 55vw;
     height: auto;
+    margin: auto;
 }
 
 .middle-pg-1-rgt > img{
     display: block;
     position: relative;
     width:50vw;
+    margin: auto
 }
 
 .middle-pg-1-lft > img{
@@ -331,6 +333,7 @@ input[type=text]{
 }
 
 .middle-pg-2-lft{
+    margin: auto;
     position: relative;
     width: 55vw;
     height: auto;
@@ -347,6 +350,7 @@ input[type=text]{
 }
 
 .middle-pg-2-lft > img{
+    margin: auto;
     display: block;
     position: relative;
     width:45vw;
@@ -397,10 +401,10 @@ input[type=text]{
     display: block;
     position: relative;
     width:100vw;
-    height: 350px;
+    height: 150px;
     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
     text-align: center;
-    padding-top: 50px;
+    // padding-top: 50px;
 }
 
 .grid-head-bold-text{
@@ -442,9 +446,8 @@ input[type=text]{
     position: relative;
     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
     justify-content: space-around;
-    padding-top: 28px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .grid-page-row2{
@@ -454,15 +457,15 @@ input[type=text]{
     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
     justify-content: space-around;
     padding-top: 28px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 250px;
 }
 
 .box1{
     display: block;
-    height:542px;
-    width:28.22vw;
+    height:35vh;
+    width:24.22vw;
     background: #FFFFFF;
     border-radius: 32px;
     text-align: center;
@@ -501,39 +504,39 @@ input[type=text]{
 .grid-img-container{
     position: relative;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 .game-pic{
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 .text-pic{ 
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 .code-pic{
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 .arvr-pic{
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 .video-pic{
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 .comic-pic{
     position: relative;
-    width:90%;
+    width:60%;
 }
 
 //Footer Page/////////////////////////

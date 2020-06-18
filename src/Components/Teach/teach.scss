@@ -1,680 +1,680 @@
-@import url('https://fonts.cdnfonts.com/css/nimbus-sans-d-ot');
-@font-face {
-    font-family: 'Renner*';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Renner* Book'), url('./../../fonts/Renner_\ 400\ Book.ttf') format('woff');
-}
-//Grid System////////////////
-.row{
-    display: flex;
-    width: 100%;
-}
-.row::after{
-    display: block;
-    clear: both;
-    content:"";
-}
-.col-1 {width:8.33%;}
-.col-2 {width:16.66%;}
-.col-3 {width:25%;}
-.col-4 {width:33.33%;}
-.col-5 {width:41.66%;}
-.col-6 {width:50%;}
-.col-7 {width:58.33%;}
-.col-8 {width:66.66%;}
-.col-9 {width:75%;}
-.col-10 {width:83.33%;}
-.col-11 {width:91.66%;}
-.col-12 {width:100%;}
-
-* {
-    box-sizing: border-box;
-}
-
-////////////////////////////////
-body{
-    overflow-x: hidden;
-}
-/////all <a> tags///////
-a:link { 
-    //text-decoration: underline; 
-    text-decoration: none; 
-} 
-a:hover { 
-    text-decoration: none; 
-}
-
-//HOMEPAGE/////////////////
-
-
-.container1{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background: #FFFFFF;
-    // overflow: hidden;
-    // overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.header{
-    height:150px;
-    width: 100vw;
-    display:flex;
-}
-.signup-btn-homepage{
-    display: flex;
-    position: relative;
-    width: 50.66%;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 20px;
-}
-.signin-btn-homepage{
-    display: flex;
-    position: relative;
-    // width: 50.66%;
-    padding-top: 30px;
-    padding-left: 50vw;
-}
-.sign-up-btn{
-    position: relative;
-    text-align: center;
-    width:12vw;
-    height: 82px;
-    background-color: #16852E;
-    border-radius: 8px;
-    padding-right: 20px;
-}
-.sign-in-btn{
-    position: relative;
-    text-align: center;
-    width:12vw;
-    height: 82px;
-    background: #FFFFFF;
-    border: 3px solid #16852E;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
-.link-txt{
-    width: 10%;
-    font-family: DINPro;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
-    /* identical to box height, or 24px */
-    letter-spacing: 0.06em;
-    color: #013EA6;
-}
-.home-main{
-    width: 100vw;
-    height: auto;
-    display: flex;
-}
-
-.main-para-cont{
-    display: block;
-    width:50vw;
-    position: relative;
-    padding-left: 6.25%;
-    padding-right: 13%;
-    margin: auto;
-}
-
-.main-para-cont>form{
-    display: block;
-}
-
-#phoneno{
-    position: relative;
-    border: 3px solid #8899A6;
-    box-sizing: border-box;
-    border-radius: 8px;
-    height: 82px;
-    width: 20vw;
-    padding-top: 10px;
-}
-.submit-btn{
-    display: flex;
-}
-
-#phoneno::placeholder {
-    font-family: 'Renner*';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 33px;
-    line-height: 100%;
-    /* or 33px */
-    letter-spacing: -0.02em;
-    color: #8899A6;
-    padding-top: 200px;
-}
-input[type=text]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-.main-image-cont{
-    padding-top: 70px;
-    width:50vw;
-}
-.main-learn{
-    position: relative;
-    width: 40vw;
-}
-.main-text{
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 115%;
-    letter-spacing: -0.05em;
-    color: #013EA6;
-}
-.main-text-light{
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 115%;
-    letter-spacing: -0.05em;
-    color:#71A5FF;
-}
-.logo{
-    position: relative;
-}
-.homepage-logo{
-    width:8.33vw;
-    padding-left:6.25%;
-    padding-top:40px;
-}
-.homepage-head-text{
-    width:8.33vw;
-    padding-left:4%;
-    padding-top:65px;
-}
-.signin-btn-txt{
-    position: relative;
-    font-family: 'Renner*';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 100%;
-    /* identical to box height, or 32px */
-    letter-spacing: -0.02em;
-    color: #16852E;
-}
-.signup-btn-txt{
-    position: relative;
-    font-family: 'Renner*';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 100%;
-    /* identical to box height, or 32px */
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
-}
-
-.pen{
-    position: relative;
-    width:1.66vw;
-}
-
-.star{
-    position: relative;
-    width: 2.48vw;
-}
-
-.key{
-    position: relative;
-    width: 1.93vw;
-}
-
-.torch{
-    position: relative;
-    width: 2.48vw;
-}
-
-//Middle Page-1//////////////////////////////
-
-.middle-pg-1{
-    width: 100vw;
-    height: auto;
-    display: flex;
-    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
-    padding-bottom: 250px;
-}
-
-.middle-pg-1-lft{
-    position: relative;
-    width: 45vw;
-    height: auto;
-    display: block;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 100px;
-}
-
-.middle-pg-1-rgt{
-    position: relative;
-    width: 55vw;
-    height: auto;
-}
-
-.middle-pg-1-rgt > img{
-    display: block;
-    position: relative;
-    width:50vw;
-}
-
-.middle-pg-1-lft > img{
-    position: relative;
-    width: 3vw;
-    padding-bottom:10px;
-}
-
-.middle-pg1-head{
-    position: relative;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 52px;
-    line-height: 120%;
-    /* or 62px */
-    letter-spacing: -0.03em;
-    color: #29364A;
-}
-
-.middle-pg1-simple{
-    position: relative;
-    padding-right: 20%;
-    padding-top: 19px;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 130%;
-    /* or 31px */
-    letter-spacing: 0.02em;
-    color: #212121;
-}
-
-.middle-pg1-list{
-    position: relative;
-    width: 100%;
-    display:flex;
-}
-
-.middle-pg1-list > img{
-    padding-right: 10px;
-  }
-
-//Middle Page-2//////////////////////////////
-
-.middle-pg-2{
-    width: 100vw;
-    height: auto;
-    display: flex;
-    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
-    padding-bottom: 250px;
-}
-
-.middle-pg-2-lft{
-    position: relative;
-    width: 55vw;
-    height: auto;
-    display: block;
-}
-
-.middle-pg-2-rgt{
-    position: relative;
-    width: 45vw;
-    height: auto;
-    padding-top: 100px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.middle-pg-2-lft > img{
-    display: block;
-    position: relative;
-    width:45vw;
-    padding-left:10%;
-}
-
-.middle-pg-2-rgt > img{
-    position: relative;
-    width: 3vw;
-    padding-bottom: 10px;
-}
-
-.middle-pg2-head{
-    position: relative;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 52px;
-    line-height: 120%;
-    /* or 62px */
-    letter-spacing: -0.03em;
-    color: #29364A;
-}
-
-.middle-pg2-simple{
-    position: relative;
-    padding-right: 20%;
-    padding-top: 19px;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 130%;
-    /* or 31px */
-    letter-spacing: 0.02em;
-    color: #212121;
-}
-
-.middle-pg-2-rft > ul{
-    list-style-image: url("../../Graphics/tick.png");
-    list-style-position: outside;
-  }
-
-//Grid Page//////////////////////
-.grid-head{
-    display: block;
-    position: relative;
-    width:100vw;
-    height: 350px;
-    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
-    text-align: center;
-    padding-top: 50px;
-}
-
-.grid-head-bold-text{
-    position: relative;
-    padding-left: 33vw;
-    padding-right: 33vw;
-    padding-top: 20px;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 56px;
-    line-height: 100%;
-    /* or 56px */
-    text-align: center;
-    letter-spacing: -0.04em;
-    color: #29364A;
-}
-
-.grid-head-light-text{
-    position: relative;
-    display: block;
-    padding-top: 10px;
-    padding-left: 38vw;
-    padding-right: 38vw;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: rgba(33, 33, 33, 0.6);
-}
-
-.grid-page-row1{
-    display: flex;
-    width: 100vw;
-    position: relative;
-    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
-    justify-content: space-around;
-    padding-top: 28px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.grid-page-row2{
-    display: flex;
-    width: 100vw;
-    position: relative;
-    background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
-    justify-content: space-around;
-    padding-top: 28px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 250px;
-}
-
-.box1{
-    display: block;
-    height:542px;
-    width:28.22vw;
-    background: #FFFFFF;
-    border-radius: 32px;
-    text-align: center;
-    justify-content: center;
-}
-
-.box-head{
-    padding-top: 24px;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 43px;
-    letter-spacing: -0.02em;
-    color: #3D3D3D;
-}
-
-.simple-text-grid{
-    position: relative;
-    padding-top: 28px;
-    padding-right: 12%;
-    padding-left: 12%;
-    text-align: left;
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 120%;
-    /* or 29px */
-    letter-spacing: 0.02em;
-    color: rgba(77, 77, 77, 0.8);
-}
-
-.grid-img-container{
-    position: relative;
-    width: 100%;
-    padding-top: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.game-pic{
-    position: relative;
-    width:90%;
-}
-
-.text-pic{ 
-    position: relative;
-    width:90%;
-}
-
-.code-pic{
-    position: relative;
-    width:90%;
-}
-
-.arvr-pic{
-    position: relative;
-    width:90%;
-}
-
-.video-pic{
-    position: relative;
-    width:90%;
-}
-
-.comic-pic{
-    position: relative;
-    width:90%;
-}
-
-//Footer Page/////////////////////////
-.footer-page{
-    width:100vw;
-    height:auto;
-    background-image: url('./../../Graphics/black_bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.upper-half{
-    position: relative;
-    width:100vw;
-    height:auto;
-    text-align: center;
-    padding-top: 141px;
-}
-
-.lower-half{
-    width:100vw;
-    display: block; 
-    height:auto;
-    text-align: center;
-    justify-content: center;
-    padding-top: 109px;
-}
-
-.astronaut{
-    width:33vw;
-}
-.big-text-footer-pg{
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 80px;
-    line-height: 100%;
-    /* identical to box height, or 80px */
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-}
-.small-text-footer-pg{
-    margin-top: 12px;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 110%;
-    /* or 35px */
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    padding-top: 12px;
-}
-
-.button-footer-pg{
-    height: 134px;
-    width:39%;
-    background: #16852E;
-    border-radius: 8px;
-}
-
-.button-text-footer-pg{
-    font-family: Renner;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 52px;
-    line-height: 100%;
-    /* identical to box height, or 52px */
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
-}
-
-.footer-submit-btn{
-    position: relative;
-    width: 100vw;
-    padding-top: 62px;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 201px;
-}
-
-//Footer/////////////////////////////////////////
-.footer{
-    display: flex;
-    width:100vw;
-    height:280px;
-    background: #212121;
-}
-
-.facebook{
-    width:34px;
-    height:34px;
-    margin-top: 23px;
-}
-
-.youtube{
-    width:49px;
-    height:34px;
-    margin-left: 17px;
-}
-
-.Feynman{
-    position: relative;
-    width:50%;
-    padding-left: 9.375%;
-    padding-top: 48px;
-}
-.head-text{
-    font-family: Nimbus Sans D OT;
-    font-style: Nimbus Sans D OT;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 100%;
-    /* or 24px */
-    text-transform: uppercase; 
-    color: #DDE3E2;
-    //margin-bottom: 2px;
-}
-
-.Contact{
-    position: relative;
-    width:25%;
-    padding-left: 5.05%;
-    padding-top: 48px;
-}
-
-.About{
-    position: relative;
-    width:25%;
-    padding-left: 13.3%;
-    padding-top: 48px;
-}
-
-.Simple-Text{
-    display: block;
-    font-family: Nimbus Sans D OT;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-top: 22px;
-    color: #DDE3E2;
-}
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// @import url('https://fonts.cdnfonts.com/css/nimbus-sans-d-ot');
+// @font-face {
+//     font-family: 'Renner*';
+//     font-style: normal;
+//     font-weight: normal;
+//     src: local('Renner* Book'), url('./../../fonts/Renner_\ 400\ Book.ttf') format('woff');
+// }
+// //Grid System////////////////
+// .row{
+//     display: flex;
+//     width: 100%;
+// }
+// .row::after{
+//     display: block;
+//     clear: both;
+//     content:"";
+// }
+// .col-1 {width:8.33%;}
+// .col-2 {width:16.66%;}
+// .col-3 {width:25%;}
+// .col-4 {width:33.33%;}
+// .col-5 {width:41.66%;}
+// .col-6 {width:50%;}
+// .col-7 {width:58.33%;}
+// .col-8 {width:66.66%;}
+// .col-9 {width:75%;}
+// .col-10 {width:83.33%;}
+// .col-11 {width:91.66%;}
+// .col-12 {width:100%;}
+
+// * {
+//     box-sizing: border-box;
+// }
+
+// ////////////////////////////////
+// body{
+//     overflow-x: hidden;
+// }
+// /////all <a> tags///////
+// a:link { 
+//     //text-decoration: underline; 
+//     text-decoration: none; 
+// } 
+// a:hover { 
+//     text-decoration: none; 
+// }
+
+// //HOMEPAGE/////////////////
+
+
+// .container1{
+//     height: 100vh;
+//     width: 100vw;
+//     position: relative;
+//     background: #FFFFFF;
+//     // overflow: hidden;
+//     // overflow-x: hidden;
+//     overflow-y: hidden;
+// }
+
+// .header{
+//     height:150px;
+//     width: 100vw;
+//     display:flex;
+// }
+// .signup-btn-homepage{
+//     display: flex;
+//     position: relative;
+//     width: 50.66%;
+//     padding-top: 30px;
+//     padding-left: 30px;
+//     padding-right: 20px;
+// }
+// .signin-btn-homepage{
+//     display: flex;
+//     position: relative;
+//     // width: 50.66%;
+//     padding-top: 30px;
+//     padding-left: 50vw;
+// }
+// .sign-up-btn{
+//     position: relative;
+//     text-align: center;
+//     width:12vw;
+//     height: 82px;
+//     background-color: #16852E;
+//     border-radius: 8px;
+//     padding-right: 20px;
+// }
+// .sign-in-btn{
+//     position: relative;
+//     text-align: center;
+//     width:12vw;
+//     height: 82px;
+//     background: #FFFFFF;
+//     border: 3px solid #16852E;
+//     box-sizing: border-box;
+//     border-radius: 8px;
+// }
+
+// .link-txt{
+//     width: 10%;
+//     font-family: DINPro;
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 24px;
+//     line-height: 100%;
+//     /* identical to box height, or 24px */
+//     letter-spacing: 0.06em;
+//     color: #013EA6;
+// }
+// .home-main{
+//     width: 100vw;
+//     height: auto;
+//     display: flex;
+// }
+
+// .main-para-cont{
+//     display: block;
+//     width:50vw;
+//     position: relative;
+//     padding-left: 6.25%;
+//     padding-right: 13%;
+//     margin: auto;
+// }
+
+// .main-para-cont>form{
+//     display: block;
+// }
+
+// #phoneno{
+//     position: relative;
+//     border: 3px solid #8899A6;
+//     box-sizing: border-box;
+//     border-radius: 8px;
+//     height: 82px;
+//     width: 20vw;
+//     padding-top: 10px;
+// }
+// .submit-btn{
+//     display: flex;
+// }
+
+// #phoneno::placeholder {
+//     font-family: 'Renner*';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 33px;
+//     line-height: 100%;
+//     /* or 33px */
+//     letter-spacing: -0.02em;
+//     color: #8899A6;
+//     padding-top: 200px;
+// }
+// input[type=text]{
+//     width: 100%;
+//     padding: 12px 20px;
+//     margin: 8px 0;
+//     display: inline-block;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     box-sizing: border-box;
+//   }
+
+// .main-image-cont{
+//     padding-top: 70px;
+//     width:50vw;
+// }
+// .main-learn{
+//     position: relative;
+//     width: 40vw;
+// }
+// .main-text{
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 64px;
+//     line-height: 115%;
+//     letter-spacing: -0.05em;
+//     color: #013EA6;
+// }
+// .main-text-light{
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 64px;
+//     line-height: 115%;
+//     letter-spacing: -0.05em;
+//     color:#71A5FF;
+// }
+// .logo{
+//     position: relative;
+// }
+// .homepage-logo{
+//     width:8.33vw;
+//     padding-left:6.25%;
+//     padding-top:40px;
+// }
+// .homepage-head-text{
+//     width:8.33vw;
+//     padding-left:4%;
+//     padding-top:65px;
+// }
+// .signin-btn-txt{
+//     position: relative;
+//     font-family: 'Renner*';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 32px;
+//     line-height: 100%;
+//     /* identical to box height, or 32px */
+//     letter-spacing: -0.02em;
+//     color: #16852E;
+// }
+// .signup-btn-txt{
+//     position: relative;
+//     font-family: 'Renner*';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 32px;
+//     line-height: 100%;
+//     /* identical to box height, or 32px */
+//     letter-spacing: -0.02em;
+//     color: #FFFFFF;
+// }
+
+// .pen{
+//     position: relative;
+//     width:1.66vw;
+// }
+
+// .star{
+//     position: relative;
+//     width: 2.48vw;
+// }
+
+// .key{
+//     position: relative;
+//     width: 1.93vw;
+// }
+
+// .torch{
+//     position: relative;
+//     width: 2.48vw;
+// }
+
+// //Middle Page-1//////////////////////////////
+
+// .middle-pg-1{
+//     width: 100vw;
+//     height: auto;
+//     display: flex;
+//     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+//     padding-bottom: 250px;
+// }
+
+// .middle-pg-1-lft{
+//     position: relative;
+//     width: 45vw;
+//     height: auto;
+//     display: block;
+//     padding-left: 5%;
+//     padding-right: 5%;
+//     padding-top: 100px;
+// }
+
+// .middle-pg-1-rgt{
+//     position: relative;
+//     width: 55vw;
+//     height: auto;
+// }
+
+// .middle-pg-1-rgt > img{
+//     display: block;
+//     position: relative;
+//     width:50vw;
+// }
+
+// .middle-pg-1-lft > img{
+//     position: relative;
+//     width: 3vw;
+//     padding-bottom:10px;
+// }
+
+// .middle-pg1-head{
+//     position: relative;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 52px;
+//     line-height: 120%;
+//     /* or 62px */
+//     letter-spacing: -0.03em;
+//     color: #29364A;
+// }
+
+// .middle-pg1-simple{
+//     position: relative;
+//     padding-right: 20%;
+//     padding-top: 19px;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 130%;
+//     /* or 31px */
+//     letter-spacing: 0.02em;
+//     color: #212121;
+// }
+
+// .middle-pg1-list{
+//     position: relative;
+//     width: 100%;
+//     display:flex;
+// }
+
+// .middle-pg1-list > img{
+//     padding-right: 10px;
+//   }
+
+// //Middle Page-2//////////////////////////////
+
+// .middle-pg-2{
+//     width: 100vw;
+//     height: auto;
+//     display: flex;
+//     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+//     padding-bottom: 250px;
+// }
+
+// .middle-pg-2-lft{
+//     position: relative;
+//     width: 55vw;
+//     height: auto;
+//     display: block;
+// }
+
+// .middle-pg-2-rgt{
+//     position: relative;
+//     width: 45vw;
+//     height: auto;
+//     padding-top: 100px;
+//     padding-left: 5%;
+//     padding-right: 5%;
+// }
+
+// .middle-pg-2-lft > img{
+//     display: block;
+//     position: relative;
+//     width:45vw;
+//     padding-left:10%;
+// }
+
+// .middle-pg-2-rgt > img{
+//     position: relative;
+//     width: 3vw;
+//     padding-bottom: 10px;
+// }
+
+// .middle-pg2-head{
+//     position: relative;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 52px;
+//     line-height: 120%;
+//     /* or 62px */
+//     letter-spacing: -0.03em;
+//     color: #29364A;
+// }
+
+// .middle-pg2-simple{
+//     position: relative;
+//     padding-right: 20%;
+//     padding-top: 19px;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 130%;
+//     /* or 31px */
+//     letter-spacing: 0.02em;
+//     color: #212121;
+// }
+
+// .middle-pg-2-rft > ul{
+//     list-style-image: url("../../Graphics/tick.png");
+//     list-style-position: outside;
+//   }
+
+// //Grid Page//////////////////////
+// .grid-head{
+//     display: block;
+//     position: relative;
+//     width:100vw;
+//     height: 350px;
+//     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+//     text-align: center;
+//     padding-top: 50px;
+// }
+
+// .grid-head-bold-text{
+//     position: relative;
+//     padding-left: 33vw;
+//     padding-right: 33vw;
+//     padding-top: 20px;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 56px;
+//     line-height: 100%;
+//     /* or 56px */
+//     text-align: center;
+//     letter-spacing: -0.04em;
+//     color: #29364A;
+// }
+
+// .grid-head-light-text{
+//     position: relative;
+//     display: block;
+//     padding-top: 10px;
+//     padding-left: 38vw;
+//     padding-right: 38vw;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 29px;
+//     text-align: center;
+//     letter-spacing: 0.04em;
+//     color: rgba(33, 33, 33, 0.6);
+// }
+
+// .grid-page-row1{
+//     display: flex;
+//     width: 100vw;
+//     position: relative;
+//     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+//     justify-content: space-around;
+//     padding-top: 28px;
+//     padding-left: 5%;
+//     padding-right: 5%;
+// }
+
+// .grid-page-row2{
+//     display: flex;
+//     width: 100vw;
+//     position: relative;
+//     background-image: linear-gradient(to right,hsl(0,33%,99%),hsl(200,8%,93%));
+//     justify-content: space-around;
+//     padding-top: 28px;
+//     padding-left: 5%;
+//     padding-right: 5%;
+//     padding-bottom: 250px;
+// }
+
+// .box1{
+//     display: block;
+//     height:542px;
+//     width:28.22vw;
+//     background: #FFFFFF;
+//     border-radius: 32px;
+//     text-align: center;
+//     justify-content: center;
+// }
+
+// .box-head{
+//     padding-top: 24px;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 36px;
+//     line-height: 43px;
+//     letter-spacing: -0.02em;
+//     color: #3D3D3D;
+// }
+
+// .simple-text-grid{
+//     position: relative;
+//     padding-top: 28px;
+//     padding-right: 12%;
+//     padding-left: 12%;
+//     text-align: left;
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 120%;
+//     /* or 29px */
+//     letter-spacing: 0.02em;
+//     color: rgba(77, 77, 77, 0.8);
+// }
+
+// .grid-img-container{
+//     position: relative;
+//     width: 100%;
+//     padding-top: 20px;
+//     padding-left: 5%;
+//     padding-right: 5%;
+// }
+
+// .game-pic{
+//     position: relative;
+//     width:90%;
+// }
+
+// .text-pic{ 
+//     position: relative;
+//     width:90%;
+// }
+
+// .code-pic{
+//     position: relative;
+//     width:90%;
+// }
+
+// .arvr-pic{
+//     position: relative;
+//     width:90%;
+// }
+
+// .video-pic{
+//     position: relative;
+//     width:90%;
+// }
+
+// .comic-pic{
+//     position: relative;
+//     width:90%;
+// }
+
+// //Footer Page/////////////////////////
+// .footer-page{
+//     width:100vw;
+//     height:auto;
+//     background-image: url('./../../Graphics/black_bg.png');
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
+// .upper-half{
+//     position: relative;
+//     width:100vw;
+//     height:auto;
+//     text-align: center;
+//     padding-top: 141px;
+// }
+
+// .lower-half{
+//     width:100vw;
+//     display: block; 
+//     height:auto;
+//     text-align: center;
+//     justify-content: center;
+//     padding-top: 109px;
+// }
+
+// .astronaut{
+//     width:33vw;
+// }
+// .big-text-footer-pg{
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 80px;
+//     line-height: 100%;
+//     /* identical to box height, or 80px */
+//     letter-spacing: -0.03em;
+//     color: #FFFFFF;
+// }
+// .small-text-footer-pg{
+//     margin-top: 12px;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 32px;
+//     line-height: 110%;
+//     /* or 35px */
+//     letter-spacing: -0.03em;
+//     color: #FFFFFF;
+//     padding-top: 12px;
+// }
+
+// .button-footer-pg{
+//     height: 134px;
+//     width:39%;
+//     background: #16852E;
+//     border-radius: 8px;
+// }
+
+// .button-text-footer-pg{
+//     font-family: Renner;
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 52px;
+//     line-height: 100%;
+//     /* identical to box height, or 52px */
+//     letter-spacing: -0.02em;
+//     color: #FFFFFF;
+// }
+
+// .footer-submit-btn{
+//     position: relative;
+//     width: 100vw;
+//     padding-top: 62px;
+//     justify-content: center;
+//     text-align: center;
+//     padding-bottom: 201px;
+// }
+
+// //Footer/////////////////////////////////////////
+// .footer{
+//     display: flex;
+//     width:100vw;
+//     height:280px;
+//     background: #212121;
+// }
+
+// .facebook{
+//     width:34px;
+//     height:34px;
+//     margin-top: 23px;
+// }
+
+// .youtube{
+//     width:49px;
+//     height:34px;
+//     margin-left: 17px;
+// }
+
+// .Feynman{
+//     position: relative;
+//     width:50%;
+//     padding-left: 9.375%;
+//     padding-top: 48px;
+// }
+// .head-text{
+//     font-family: Nimbus Sans D OT;
+//     font-style: Nimbus Sans D OT;
+//     font-weight: bold;
+//     font-size: 24px;
+//     line-height: 100%;
+//     /* or 24px */
+//     text-transform: uppercase; 
+//     color: #DDE3E2;
+//     //margin-bottom: 2px;
+// }
+
+// .Contact{
+//     position: relative;
+//     width:25%;
+//     padding-left: 5.05%;
+//     padding-top: 48px;
+// }
+
+// .About{
+//     position: relative;
+//     width:25%;
+//     padding-left: 13.3%;
+//     padding-top: 48px;
+// }
+
+// .Simple-Text{
+//     display: block;
+//     font-family: Nimbus Sans D OT;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 14px;
+//     margin-top: 22px;
+//     color: #DDE3E2;
+// }
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

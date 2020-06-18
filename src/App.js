@@ -11,7 +11,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Choose/>
+          <Learn/>
         </Route>
         <Route exact path='/learn'>
           <Learn/>

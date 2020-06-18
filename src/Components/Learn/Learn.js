@@ -115,41 +115,34 @@ const GridPage = () => {
     return (
         <React.Fragment>
             <div className="grid-head">
-                <img src={person} alt="" />
+                {/* <img src={person} alt="" /> */}
                 <text className="grid-head-bold-text">Learn as you build</text>
-                <text className="grid-head-light-text">Use a variety of mediums to learn the most difficult of concepts with ease</text>
             </div>
             <div className="grid-page-row1">
                 <div className="box1">
                     <text className="box-head">Games</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="game-pic" src={game} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Text</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="text-pic" src={text} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Code</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="code-pic" src={code} alt="" /></div>
                 </div>
             </div>
             <div className="grid-page-row2">
                 <div className="box1">
                     <text className="box-head">AR/VR</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="arvr-pic" src={ar_vr} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Video</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="video-pic" src={video} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Comic</text>
-                    <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
                     <div className="grid-img-container"><img class="comic-pic" src={comic} alt="" /></div>
                 </div>
             </div>
