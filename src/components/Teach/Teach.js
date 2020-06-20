@@ -43,10 +43,10 @@ const Homepage = () => {
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
                 <div className="signin-btn-homepage">
-                    <button onclick={() => { console.log('yay') }} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
+                    <button onClick={() => { console.log('yay') }} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
                 </div>
                 <div className="signup-btn-homepage">
-                    <button onclick={() => { console.log('yay') }} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
+                    <button onClick={() => { console.log('yay') }} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
                 </div>
             </div>
             <div className="home-main">

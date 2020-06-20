@@ -9,7 +9,7 @@ import './Login.scss'
 const Login = () => {
     const [email ,setEmail] = useState('');
     const [password ,setPassword] = useState('');
-  
+    
 
  const emailhandleChange = event => {
     setEmail(event.target.value);
@@ -31,13 +31,26 @@ const Login = () => {
  const signup = e => {
     e.preventDefault();
     fire.auth().createUserWithEmailAndPassword(email,password).then((u)=>{
-    }).then((u)=>{console.log(u)})
-    .catch((error) => {
+      const user = firebase.auth().currentUser;
+      user.updateProfile({
+        displayName: "Thefeynmanschool",
+        photoURL: "1234566855"
+        }).then(function() {
+        // Update successful.
+      
+       console.log(user.displayName);
+       console.log(user.photoURL);
+      }).catch(function(error) {
+        // An error happened.
+      });
+     console.log(u);
+    }).catch((error) => {
         console.log(error);
       document.getElementById("warning").innerHTML = error.message;
       document.getElementById("warning").style.display = "block";
       })
   }
+
 
 const googleLogin = ()=> {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -51,9 +64,8 @@ const googleLogin = ()=> {
 
     return (
       
-       <div className="col-md-6">
-       <div className="alert alert-danger" id="warning" role="alert" >
-      </div>
+  <div >
+       <div className="alert alert-danger" id="warning" role="alert" ></div>
    <form>
        <div className="form-group">
        <label htmlFor="exampleInputEmail1">Email address</label>
@@ -72,10 +84,9 @@ const googleLogin = ()=> {
 		<button className="btn btn-info" type="button" onClick={googleLogin}>Login with Google
 		<img id="google_logo" src={Google}  alt="noimage"/>
 		</button>
-   
+  </div>
  </div>
- </div>
- 
+  
     );
   
 }

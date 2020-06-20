@@ -680,7 +680,17 @@ input[type=text]{
     margin-top: 22px;
     color: #DDE3E2;
 }
-.login-container{
+#login-container{
     display: none;
+    width: 300px;
+    width: 360px;
+    padding: 20px;
+    border: 1px solid;
+    position: absolute;
+    z-index: 10;
+    background: #dadada;
+    left: 42vw;
+    border-color: burlywood;
+    border-radius: 5px;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
