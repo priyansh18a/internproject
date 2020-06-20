@@ -75,8 +75,8 @@ const Footer = () => {
                 <br />
                 <text className="Simple-Text">&copy;2010—2020</text>
                 <text className="Simple-Text">Privacy—Terms</text>
-                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank"><img className="facebook" src={facebook} alt="Facebook" /></a>
-                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank"><img className="youtube" src={youtube} alt="Youtube" /></a>
+                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
+                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank" rel="noopener noreferrer"><img className="youtube" src={youtube} alt="Youtube" /></a>
             </div>
             <div className="About">
                 <text className="head-text">About</text>

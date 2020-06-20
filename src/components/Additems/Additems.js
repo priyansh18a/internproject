@@ -47,6 +47,7 @@ const Additem = () => {
         setImagecount(prevState => prevState + 1);
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
+       
       };
       
     const handleFiles = file => {

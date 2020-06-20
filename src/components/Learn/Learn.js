@@ -28,8 +28,16 @@ import tick from './../../Graphics/tick.svg';
 
 //imported the scss file
 import './learn.scss';
+// module
+import Login from '../Login-Signup/Login';
 
 const Homepage = () => {
+
+    const openlogin = () => {
+        console.log('this works');
+        document.getElementById('login-container').style.display = "block";
+    }
+
     return (
         <div className="container1">
             <div className="header">
@@ -43,10 +51,10 @@ const Homepage = () => {
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
                 <div className="signin-btn-homepage">
-                    <button onclick={() => { console.log('yay') }} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
+                    <button onclick={openlogin} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
                 </div>
                 <div className="signup-btn-homepage">
-                    <button onclick={() => { console.log('yay') }} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
+                    <button onclick={openlogin} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
                 </div>
             </div>
             <div className="home-main">
@@ -75,8 +83,8 @@ const Footer = () => {
                 <br />
                 <text className="Simple-Text">&copy;2010—2020</text>
                 <text className="Simple-Text">Privacy—Terms</text>
-                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank"><img className="facebook" src={facebook} alt="Facebook" /></a>
-                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank"><img className="youtube" src={youtube} alt="Youtube" /></a>
+                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
+                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank" rel="noopener noreferrer"><img className="youtube" src={youtube} alt="Youtube" /></a>
             </div>
             <div className="About">
                 <text className="head-text">About</text>
@@ -269,6 +277,9 @@ const Learn = () => {
     return (
         <React.Fragment>
             <Homepage />
+            <div id="login-container">
+            <Login/>
+            </div>
             <GridPage />
             <Middle_Page1 />
             <Middle_Page2 />
