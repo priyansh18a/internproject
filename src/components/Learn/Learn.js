@@ -1,5 +1,5 @@
 //React
-import React from 'react';
+import React, { useState} from 'react';
 
 //imported the graphics
 import logo from './../../Graphics/logo.svg';
@@ -31,11 +31,19 @@ import './learn.scss';
 // module
 import Login from '../Login-Signup/Login';
 
-const Homepage = () => {
+export const Homepage = () => {
 
-    const openlogin = () => {
+    const [show , setShow] = useState('');
+
+    const openlogin = whattoshow => {
         console.log('this works');
         document.getElementById('login-container').style.display = "block";
+        setShow(whattoshow);
+        
+    }
+
+    const closeloginsignup = () => {
+        document.getElementById('login-container').style.display = "none"; 
     }
 
     return (
@@ -51,14 +59,14 @@ const Homepage = () => {
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
                 <div className="signin-btn-homepage">
-                    <button onClick={openlogin} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
+                    <button onClick={() => openlogin('login')} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
                 </div>
                 <div className="signup-btn-homepage">
-                    <button onClick={openlogin} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
+                    <button onClick={() => openlogin('signup')} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
                 </div>
             </div>
             <div id="login-container">
-            <Login/>
+            <Login show={show} onClick={closeloginsignup}/>
             </div>
             <div className="home-main">                                                             
                 <div className="l-main-para-cont">
@@ -109,7 +117,7 @@ const FooterPage = () => {
     return (
         <div className="footer-page">
             <div className="upper-half">
-                <img class="astronaut" src={astronaut} alt="" />
+                <img className="astronaut" src={astronaut} alt="" />
             </div>
             <div className="lower-half">
                 <text className="big-text-footer-pg">Coming Soon</text>
@@ -132,29 +140,29 @@ const GridPage = () => {
             <div className="grid-page-row1">
                 <div className="box1">
                     <text className="box-head">Games</text>
-                    <div className="grid-img-container"><img class="game-pic" src={game} alt="" /></div>
+                    <div className="grid-img-container"><img className="game-pic" src={game} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Text</text>
-                    <div className="grid-img-container"><img class="text-pic" src={text} alt="" /></div>
+                    <div className="grid-img-container"><img className="text-pic" src={text} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Code</text>
-                    <div className="grid-img-container"><img class="code-pic" src={code} alt="" /></div>
+                    <div className="grid-img-container"><img className="code-pic" src={code} alt="" /></div>
                 </div>
             </div>
             <div className="grid-page-row2">
                 <div className="box1">
                     <text className="box-head">AR/VR</text>
-                    <div className="grid-img-container"><img class="arvr-pic" src={ar_vr} alt="" /></div>
+                    <div className="grid-img-container"><img className="arvr-pic" src={ar_vr} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Video</text>
-                    <div className="grid-img-container"><img class="video-pic" src={video} alt="" /></div>
+                    <div className="grid-img-container"><img className="video-pic" src={video} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Comic</text>
-                    <div className="grid-img-container"><img class="comic-pic" src={comic} alt="" /></div>
+                    <div className="grid-img-container"><img className="comic-pic" src={comic} alt="" /></div>
                 </div>
             </div>
         </React.Fragment>

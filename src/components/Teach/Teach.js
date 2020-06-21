@@ -1,13 +1,8 @@
 //React
 import React from 'react';
+import {Homepage} from '../Learn/Learn'
 
 //imported the graphics
-import logo from './../../Graphics/logo.svg';
-import main_teach from './../../Graphics/main_teach.svg';
-import pen from './../../Graphics/pen.svg';
-import star from './../../Graphics/star.svg';
-import torch from './../../Graphics/torch.svg';
-import key from './../../Graphics/key.svg';
 import teach_combined from './../../Graphics/teach_combined.svg';
 import person from './../../Graphics/person.svg';
 import next_gen_vis_tools from './../../Graphics/next_gen_vis_tools.svg';
@@ -29,43 +24,6 @@ import tick from './../../Graphics/tick.svg';
 //imported the scss file
 import './teach.scss';
 
-const Homepage = () => {
-    return (
-        <div className="container1">
-            <div className="header">
-                <div className="homepage-logo">
-                    <img className="logo" src={logo} alt="Feynman School" />
-                </div>
-                <div className="homepage-head-text">
-                    <a className="link-txt" href='/learn'><text>Learn</text></a>
-                </div>
-                <div className="homepage-head-text">
-                    <a className="link-txt" href='/teach'>Teach</a>
-                </div>
-                <div className="signin-btn-homepage">
-                    <button onClick={() => { console.log('yay') }} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
-                </div>
-                <div className="signup-btn-homepage">
-                    <button onClick={() => { console.log('yay') }} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
-                </div>
-            </div>
-            <div className="home-main">
-                <div className="main-para-cont">
-                    <div className="text-para">
-                        <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts.</text><text className="main-text-light"> Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
-                    </div>
-                    {/* <form>
-                        <input type="text" id="phoneno" name="phoneno" placeholder="Phone Number"></input>
-                        <input className="submit-btn"type="submit" value="Submit"/>
-                    </form> */}
-                </div>
-                <div className="main-image-cont">
-                    <img className="main-learn" src={main_teach} alt="" />
-                </div>
-            </div>
-        </div>
-    )
-}
 
 const Footer = () => {
     return (
@@ -98,7 +56,7 @@ const FooterPage = () => {
     return (
         <div className="footer-page">
             <div className="upper-half">
-                <img class="astronaut" src={astronaut} alt="" />
+                <img className="astronaut" src={astronaut} alt="" />
             </div>
             <div className="lower-half">
                 <text className="big-text-footer-pg">Coming Soon</text>
@@ -123,34 +81,34 @@ const GridPage = () => {
                 <div className="box1">
                     <text className="box-head">Games</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="game-pic" src={game} alt="" /></div>
+                    <div className="grid-img-container"><img className="game-pic" src={game} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Text</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="text-pic" src={text} alt="" /></div>
+                    <div className="grid-img-container"><img className="text-pic" src={text} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Code</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="code-pic" src={code} alt="" /></div>
+                    <div className="grid-img-container"><img className="code-pic" src={code} alt="" /></div>
                 </div>
             </div>
             <div className="grid-page-row2">
                 <div className="box1">
                     <text className="box-head">AR/VR</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="arvr-pic" src={ar_vr} alt="" /></div>
+                    <div className="grid-img-container"><img className="arvr-pic" src={ar_vr} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Video</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="video-pic" src={video} alt="" /></div>
+                    <div className="grid-img-container"><img className="video-pic" src={video} alt="" /></div>
                 </div>
                 <div className="box1">
                     <text className="box-head">Comic</text>
                     <text className="simple-text-grid">Augmented reality in education is not a hoax. Augmented reality in education is</text>
-                    <div className="grid-img-container"><img class="comic-pic" src={comic} alt="" /></div>
+                    <div className="grid-img-container"><img className="comic-pic" src={comic} alt="" /></div>
                 </div>
             </div>
         </React.Fragment>

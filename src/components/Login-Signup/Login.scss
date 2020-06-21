@@ -18,5 +18,22 @@
     text-align: center;
     color: #424551;
     opacity: 0.6;
-    margin-bottom: 26px;
+    margin-bottom: 8px;
+}
+.btn {
+    margin-bottom: 6px;
+}
+#login , #signup {
+    display: none;
+}
+
+.closeloginsignup{
+  
+    float: right;
+  
+    color: red;
+   
+    font-size: 25px;
+    position: relative;
+    top: -17px;
 }
