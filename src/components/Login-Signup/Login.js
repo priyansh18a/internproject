@@ -1,38 +1,47 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect, useContext} from 'react';
 import fire from '../../custom/Fire';
+import { AuthContext } from '../../custom/auth-context';
 import firebase from 'firebase';
-import { Link} from 'react-router-dom';
 import Google from '../../Graphics/Google.png'
+import close from '../../Graphics/close.png'
 import './Login.scss'
 
 
 
 const Login = props => {
+    const auth = useContext(AuthContext);
     const [email ,setEmail] = useState('');
     const [password ,setPassword] = useState('');
     const [name ,setName] = useState('');
-    const [phonenum ,setPhonenum] = useState('');
+    const [phonenum ,setPhonenum] = useState(props.phoneNo);
   
     useEffect(() => { whichtoshow() }, [props.show] );
+    useEffect(() => { phoneNumHandler() }, [props.phoneNo] );
+
+
 
  const emailhandleChange = event => {
     setEmail(event.target.value);
   }
  const passwordhandleChange = event => {
-  setPassword(event.target.value);
+    setPassword(event.target.value);
  }
  const namehandleChange = event => {
-  setName(event.target.value);
-}
-  const phonenumhandleChange = event => {
-  setPhonenum(event.target.value);
-  }
+    setName(event.target.value);
+ }
+ const phonenumhandleChange = event => {
+    setPhonenum(event.target.value);
+ }
+ const phoneNumHandler = () => {
+  setPhonenum(props.phoneNo);
+ }
 
  const login = e => {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(email,password).then((u)=>{
-      console.log(u);
-      document.getElementById("warning").innerHTML = "Login Successful";
+      auth.login();
+      console.log(u)
+      document.getElementById("warning").innerHTML = 'Login Successful';
     }).catch((error) => {
         console.log(error);
     
@@ -47,12 +56,11 @@ const Login = props => {
       const user = firebase.auth().currentUser;
       user.updateProfile({
         displayName: name,
-        photoURL: phonenum
+        photoURL: phonenum    // phone num stored in phoneURL
         }).then(function() {
         // Update successful.
-      
        console.log(user.displayName);
-       console.log(user.photoURL);
+       console.log(user.photoURL);  
       }).catch(function(error) {
         // An error happened.
       });
@@ -68,14 +76,21 @@ const Login = props => {
   const googleLogin = ()=> {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
-
-    .then (result => {
+      .then (result => {
         const user = result.user;
         console.log(user.displayName);
     })
-}
+  }
+
+    // const signout = () => {
+    //   fire.auth().signOut();
+    // }
+
+    // const passwordreset = () => {
+    //   fire.auth().sendPasswordResetEmail(email);
+    // }
+
   const whichtoshow = () => {
-    
     if( props.show === 'login' ){
       document.getElementById("signup").style.display  = "none";
       document.getElementById("login").style.display  = "block";
@@ -99,61 +114,73 @@ const Login = props => {
     }
 
   return (
-      
-  <div>
+    <div className="login-signup">
        <div className="alert alert-danger" id="warning" role="alert" ></div>
-       <Link onClick={props.onClick} className="closeloginsignup"> &times; </Link>
-    <div id="login">
+       <img onClick={props.onClick} className="closeloginsignup" src={close} alt=""/>
+     <div id="login">
+       <p className="main-head">Sign In</p>
      <form>
        <div className="form-group">
        <label htmlFor="exampleInputEmail">Email address</label>
-       <input value={email} onChange={emailhandleChange} type="email" name="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" />
-       <small id="emailHelp" className="form-text text-muted">We'll never share your email and phone number with anyone else.</small>
+       <input value={email} onChange={emailhandleChange} type="email" name="email" className="input" id="exampleInputEmail" aria-describedby="emailHelp"  />
       </div>
        <div className="form-group">
       <label htmlFor="exampleInputPassword">Password</label>
-      <input value={password} onChange={passwordhandleChange} type="password" name="password" className="form-control" id="exampleInputPassword" placeholder="Password" />
+      <input value={password} onChange={passwordhandleChange} type="password" name="password" className="input" id="exampleInputPassword"  />
       </div>
-      <button type="submit" onClick={login} className="btn btn-primary">Login</button>
+      <button type="submit" onClick={login} className="submit-button">Sign In</button>
     
     </form>
-      <p className="or">Or</p>
+      <p className=" or ">Or</p>
       <div className="google-login">
-      <button className="btn btn-info" type="button" onClick={googleLogin}>Login with Google
-      <img id="google_logo" src={Google}  alt="noimage"/>
+      
+      <button className="google-login-btn" type="button" onClick={googleLogin}>
+      <img id="google_logo" src={Google}  alt="noimage"/>Login with Google 
       </button>
-     <p>Does not have account? <Link onClick={gotosignup}>Click here to Signup</Link></p>
+     <p className="info" onClick={gotosignup}>DON’T HAVE AN ACCOUNT? SIGN UP</p>
   </div>
   </div>
-  <div id="signup">
+  <div id="signup"> 
+     <p className="main-head">Join Feynman</p>
      <form>
      <div className="form-group">
+     <div className="form-group">
+      <label htmlFor="phonenum">Phone Number</label>
+      <div className="phonediv">
+      <select className="country-code-signup">
+              <option value="+91" selected>+91</option>
+              <option value="+1">+1</option>
+              <option value="+92">+92</option>
+              <option value="+7">+7</option>
+              <option value="+344">+344</option>
+              <option value="+672">+672</option>
+              <option value="+43">+43</option>
+			</select>     
+      <input value={phonenum} onChange={phonenumhandleChange} type="number" name="phonenum" className="input" id="phonenum" required  />
+      </div>
+      </div>
       <label htmlFor="name">Name</label>
-      <input value={name} onChange={namehandleChange} type="text" name="name" className="form-control" id="name" placeholder="Your name" />
+      <input value={name} onChange={namehandleChange} type="text" name="name" className="input" id="name" />
       </div>
       <div className="form-group">
        <label htmlFor="exampleInputEmail1">Email address</label>
-       <input value={email} onChange={emailhandleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+       <input value={email} onChange={emailhandleChange} type="email" name="email" className="input" id="exampleInputEmail1" aria-describedby="emailHelp" required />
       </div>
-      <div className="form-group">
-      <label htmlFor="phonenum">Phone Number</label>
-      <input value={phonenum} onChange={phonenumhandleChange} type="number" name="phonenum" className="form-control" id="phonenum" placeholder="Enter Your Phone Number" />
-      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-
-      </div>
+      
        <div className="form-group">
       <label htmlFor="exampleInputPassword1">Password</label>
-      <input value={password} onChange={passwordhandleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+      <input value={password} onChange={passwordhandleChange} type="password" name="password" className="input" id="exampleInputPassword1" required />
       </div>
   
-      <button onClick={signup}  className="btn btn-success">Signup</button>
+      <button onClick={signup}  className="submit-button">Signup</button>
     </form>
       <p className="or">Or</p>
       <div className="google-login">
-      <button className="btn btn-info" type="button" onClick={googleLogin}>Signup with Google
+      <button className="google-login-btn" type="button" onClick={googleLogin}>
       <img id="google_logo" src={Google}  alt="noimage"/>
+        Signup with Google
       </button>
-     <p>Already Registered? <Link onClick={gotologin}>Click here to Login</Link></p>
+     <p className="info" onClick={gotologin}>I ALREADY HAVE AN ACCOUNT</p>
   </div>
   </div>
  </div>

@@ -1,4 +1,5 @@
-import React  from 'react';
+import React, { useState, useCallback } from 'react';
+import { AuthContext } from './custom/auth-context';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,12 +13,24 @@ import Teach from './components/Teach/Teach'
 
 
 
-
 const App = () => {
-  
-  return (
-    <Router>
-    <Switch>
+
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage);
+
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []); 
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
+
+  let routes;
+
+  if (isLoggedIn) {
+    routes = (
+   <Switch>
         <Route exact path="/" >
           <Learn/>
         </Route>
@@ -30,11 +43,36 @@ const App = () => {
         <Route path="/teach/user/:screenId" exact>
           <Additem/>
         </Route>
-        
-        
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/teach/user/0" />
     </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+      <Route exact path="/" >
+        <Learn/>
+      </Route>
+      <Route exact path='/learn'>
+        <Learn/>
+      </Route>
+      <Route path='/teach'  exact >
+        <Teach/>
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+    );
+  }
+
+  
+  return (
+    <AuthContext.Provider
+      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+    >
+    <Router>
+    {routes}
     </Router>
+    </AuthContext.Provider>
+  
   );
 }
 

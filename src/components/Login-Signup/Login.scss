@@ -1,39 +1,219 @@
-
+@font-face {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy'), url(./../../fonts/Gilroy-Regular.ttf) format('truetype');
+}
+*{
+	margin: 0px;
+    padding: 0px;
+    font-family:'Gilroy';
+}
+.login-signup{
+    width: 34vw;
+    padding: 48px;
+    border: 1px solid;
+    position: absolute;
+    z-index: 10;
+    left: 32%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), #212121;
+    border-radius: 16px;
+    min-width: 400px;
+    max-width: 640px;
+}
+.main-head{
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    font-weight: bold;
+}
 #warning {
     display: none;
+}
+.form-group{
+    display: grid;
+    margin-bottom: 3rem;
+}
+.form-group label{
+    font-size: 16px;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 0.8);
+}
+.input{
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding-top: 10px;
+    background:linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), #212121;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.56px;
+    color: rgba(255, 255, 255, 0.6);
+
+}
+/* Change the white to any color ;) */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover, 
+.input:-webkit-autofill:focus, 
+.input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px  #2E2E2E inset !important;
+    
+}
+/*Change text in autofill textbox*/
+.input:-webkit-autofill {
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+
+.input:focus{
+    outline: none;
+    border-bottom:2px solid skyblue;
+}
+#phonenum{
+    margin-left: -47px;
+    padding-left: 50px;
+}
+.submit-button{
+    height: 71px;
+    border-radius: 8px;
+    background-color:#0099ff;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+    margin-top: 42px;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.48px;
+    color: #ffffff;
+    margin: auto;
+    font-weight: bold;
+    cursor: pointer;
 }
 .google-login{
     text-align: center;
 }
+.google-login-btn{
+    height: 71px;
+    border-radius: 8px;
+    border: 3px solid #0099FF;
+    background-color:#212121 ;
+    width: 100%;
+    min-width: 200px;
+    margin-top: 42px;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.48px;
+    color: #0099ff;
+    margin: auto;
+    font-weight: bold; 
+    cursor: pointer;
+}
 #google_logo{
 	width: 25px;
 	height: 25px;
-	margin-left: 5px;
+	margin-right: 10px;
 	
 }
-.or{
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 24px;
-    text-align: center;
-    color: #424551;
-    opacity: 0.6;
-    margin-bottom: 8px;
+.info {
+    font-family: 'Gilroy';
+    font-size: 16px;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 51px;
+    margin-bottom: 0px;
+    cursor: pointer;
 }
-.btn {
-    margin-bottom: 6px;
+.or{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
 }
 #login , #signup {
     display: none;
 }
 
 .closeloginsignup{
-  
+    cursor: pointer;
     float: right;
-  
-    color: red;
-   
     font-size: 25px;
     position: relative;
     top: -17px;
+}
+.phonediv {
+    display: flex;
+}
+select.country-code-signup {
+    border: none;
+    background-color: #2E2E2E;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 28px;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    margin-bottom: 8px;
+    z-index: 10;
+    overflow: hidden;
+    height: 47px;
+    padding-top: 8px;
+    width: 47px;
+
+}
+select.country-code-signup:focus{
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+@media (max-width: 900px){
+    .login-signup{
+         left:25%;
+    }
+}
+@media (max-width: 700px){
+    .login-signup{
+        left:19%;
+    }
+}
+@media (max-width: 550px){
+    .login-signup{
+        left:5%;
+    }
+}
+
+@media (max-width:450px){
+    .login-signup{
+    min-width: 100vw;
+    left:0px;
+    padding: 25px;
+    }
+    .main-head{
+        font-size: 30px;
+    }
+    .submit-button{
+        width: auto;
+        height: 50px;
+        margin-left: 17vw; 
+        font-size: 18px;
+
+    }
+    .google-login-btn{
+        width: auto;
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
+    }
 }

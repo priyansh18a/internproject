@@ -1,29 +1,28 @@
 //React
 import React, { useState} from 'react';
+import { Link } from 'react-router-dom';
 
 //imported the graphics
-import logo from './../../Graphics/logo.svg';
-import main_learn from './../../Graphics/main_learn.svg';
-import pen from './../../Graphics/pen.svg';
-import star from './../../Graphics/star.svg';
-import torch from './../../Graphics/torch.svg';
-import key from './../../Graphics/key.svg';
-import learn_combined from './../../Graphics/learn_combined.svg';
-import person from './../../Graphics/person.svg';
-import css_cpp from './../../Graphics/css_cpp.svg';
-import practical_for_student from './../../Graphics/practical_for_student.svg';
-import experienced_teachers from './../../Graphics/experienced_teachers.svg';
-import scholarship from './../../Graphics/scholarship.svg';
-import astronaut from './../../Graphics/astronaut.svg';
+import logo from './../../Graphics/logo.png';
+import cross from './../../Graphics/cross.png';
+import dropdown from './../../Graphics/dropdown.png'
+import gotonext from './../../Graphics/gotonext.png'
+import game from './../../Graphics/game.png'
+import vr_ar from './../../Graphics/vr_ar.png'
+import code from './../../Graphics/code.png'
+import video from './../../Graphics/videos.png'
+import comics from './../../Graphics/comics.png'
+import text from './../../Graphics/text.png'
+import path from './../../Graphics/path.png'
+import tick from './../../Graphics/tick.png';
+import visualisation from './../../Graphics/visualisation.png'
+import project from './../../Graphics/project.png'
+import teacher from './../../Graphics/teacher.png'
+import scholarship from './../../Graphics/scholarship.png'
+import menu_icon from './../../Graphics/menu_icon.png'
 import facebook from './../../Graphics/facebook.svg';
 import youtube from './../../Graphics/youtube.svg';
-import game from './../../Graphics/game.svg';
-import text from './../../Graphics/text.svg';
-import code from './../../Graphics/code.svg';
-import ar_vr from './../../Graphics/ar_vr.svg';
-import video from './../../Graphics/video.svg';
-import comic from './../../Graphics/comic.svg';
-import tick from './../../Graphics/tick.svg';
+
 
 
 //imported the scss file
@@ -31,250 +30,307 @@ import './learn.scss';
 // module
 import Login from '../Login-Signup/Login';
 
-export const Homepage = () => {
+export const Topsection = () => {
 
     const [show , setShow] = useState('');
+    const [phoneNum ,setPhoneNum] = useState('');
 
     const openlogin = whattoshow => {
-        console.log('this works');
         document.getElementById('login-container').style.display = "block";
         setShow(whattoshow);
-        
+        document.getElementById('sidebar').style.display = "none";
+        document.getElementById('menu_icon').style.display = "block";
+        document.getElementById('cross').style.display = "none";
+    }
+
+    const phonehandleChange = event => {
+        setPhoneNum(event.target.value);
     }
 
     const closeloginsignup = () => {
         document.getElementById('login-container').style.display = "none"; 
     }
-
+    const gotonextbox = () => {
+        // document.getElementById('future-depend').scrollBy(0, window.innerHeight);
+        // console.log('abc');
+        
+    }
+    const opensidebar = () => {
+        document.getElementById('sidebar').style.display = "block";
+        document.getElementById('menu_icon').style.display = "none";
+        document.getElementById('cross').style.display = "block";
+    }
+    const closesidebar = () => {
+        document.getElementById('sidebar').style.display = "none";
+        document.getElementById('menu_icon').style.display = "block";
+        document.getElementById('cross').style.display = "none";
+    }
+    
     return (
+        <React.Fragment>
         <div className="container1">
             <div className="header">
-                <div className="homepage-logo">
-                    <img className="logo" src={logo} alt="Feynman School" />
-                </div>
+               <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
+               <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/learn'><text>Learn</text></a>
+                    <a className="link-txt" href='/learn'>Learn</a>
                 </div>
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
-                <div className="signin-btn-homepage">
-                    <button onClick={() => openlogin('login')} className="sign-in-btn"><span className="signin-btn-txt">Sign In</span></button>
-                </div>
-                <div className="signup-btn-homepage">
-                    <button onClick={() => openlogin('signup')} className="sign-up-btn"><span className="signup-btn-txt">Sign Up</span></button>
-                </div>
+                <Link onClick={() => openlogin('login')} className="sign-in-btn">Sign In</Link>
+                <button onClick={() => openlogin('signup')} className="sign-up-btn">Sign Up</button>
+
+            </div>
+            <div  id="sidebar">
+                <img src={cross} alt="" id="cross" onClick={closesidebar}/>
+                <ul>
+                    <li>Learn</li>
+                    <li>Teach</li>
+                    <li>News</li>
+                    <li>Blog</li>
+                    <li>About us</li>
+                    <li id="sign-in" onClick={() => openlogin('login')}>Sign In</li>
+                </ul>
+
             </div>
             <div id="login-container">
-            <Login show={show} onClick={closeloginsignup}/>
+            <Login show={show} onClick={closeloginsignup} phoneNo={phoneNum}/>
             </div>
-            <div className="home-main">                                                             
+
+            <div className="home-main" >                                                             
                 <div className="l-main-para-cont">
                     <div className="text-para">
-                        <text className="main-text">Now, medium </text><img className="pen" src={pen} alt="" /><text className="main-text"> wont be a restriction to teach </text><img className="star" src={star} alt="" /><text className="main-text"> concepts.</text><text className="main-text-light"> Better education? </text><img className="torch" src={torch} alt="" /><text className="main-text"> All you will need is your imagination. </text><img className="key" src={key} alt="" />
+                        <p className="main-para"onClick={closeloginsignup} >Better education? <br/> All you will need is your imagination.</p>
+                        <div className="phone-num" onClick={closeloginsignup}>
+                        <select className="country-code">
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+92">+92</option>
+                            <option value="+7">+7</option>
+                            <option value="+344">+344</option>
+                            <option value="+672">+672</option>
+                            <option value="+43">+43</option>
+			            </select>
+                        <img src={dropdown} className="dropdown" alt=""/>
+                        
+                        <input type="number" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
+                        </div>
+                        <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Join Now</p></button>
+                    <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
                     </div>
-                    {/* <form>
-                        <input type="text" id="phoneno" name="phoneno" placeholder="Phone Number"></input>
-                        <input className="submit-btn"type="submit" value="Submit"/>
-                    </form> */}
                 </div>
-                <div className="main-image-cont">
-                    <img className="l-main-learn" src={main_learn} alt="" />
+                <div className="main-image-cont" onClick={closeloginsignup}>
+                    {/* <img className="l-main-learn" src={} alt="" /> */}
                 </div>
+              
             </div>
+              <div className="goto-div"><img className="gotonextbox" src={gotonext} alt="" onClick={gotonextbox}/></div>
         </div>
-    )
-}
-
-const Footer = () => {
-    return (
-        <div className="footer">
-            <div className="Feynman">
-                <text className="head-text">FEYNMAN</text>
-                <br />
-                <text className="Simple-Text">&copy;2010—2020</text>
-                <text className="Simple-Text">Privacy—Terms</text>
-                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
-                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank" rel="noopener noreferrer"><img className="youtube" src={youtube} alt="Youtube" /></a>
-            </div>
-            <div className="About">
-                <text className="head-text">About</text>
-                <a href="/#/teach"><text className="Simple-Text">Timeline</text></a>
-                <a href="/#/teach"><text className="Simple-Text">Testimonials</text></a>
-                <a href="/#/teach"><text className="Simple-Text">Feynman in News</text></a>
-                <a href="/#/teach"><text className="Simple-Text">Team</text></a>
-            </div>
-            <div className="Contact">
-                <text className="head-text">Contact Us</text>
-                <text className="Simple-Text">Phone: 1800 2255 02</text>
-                <text className="Simple-Text">Email: info@feynman.com</text>
-            </div>
+        <div id="future-depend">
+          <p>The future depend on <br/> what we do in present</p>
         </div>
-    )
-}
-
-const FooterPage = () => {
-    return (
-        <div className="footer-page">
-            <div className="upper-half">
-                <img className="astronaut" src={astronaut} alt="" />
-            </div>
-            <div className="lower-half">
-                <text className="big-text-footer-pg">Coming Soon</text>
-                <text className="small-text-footer-pg">Sign up to stay notified</text>
-                <div className="footer-submit-btn">
-                    <button className="button-footer-pg" type="button"><text className="button-text-footer-pg">Sign Up for Demo</text></button>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-const GridPage = () => {
-    return (
-        <React.Fragment>
-            <div className="grid-head">
-                {/* <img src={person} alt="" /> */}
-                <text className="grid-head-bold-text">Learn as you build</text>
-            </div>
-            <div className="grid-page-row1">
-                <div className="box1">
-                    <text className="box-head">Games</text>
-                    <div className="grid-img-container"><img className="game-pic" src={game} alt="" /></div>
-                </div>
-                <div className="box1">
-                    <text className="box-head">Text</text>
-                    <div className="grid-img-container"><img className="text-pic" src={text} alt="" /></div>
-                </div>
-                <div className="box1">
-                    <text className="box-head">Code</text>
-                    <div className="grid-img-container"><img className="code-pic" src={code} alt="" /></div>
-                </div>
-            </div>
-            <div className="grid-page-row2">
-                <div className="box1">
-                    <text className="box-head">AR/VR</text>
-                    <div className="grid-img-container"><img className="arvr-pic" src={ar_vr} alt="" /></div>
-                </div>
-                <div className="box1">
-                    <text className="box-head">Video</text>
-                    <div className="grid-img-container"><img className="video-pic" src={video} alt="" /></div>
-                </div>
-                <div className="box1">
-                    <text className="box-head">Comic</text>
-                    <div className="grid-img-container"><img className="comic-pic" src={comic} alt="" /></div>
-                </div>
-            </div>
         </React.Fragment>
     )
 }
 
-const Middle_Page1 = () => {
+export const LearnMethod = () => {
     return (
-        <div className="middle-pg-1">
+        <div className="learn-container">
+            <div className="learn-left">
+            <p className="left-main-text">Learn as you <br/> <span className="build">build</span></p>
+            <p className="left-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tellus vel id sapien bibendum turpis.</p>
+            </div>
+            <div className="learn-right">
+              <div className="type-card">
+                  <img src={game} alt=""/>
+                  <p className="card-head">Games</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div>
+             <div className="type-card">
+                  <img src={vr_ar} alt=""/>
+                  <p className="card-head">AR/VR</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div> 
+             <div className="type-card">
+                  <img src={code} alt=""/>
+                  <p className="card-head">Code</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div> 
+             <div className="type-card">
+                  <img src={video} alt=""/>
+                  <p className="card-head">Video</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div> 
+             <div className="type-card">
+                  <img src={comics} alt=""/>
+                  <p className="card-head">Comics</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div> 
+             <div className="type-card">
+                  <img src={text} alt=""/>
+                  <p className="card-head">Text</p>
+                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+             </div> 
+               
+            </div>
+          
+        </div>
+        
+    )
+}
+
+const MiddlePage1 = () => {
+    return (
+        <div className="middle-pg-1 not-for-mobile">
+             
             <div className="middle-pg-1-lft">
-                <img src={person} alt="" />
-                <text className="middle-pg1-head">Every person learns through a different path</text>
-                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                <p className="middle-pg1-head">Every person learns<br/> through a<span className="different"> different path</span></p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
-                <img src={learn_combined} alt="" />
+                <img src={path} alt="" />
             </div>
         </div>
     )
 }
 
-const Middle_Page2 = () => {
+const MiddlePage1Mobile = () => {
     return (
-        <div className="middle-pg-2">
+        <div className="mobile-div">
+             <hr className="break" style={{margin:'8px 5vw'}}/>
             <div className="middle-pg-2-lft">
-                <img src={css_cpp} alt="" />
+                <img src={path} alt="" />
             </div>
             <div className="middle-pg-2-rgt">
-                <img src={person} alt="" />
-                <text className="middle-pg2-head">Interact with the content for better visualisation</text>
-                <text className="middle-pg2-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+    
+                <p className="middle-pg1-head">Every person learns through a<span className="different"> different path</span></p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
             </div>
         </div>
     )
 }
 
-const Middle_Page3 = () => {
+const MiddlePage2 = () => {
     return (
         <div className="middle-pg-1">
-            <div className="middle-pg-1-lft">
-                <img src={person} alt="" />
-                <text className="middle-pg1-head">Pratical projects for every student</text>
-                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+            <div className="middle-pg-2-lft">
+                <img src={visualisation} alt="" />
+            </div>
+            <div className="middle-pg-2-rgt">
+    
+                <p className="middle-pg1-head">Interact with the content for <span className="visualisation">better visualisation</span></p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const MiddlePage3 = () => {
+    return (
+        <div className="middle-pg-1 not-for-mobile">
+            <div className="middle-pg-1-lft">
+                <p className="middle-pg1-head"><span className="practical"> Practical projects</span> for<br/>  every student</p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
-                <img src={practical_for_student} alt="" />
+                <img src={project} alt="" />
             </div>
         </div>
     )
 }
 
-const Middle_Page4 = () => {
+const MiddlePage3Mobile = () => {
     return (
-        <div className="middle-pg-2">
+        <div className="mobile-div">
             <div className="middle-pg-2-lft">
-                <img src={experienced_teachers} alt="" />
+                <img src={project} alt="" />
             </div>
             <div className="middle-pg-2-rgt">
-                <img src={person} alt="" />
-                <text className="middle-pg2-head">Experienced teachers for perfect learning</text>
-                <text className="middle-pg2-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+    
+                <p className="middle-pg1-head"><span className="practical"> Practical projects</span> for<br/>  every student</p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
             </div>
         </div>
     )
 }
 
-const Middle_Page5 = () => {
+const MiddlePage4 = () => {
     return (
         <div className="middle-pg-1">
-            <div className="middle-pg-1-lft">
-                <img src={person} alt="" />
-                <text className="middle-pg1-head">Feynman scholarship for the brightest talents</text>
-                <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+            <div className="middle-pg-2-lft">
+                <img src={teacher} alt="" />
+            </div>
+            <div className="middle-pg-2-rgt">
+    
+                <p className="middle-pg1-head"><span className="different">Experienced teachers<br/></span> for perfect learning</p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <text className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</text>
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const MiddlePage5 = () => {
+    return (
+        <div className="middle-pg-1 not-for-mobile">
+            <div className="middle-pg-1-lft">
+                <p className="middle-pg1-head">Feynman<span className="scholarship"> scholarship</span> for the brightest talents</p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -284,17 +340,102 @@ const Middle_Page5 = () => {
     )
 }
 
+const MiddlePage5Mobile = () => {
+    return (
+        <div className="mobile-div">
+            <div className="middle-pg-2-lft">
+                <img src={scholarship} alt="" />
+            </div>
+            <div className="middle-pg-2-rgt">
+    
+                <p className="middle-pg1-head">Feynman<span className="scholarship"> scholarship</span> for the brightest talents</p>
+                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+                <div className="middle-pg1-list">
+                    <img src={tick} alt="" />
+                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export const FooterPage = () => {
+    return (
+        <div className="footer-page">
+            <hr className="break"/>
+            <div className="main-content">
+                    <div className="text-para">
+                        <p className="main-para">Coming Soon, <br/>Join Now</p>
+                    <form>
+                        <div className="phone-num">
+                        <select className="country-code">
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+92">+92</option>
+                            <option value="+7">+7</option>
+                            <option value="+344">+344</option>
+                            <option value="+672">+672</option>
+                            <option value="+43">+43</option>
+			            </select>
+                        <img src={dropdown} className="dropdown" alt=""/>
+                        
+                        <input type="text" className="phoneno" name="phoneno" placeholder="Phone number"></input>
+                        </div>
+                        <button className="submit-btn" type="submit"><p>Join Now</p></button>
+                    </form>
+                    <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
+                </div>
+
+            </div>
+            <hr className="break"/>
+        </div>
+    )
+}
+
+export const Footer = () => {
+    return (
+        <div className="footer">
+            <div className="Feynman">
+                <p className="head-text">FEYNMAN</p>
+                <p className="Simple-Text">&copy;2010—2020</p>
+                <p className="Simple-Text mb-4">Privacy—Terms</p>
+                <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
+                <a href="https://www.youtube.com/channel/UCk0jfiNeFKyn3GYxMtHCkcQ" target="_blank" rel="noopener noreferrer"><img className="youtube" src={youtube} alt="Youtube" /></a>
+            </div>
+            <div className="About">
+                <p className="head-text">About</p>
+                <a href="/#/teach"><p className="Simple-Text">Timeline</p></a>
+                <a href="/#/teach"><p className="Simple-Text">Testimonials</p></a>
+                <a href="/#/teach"><p className="Simple-Text">Feynman in News</p></a>
+                <a href="/#/teach"><p className="Simple-Text">Team</p></a>
+            </div>
+            <div className="Contact">
+                <p className="head-text">Contact Us</p>
+                <p className="Simple-Text">Phone: 1800 2255 02</p>
+                <p className="Simple-Text">Email: info@feynman.com</p>
+            </div>
+        </div>
+    )
+}
+
+
 const Learn = () => {
     return (
         <React.Fragment>
-            <Homepage />
-            
-            <GridPage />
-            <Middle_Page1 />
-            <Middle_Page2 />
-            <Middle_Page3 />
-            <Middle_Page4 />
-            <Middle_Page5 />
+            <Topsection />
+            <LearnMethod />
+            <MiddlePage1 />
+            <MiddlePage1Mobile />
+            <MiddlePage2 />
+            <MiddlePage3 />
+            <MiddlePage3Mobile />
+            <MiddlePage4 />
+            <MiddlePage5/>
+            <MiddlePage5Mobile />
             <FooterPage />
             <Footer />
         </React.Fragment>
