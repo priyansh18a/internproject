@@ -79,18 +79,19 @@ export const Topsection = () => {
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
                 <Link onClick={() => openlogin('login')} className="sign-in-btn">Sign In</Link>
-                <button onClick={() => openlogin('signup')} className="sign-up-btn">Sign Up</button>
+                <button onClick={() => openlogin('signup')} className="sign-up-btn" id>Sign Up</button>
+                <button onClick={() => openlogin('login')} id="sign-in-mobile">Sign In</button>
 
             </div>
             <div  id="sidebar">
                 <img src={cross} alt="" id="cross" onClick={closesidebar}/>
                 <ul>
-                    <li>Learn</li>
-                    <li>Teach</li>
+                    <li><a href='/learn'>Learn</a></li>
+                    <li><a href='/teach'>Teach</a></li>
                     <li>News</li>
                     <li>Blog</li>
                     <li>About us</li>
-                    <li id="sign-in" onClick={() => openlogin('login')}>Sign In</li>
+
                 </ul>
 
             </div>
@@ -370,7 +371,6 @@ export const FooterPage = () => {
             <div className="main-content">
                     <div className="text-para">
                         <p className="main-para">Coming Soon, <br/>Join Now</p>
-                    <form>
                         <div className="phone-num">
                         <select className="country-code">
                             <option value="+91" selected>+91</option>
@@ -383,10 +383,10 @@ export const FooterPage = () => {
 			            </select>
                         <img src={dropdown} className="dropdown" alt=""/>
                         
-                        <input type="text" className="phoneno" name="phoneno" placeholder="Phone number"></input>
+                        <input type="text" className="phoneno" name="phoneno" placeholder="Phone number" ></input>
                         </div>
-                        <button className="submit-btn" type="submit"><p>Join Now</p></button>
-                    </form>
+                        <button className="submit-btn" onClick={() => {console.log('work')}}><p>Join Now</p></button>
+        
                     <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
                 </div>
 
