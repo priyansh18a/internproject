@@ -30,8 +30,7 @@ import './learn.scss';
 // module
 import Login from '../Login-Signup/Login';
 
-export const Topsection = () => {
-
+const Learn = () => {
     const [show , setShow] = useState('');
     const [phoneNum ,setPhoneNum] = useState('');
 
@@ -41,6 +40,9 @@ export const Topsection = () => {
         document.getElementById('sidebar').style.display = "none";
         document.getElementById('menu_icon').style.display = "block";
         document.getElementById('cross').style.display = "none";
+        var elmnt = document.getElementById("login-container");
+        elmnt.scrollIntoView();
+        
     }
 
     const phonehandleChange = event => {
@@ -67,7 +69,8 @@ export const Topsection = () => {
     }
     
     return (
-        <React.Fragment>
+       
+        <div id="learn">
         <div className="container1">
             <div className="header">
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
@@ -131,12 +134,7 @@ export const Topsection = () => {
         <div id="future-depend">
           <p>The future depend on <br/> what we do in present</p>
         </div>
-        </React.Fragment>
-    )
-}
-
-export const LearnMethod = () => {
-    return (
+        
         <div className="learn-container">
             <div className="learn-left">
             <p className="left-main-text">Learn as you <br/> <span className="build">build</span></p>
@@ -175,17 +173,10 @@ export const LearnMethod = () => {
              </div> 
                
             </div>
-          
         </div>
         
-    )
-}
-
-const MiddlePage1 = () => {
-    return (
         <div className="middle-pg-1 not-for-mobile">
-             
-            <div className="middle-pg-1-lft">
+             <div className="middle-pg-1-lft">
                 <p className="middle-pg1-head">Every person learns<br/> through a<span className="different"> different path</span></p>
                 <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
@@ -201,11 +192,7 @@ const MiddlePage1 = () => {
                 <img src={path} alt="" />
             </div>
         </div>
-    )
-}
 
-const MiddlePage1Mobile = () => {
-    return (
         <div className="mobile-div">
              <hr className="break" style={{margin:'8px 5vw'}}/>
             <div className="middle-pg-2-lft">
@@ -225,11 +212,7 @@ const MiddlePage1Mobile = () => {
                 </div>
             </div>
         </div>
-    )
-}
 
-const MiddlePage2 = () => {
-    return (
         <div className="middle-pg-1">
             <div className="middle-pg-2-lft">
                 <img src={visualisation} alt="" />
@@ -248,11 +231,7 @@ const MiddlePage2 = () => {
                 </div>
             </div>
         </div>
-    )
-}
 
-const MiddlePage3 = () => {
-    return (
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
                 <p className="middle-pg1-head"><span className="practical"> Practical projects</span> for<br/>  every student</p>
@@ -270,11 +249,7 @@ const MiddlePage3 = () => {
                 <img src={project} alt="" />
             </div>
         </div>
-    )
-}
-
-const MiddlePage3Mobile = () => {
-    return (
+ 
         <div className="mobile-div">
             <div className="middle-pg-2-lft">
                 <img src={project} alt="" />
@@ -293,11 +268,7 @@ const MiddlePage3Mobile = () => {
                 </div>
             </div>
         </div>
-    )
-}
 
-const MiddlePage4 = () => {
-    return (
         <div className="middle-pg-1">
             <div className="middle-pg-2-lft">
                 <img src={teacher} alt="" />
@@ -316,11 +287,7 @@ const MiddlePage4 = () => {
                 </div>
             </div>
         </div>
-    )
-}
 
-const MiddlePage5 = () => {
-    return (
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
                 <p className="middle-pg1-head">Feynman<span className="scholarship"> scholarship</span> for the brightest talents</p>
@@ -338,11 +305,7 @@ const MiddlePage5 = () => {
                 <img src={scholarship} alt="" />
             </div>
         </div>
-    )
-}
 
-const MiddlePage5Mobile = () => {
-    return (
         <div className="mobile-div">
             <div className="middle-pg-2-lft">
                 <img src={scholarship} alt="" />
@@ -361,11 +324,7 @@ const MiddlePage5Mobile = () => {
                 </div>
             </div>
         </div>
-    )
-}
 
-export const FooterPage = () => {
-    return (
         <div className="footer-page">
             <hr className="break"/>
             <div className="main-content">
@@ -383,9 +342,9 @@ export const FooterPage = () => {
 			            </select>
                         <img src={dropdown} className="dropdown" alt=""/>
                         
-                        <input type="text" className="phoneno" name="phoneno" placeholder="Phone number" ></input>
+                        <input type="text" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
                         </div>
-                        <button className="submit-btn" onClick={() => {console.log('work')}}><p>Join Now</p></button>
+                        <button className="submit-btn" onClick={() => openlogin('signup')} ><p>Join Now</p></button>
         
                     <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
                 </div>
@@ -393,11 +352,7 @@ export const FooterPage = () => {
             </div>
             <hr className="break"/>
         </div>
-    )
-}
-
-export const Footer = () => {
-    return (
+        
         <div className="footer">
             <div className="Feynman">
                 <p className="head-text">FEYNMAN</p>
@@ -408,10 +363,10 @@ export const Footer = () => {
             </div>
             <div className="About">
                 <p className="head-text">About</p>
-                <a href="/#/teach"><p className="Simple-Text">Timeline</p></a>
-                <a href="/#/teach"><p className="Simple-Text">Testimonials</p></a>
-                <a href="/#/teach"><p className="Simple-Text">Feynman in News</p></a>
-                <a href="/#/teach"><p className="Simple-Text">Team</p></a>
+                <a href="/learn"><p className="Simple-Text">Timeline</p></a>
+                <a href="/learn"><p className="Simple-Text">Testimonials</p></a>
+                <a href="/learn"><p className="Simple-Text">Feynman in News</p></a>
+                <a href="/learn"><p className="Simple-Text">Team</p></a>
             </div>
             <div className="Contact">
                 <p className="head-text">Contact Us</p>
@@ -419,26 +374,8 @@ export const Footer = () => {
                 <p className="Simple-Text">Email: info@feynman.com</p>
             </div>
         </div>
-    )
-}
-
-
-const Learn = () => {
-    return (
-        <React.Fragment>
-            <Topsection />
-            <LearnMethod />
-            <MiddlePage1 />
-            <MiddlePage1Mobile />
-            <MiddlePage2 />
-            <MiddlePage3 />
-            <MiddlePage3Mobile />
-            <MiddlePage4 />
-            <MiddlePage5/>
-            <MiddlePage5Mobile />
-            <FooterPage />
-            <Footer />
-        </React.Fragment>
+        </div>
+       
     )
 
 }
