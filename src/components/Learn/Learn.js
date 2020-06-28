@@ -1,6 +1,6 @@
 //React
 import React, { useState} from 'react';
-import { Link } from 'react-router-dom';
+
 
 //imported the graphics
 import logo from './../../Graphics/logo.png';
@@ -45,6 +45,24 @@ const Learn = () => {
         
     }
 
+     window.onscroll = () => {
+            const nav = document.querySelector('#header');
+            const signIn = document.getElementById('signIn');
+            const signUp = document.getElementById('signUp');
+            if(window.scrollY <= 150){
+              nav.className = 'header' ;
+              nav.style.top = '-80px'
+              signIn.style.top = '111px'
+              signUp.style.top = '100px'
+
+            } else if(window.scrollY >= 150){ 
+                nav.className = 'header mini' ;
+                nav.style.top = '0px'
+                signIn.style.top = '31px'
+                signUp.style.top = '20px'
+              }; 
+     }
+
     const phonehandleChange = event => {
         setPhoneNum(event.target.value);
     }
@@ -72,7 +90,7 @@ const Learn = () => {
        
         <div id="learn">
         <div className="container1">
-            <div className="header">
+            <div id="header" className="header">
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
                <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
                 <div className="homepage-head-text">
@@ -81,8 +99,8 @@ const Learn = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach'>Teach</a>
                 </div>
-                <Link onClick={() => openlogin('login')} className="sign-in-btn">Sign In</Link>
-                <button onClick={() => openlogin('signup')} className="sign-up-btn" id>Sign Up</button>
+                <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn">Sign In</p>
+                <button onClick={() => openlogin('signup')} className="sign-up-btn" id="signUp">Sign Up</button>
                 <button onClick={() => openlogin('login')} id="sign-in-mobile">Sign In</button>
 
             </div>
@@ -108,7 +126,7 @@ const Learn = () => {
                         <p className="main-para"onClick={closeloginsignup} >Better education? <br/> All you will need is your imagination.</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
-                            <option value="+91" selected>+91</option>
+                            <option value="+91" defaultValue>+91</option>
                             <option value="+1">+1</option>
                             <option value="+92">+92</option>
                             <option value="+7">+7</option>
@@ -332,7 +350,7 @@ const Learn = () => {
                         <p className="main-para">Coming Soon, <br/>Join Now</p>
                         <div className="phone-num">
                         <select className="country-code">
-                            <option value="+91" selected>+91</option>
+                            <option value="+91" defaultValue>+91</option>
                             <option value="+1">+1</option>
                             <option value="+92">+92</option>
                             <option value="+7">+7</option>

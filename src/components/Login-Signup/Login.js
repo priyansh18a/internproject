@@ -148,7 +148,7 @@ const Login = props => {
       <label htmlFor="phonenum">Phone Number</label>
       <div className="phonediv">
       <select className="country-code-signup">
-              <option value="+91" selected>+91</option>
+              <option value="+91" defaultValue>+91</option>
               <option value="+1">+1</option>
               <option value="+92">+92</option>
               <option value="+7">+7</option>

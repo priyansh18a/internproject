@@ -56,7 +56,6 @@ a:hover {
     text-decoration: none; 
 }
 
-//Topsection/////////////////
 
 .container1{
     width: 100vw;
@@ -69,11 +68,28 @@ a:hover {
 .header{
     width: 100vw;
     display:flex;
-    height: 80px;
+    height: 160px;
     opacity: 0.95;
     background: linear-gradient(90deg, #262626 0%, #0F0F0F 100%);
     margin-top: 0px;
+    z-index: 99;
+    position: relative;
+    -webkit-transition: top .4s ease-in-out;
+    transition: top .4s ease-in-out;  
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    padding-top: 80px;
+    top:-80px;
+    // will-change: top;
 }
+.header.mini{
+    background : linear-gradient(90deg, rgb(38, 38, 38) 0%, rgb(54, 88, 102) 100%);
+    position: fixed;
+    height: 90px;
+    padding-top: 0px;
+}
+
+
 #menu_icon{
     display: none;
     position: absolute;
@@ -123,8 +139,11 @@ a:hover {
     letter-spacing: -0.4px;
     position: absolute;
     color: #0099ff;
-    top: 31px;
+    top: 111px;
     right: 292px;
+}
+.sign-in-btn:hover,.sign-in-btn:focus{
+    color: #1985ce;
 }
 .sign-up-btn {
     right: 120px;
@@ -138,7 +157,7 @@ a:hover {
     color: #ffffff;
     border: none;
     position: absolute;
-    top: 20px;
+    top: 100px;
     cursor: pointer;
 }
 .sign-up-btn:focus,.sign-up-btn:hover,#sign-in-mobile:focus, #sign-in-mobile:hover{
@@ -178,7 +197,7 @@ a:hover {
 }
 .home-main{
     width: 100vw;
-    height: 840px;
+    height: 750px;
     display: flex;
 }
 
@@ -187,7 +206,7 @@ a:hover {
     width: 50vw;
     padding-left: 6.25%;
     padding-right: 11%;
-    padding-top: 200px;
+    padding-top: 120px;
 }
 
 .main_para_cont>form{
@@ -343,10 +362,13 @@ select.country-code:focus{
   background-image: url('./../../Graphics/future_back.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 30vw;
+  height: 645px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden; 
+  width: 100vw;
+
+
 }
 
 #future-depend p{
@@ -357,7 +379,6 @@ select.country-code:focus{
     margin: auto;
 }
 
-//LearnMethod Page//////////////////////
 .learn-container{
     height: 1700px;
     display: flex;
@@ -365,6 +386,7 @@ select.country-code:focus{
     background-color: #212121;
     align-items: center;
     margin-top: -1px;
+    width: 100vw;
 }
 .learn-left{
     vertical-align: middle;
@@ -404,7 +426,7 @@ select.country-code:focus{
 
 .type-card{
     width: 22vw;
-    height: 17.6vw;
+    height: 331px;
     overflow: hidden;
     border-radius: 8px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.0136) 100%), #212121;
@@ -427,7 +449,7 @@ select.country-code:focus{
     margin-bottom: 0.7px;
 }
 .card-subhead{
-    font-size: 1.2vw;
+    font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.6);
@@ -663,7 +685,7 @@ select.country-code:focus{
 }
 // for-mobile
 @media (max-width: 450px){
-    .header{
+    #header{
         height: 47px;
     }
     #menu_icon{
