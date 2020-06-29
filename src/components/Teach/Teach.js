@@ -42,8 +42,8 @@ const Teach = () => {
         document.getElementById('sidebar').style.display = "none";
         document.getElementById('menu_icon').style.display = "block";
         document.getElementById('cross').style.display = "none";
-        var elmnt = document.getElementById("login-container");
-        elmnt.scrollIntoView();
+        // var elmnt = document.getElementById("login-container");
+        // elmnt.scrollIntoView();
     }
 
     window.onscroll = () => {

@@ -40,9 +40,7 @@ const Learn = () => {
         document.getElementById('sidebar').style.display = "none";
         document.getElementById('menu_icon').style.display = "block";
         document.getElementById('cross').style.display = "none";
-        var elmnt = document.getElementById("login-container");
-        elmnt.scrollIntoView();
-        
+        // document.getElementById('backdisable').style.display = 'block';
     }
 
      window.onscroll = () => {
@@ -89,6 +87,7 @@ const Learn = () => {
     return (
        
         <div id="learn">
+        {/* <div id="backdisable"></div> */}
         <div className="container1">
             <div id="header" className="header">
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 

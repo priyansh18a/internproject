@@ -64,6 +64,17 @@ a:hover {
     overflow-y: hidden;
     
 }
+#backdisable{
+    width: 100%;
+    z-index: 150;
+    height: 100%;
+    background-color: white;
+    color: #aaa;
+    opacity: .3;
+    filter: alpha(opacity=50);
+    position: absolute;
+    display: none;
+}
 
 .header{
     width: 100vw;
@@ -206,7 +217,7 @@ a:hover {
     width: 50vw;
     padding-left: 6.25%;
     padding-right: 11%;
-    padding-top: 120px;
+    padding-top: 0px;
 }
 
 .main_para_cont>form{

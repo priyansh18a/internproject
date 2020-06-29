@@ -13,16 +13,19 @@
     width: 34vw;
     padding: 48px;
     border: 1px solid;
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    z-index:200;
     left: 32%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), #212121;
     border-radius: 16px;
     min-width: 400px;
     max-width: 640px;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    top: 100px;
 }
 .main-head{
-    font-size: 2.8vw;;
+    font-size: 2.8vw;
     line-height: 120%;
     letter-spacing: 0.02em;
     color: #FFFFFF;
