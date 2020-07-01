@@ -6,3 +6,12 @@
 #teachMain{
     margin-top: -60px;
 }
+#teachMainMobile {
+    width: 100vw;
+    display: none;
+}
+@media (max-width: 450px){
+    #teachMainMobile {
+        display: block;
+    }
+}

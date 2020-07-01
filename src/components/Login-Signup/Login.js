@@ -20,21 +20,21 @@ const Login = props => {
 
 
 
- const emailhandleChange = event => {
-    setEmail(event.target.value);
-  }
- const passwordhandleChange = event => {
-    setPassword(event.target.value);
- }
- const namehandleChange = event => {
-    setName(event.target.value);
- }
- const phonenumhandleChange = event => {
-    setPhonenum(event.target.value);
- }
- const phoneNumHandler = () => {
-  setPhonenum(props.phoneNo);
- }
+    const emailhandleChange = event => {
+        setEmail(event.target.value);
+      }
+    const passwordhandleChange = event => {
+        setPassword(event.target.value);
+    }
+    const namehandleChange = event => {
+        setName(event.target.value);
+    }
+    const phonenumhandleChange = event => {
+        setPhonenum(event.target.value);
+    }
+    const phoneNumHandler = () => {
+      setPhonenum(props.phoneNo);
+    }
 
  const login = e => {
     e.preventDefault();

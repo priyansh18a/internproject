@@ -113,13 +113,15 @@ a:hover {
     padding-top: 10px;
     background-color:#212121 ;
     width: 150px;
-    position: absolute;
-    z-index: 11;
+    position: fixed;
+    z-index: 100;
     border-radius: 0px 0px 7px 0px;
+    margin-top: -82px;
+    transition: display 1s ease-in-out;
 }
 #sidebar img{
     position:absolute;
-    top: -33px;
+    top: -35px;
     left: 20px;
     z-index: 20;
 
@@ -147,14 +149,14 @@ a:hover {
 .sign-in-btn{
     width: 60px;
     height: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1;
     letter-spacing: -0.4px;
     position: absolute;
     color: #0099ff;
-    top: 100px;
-    right: 292px;
+    top: 104px;
+    right: 260px;
     cursor: pointer;
 }
 .sign-in-btn:hover,.sign-in-btn:focus{
@@ -162,17 +164,17 @@ a:hover {
 }
 .sign-up-btn {
     right: 120px;
-    width: 124px;
-    height: 40px;
+    width: 100px;
+    height: 30px;
     border-radius: 48px;
     background-color: #0099ff;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     line-height: 1;
     color: #ffffff;
     border: none;
     position: absolute;
-    top: 87px;
+    top: 96px;
     cursor: pointer;
 }
 .sign-up-btn:focus,.sign-up-btn:hover,#sign-in-mobile:focus, #sign-in-mobile:hover{
@@ -226,6 +228,10 @@ a:hover {
 
 .main_para_cont>form{
     display: block;
+}
+#learnMainMobile {
+    width: 100vw;
+    display: none;
 }
 .main-para {
     font-family: 'Gilroy-bold';
@@ -347,6 +353,8 @@ select.country-code:focus{
     margin-right: 54px;
 }
 
+
+
 .main-image-cont{
     width:50vw;
 }
@@ -354,6 +362,10 @@ select.country-code:focus{
     position: relative;
     width: 39vw;
     margin-top: -35px;
+}
+
+#learnMain{
+    transform: rotate(11.55deg);
 }
 
 .logo{
@@ -372,7 +384,7 @@ select.country-code:focus{
 .homepage-head-text{
     width: 8.33vw;
     padding-left: 5vw;
-    padding-top: 26px;
+    padding-top: 31px;
 }
 #future-depend{
   background-image: url('./../../Graphics/future_back.png');
@@ -701,7 +713,24 @@ select.country-code:focus{
     top: 0px;
   
 }
-@media (min-width: 1000px){
+@media (max-width: 1550px){
+    .home-main{
+       height:650px;
+   }
+}
+@media (max-width: 1400px){
+    .home-main{
+       height:550px;
+   }
+}
+
+@media (max-width: 640px){
+    .link-txt{
+       display: none;
+   }
+}
+
+@media (min-width:500px){
     #menu_icon{
        display: none !important;
    }
@@ -710,25 +739,24 @@ select.country-code:focus{
    }
 }
 
-@media (max-width: 640px){
-     .link-txt{
-        display: none;
-    }
-}
+
 // for-mobile
 @media (max-width: 450px){
-    #header{
-        height: 47px;
+    .header{
+        height: 127px;
     }
     #menu_icon{
         display: block;
-        top: 9px;
+        top: 90px;
         left: 20px;
+    }
+    .header.mini{
+        height: 57px;
     }
     .logo{
         height: 24.5px;
         width: 16px;
-        margin: 6px 5px 0px 45vw;
+        margin: 16px 5px 0px 45vw;
     }
 	.sign-in-btn,.homepage-head-text, .main-image-cont, .goto-div,#future-depend{
         display: none;
@@ -738,6 +766,7 @@ select.country-code:focus{
     }
     #sign-in-mobile{
         display: block;
+        margin-top: 79px;
     }
     .home-main{
         display: grid;
@@ -745,10 +774,15 @@ select.country-code:focus{
     }
     .l-main-para-cont{
         width: 100vw;
-        padding-top: 432px;
+        
+    }
+    #learnMainMobile {
+        display: block;
+
     }
     .main-para{
         font-size: 36px;
+        padding-right: 11%;
     }
     .phoneno{
         width: 83vw;

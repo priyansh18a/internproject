@@ -70,20 +70,23 @@ const Learn = () => {
     }
 
      window.onscroll = () => {
-            const nav = document.querySelector('#header');
-            const signIn = document.getElementById('signIn');
-            const signUp = document.getElementById('signUp');
             if(window.scrollY <= 150){
-              nav.className = 'header' ;
-              nav.style.top = '-80px'
-              signIn.style.top = '100px'
-              signUp.style.top = '87px'
-
+              document.querySelector('#header').className = 'header' ;
+              document.querySelector('#header').style.top = '-80px';
+              document.getElementById('signIn').style.top = '104px';
+              document.getElementById('signUp').style.top = '96px'
+              document.getElementById('sign-in-mobile').style.marginTop = '79px'
+              document.getElementById('menu_icon').style.top = '90px'
+              document.getElementById('sidebar').style.marginTop = '-82px';
             } else if(window.scrollY >= 150){ 
-                nav.className = 'header mini' ;
-                nav.style.top = '-10px'
-                signIn.style.top = '32px'
-                signUp.style.top = '19px'
+                document.querySelector('#header').className = 'header mini' ;
+                document.querySelector('#header').style.top = '-10px';
+                document.getElementById('signIn').style.top = '32px'
+                document.getElementById('signUp').style.top = '25px'
+                document.getElementById('sign-in-mobile').style.marginTop = '10px'
+                document.getElementById('menu_icon').style.top = '21px'
+                document.getElementById('sidebar').style.marginTop = '46px';
+            
               }; 
      }
 
@@ -94,6 +97,7 @@ const Learn = () => {
     const closeloginsignup = () => {
         document.getElementById('login-container').style.display = "none"; 
         document.getElementById('backdisable').style.display = 'none';
+        setShow('');
     }
     const gotonextbox = () => {
         // document.getElementById('future-depend').scrollBy(0, window.innerHeight);
@@ -133,7 +137,7 @@ const Learn = () => {
             <div  id="sidebar">
                 <img src={cross} alt="" id="cross" onClick={closesidebar}/>
                 <ul>
-                    <li><a href='/learn'>Learn</a></li>
+                    <li ><a href='/learn' style={{color:"#0099FF"}}>Learn</a></li>
                     <li><a href='/teach'>Teach</a></li>
                     <li>News</li>
                     <li>Blog</li>
@@ -149,6 +153,7 @@ const Learn = () => {
             <div className="home-main" >                                                             
                 <div className="l-main-para-cont">
                     <div className="text-para">
+                    <img className="l-main-learn" src={learnMain} alt="" id="learnMainMobile" />
                         <p className="main-para"onClick={closeloginsignup} >Better education? <br/> All you will need is your imagination.</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
@@ -165,11 +170,10 @@ const Learn = () => {
                         <input type="number" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
                         </div>
                         <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Join Now</p></button>
-                    <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
-                    <img className="l-main-learn" src={learnMain} alt="" />
+                    <img className="l-main-learn" src={learnMain} alt="" id="learnMain" />
                 </div>
               
             </div>
@@ -396,9 +400,7 @@ const Learn = () => {
                         <input type="text" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
                         </div>
                         <button className="submit-btn" onClick={() => openlogin('signup')} ><p>Join Now</p></button>
-        
-                    <p className="privacy">*You will be notified of updates on upcoming courses of Feynman on your phone.</p>
-                </div>
+                        </div>
 
             </div>
             <hr className="break"/>
