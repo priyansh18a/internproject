@@ -45,8 +45,8 @@ const Login = props => {
     }).catch((error) => {
         console.log(error);
     
-      document.getElementById("warning").innerHTML = error.message;
-      document.getElementById("warning").style.display = "block";
+      document.getElementById("warning-msg").innerHTML = error.message;
+      document.getElementById("warning").style.display = "flex";
       });
   }
 
@@ -67,8 +67,8 @@ const Login = props => {
      console.log(u);
     }).catch((error) => {
         console.log(error);
-      document.getElementById("warning").innerHTML = error.message;
-      document.getElementById("warning").style.display = "block";
+      document.getElementById("warning-msg").innerHTML = error.message;
+      document.getElementById("warning").style.display = "flex";
       })
   }
 
@@ -113,15 +113,20 @@ const Login = props => {
       document.getElementById("login").style.display  = "block";
     }
 
+  const closewarning = () => {
+    document.getElementById("warning").style.display = "none";
+  }
+
   return (
     <div className="login-signup">
-       <div className="alert alert-danger" id="warning" role="alert" ></div>
+       <div className="alert alert-danger" id="warning" role="alert"
+        ><p id="warning-msg"></p><span id="closewarning" aria-label="img" role="img" onClick={closewarning}>&#x274C;</span></div>
        <img onClick={props.onClick} className="closeloginsignup" src={close} alt=""/>
      <div id="login">
        <p className="main-head">Sign In</p>
      <form>
        <div className="form-group">
-       <label htmlFor="exampleInputEmail">Email address</label>
+       <label htmlFor="exampleInputEmail" >Email address</label>
        <input value={email} onChange={emailhandleChange} type="email" name="email" className="input" id="exampleInputEmail" aria-describedby="emailHelp"  />
       </div>
        <div className="form-group">

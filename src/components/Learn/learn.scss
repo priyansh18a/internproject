@@ -67,19 +67,19 @@ a:hover {
 #backdisable{
     width: 100%;
     z-index: 150;
-    height: 100%;
+    height: 100vh;
     background-color: white;
     color: #aaa;
     opacity: .3;
     filter: alpha(opacity=50);
-    position: absolute;
+    position: fixed;
     display: none;
 }
 
 .header{
     width: 100vw;
     display:flex;
-    height: 160px;
+    height: 140px;
     opacity: 0.95;
     background: linear-gradient(90deg, #262626 0%, #0F0F0F 100%);
     margin-top: 0px;
@@ -89,14 +89,17 @@ a:hover {
     transition: top .4s ease-in-out;  
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    padding-top: 80px;
+    padding-top: 72px;
     top:-80px;
     // will-change: top;
+}
+#learn{
+    color:#0099FF;
 }
 .header.mini{
     background : linear-gradient(90deg, rgb(38, 38, 38) 0%, rgb(54, 88, 102) 100%);
     position: fixed;
-    height: 90px;
+    height: 70px;
     padding-top: 0px;
 }
 
@@ -150,8 +153,9 @@ a:hover {
     letter-spacing: -0.4px;
     position: absolute;
     color: #0099ff;
-    top: 111px;
+    top: 100px;
     right: 292px;
+    cursor: pointer;
 }
 .sign-in-btn:hover,.sign-in-btn:focus{
     color: #1985ce;
@@ -168,7 +172,7 @@ a:hover {
     color: #ffffff;
     border: none;
     position: absolute;
-    top: 100px;
+    top: 87px;
     cursor: pointer;
 }
 .sign-up-btn:focus,.sign-up-btn:hover,#sign-in-mobile:focus, #sign-in-mobile:hover{
@@ -320,6 +324,7 @@ select.country-code:focus{
     min-width: 200px;
     border: none;
     margin-top: 42px;
+    cursor: pointer;
   
 }
 .submit-btn p {
@@ -343,12 +348,12 @@ select.country-code:focus{
 }
 
 .main-image-cont{
-    padding-top: 70px;
     width:50vw;
 }
 .l-main-learn{
     position: relative;
-    width: 33vw;
+    width: 39vw;
+    margin-top: -35px;
 }
 
 .logo{
@@ -367,7 +372,7 @@ select.country-code:focus{
 .homepage-head-text{
     width: 8.33vw;
     padding-left: 5vw;
-    padding-top: 31px;
+    padding-top: 26px;
 }
 #future-depend{
   background-image: url('./../../Graphics/future_back.png');
@@ -378,16 +383,26 @@ select.country-code:focus{
   align-items: center;
   overflow: hidden; 
   width: 100vw;
-
-
+}
+.date-time{
+    display: flex;
+    margin: auto;
+}
+.time-div{
+    background: #212121;
+    border-radius: 8px;
+    width: 113px;
+    height: 137px;
+    margin-left: 10px;
+    padding: 41px 43px;
 }
 
 #future-depend p{
-    font-size: 6vw;
     font-weight: bold;
-    line-height: 0.9;
-    color: #ffffff;
-    margin: auto;
+    font-size: 48px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
 }
 
 .learn-container{
@@ -678,6 +693,12 @@ select.country-code:focus{
 }
 #login-container{
     display: none;
+    height: 100vh;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
   
 }
 @media (min-width: 1000px){

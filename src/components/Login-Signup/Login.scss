@@ -10,8 +10,8 @@
     font-family:'Gilroy';
 }
 .login-signup{
-    width: 34vw;
-    padding: 48px;
+    width: 31vw;
+    padding: 48px 48px 30px;
     border: 1px solid;
     position: fixed;
     z-index:200;
@@ -22,26 +22,61 @@
     max-width: 640px;
     -webkit-transition: height .5s;
     transition: height .5s;
-    top: 100px;
 }
+
 .main-head{
-    font-size: 2.8vw;
+    font-size: 2.5vw;
     line-height: 120%;
     letter-spacing: 0.02em;
     color: #FFFFFF;
     font-weight: bold;
+    
 }
 #warning {
     display: none;
 }
+#warning-msg{
+    margin-bottom: 0px;
+}
+span#closewarning {
+    margin-left: 10vw;
+    cursor: pointer;
+
+}
+@media (max-width: 1835px){
+    span#closewarning {
+        margin-left: 9vw;
+    }
+}
+@media (max-width: 1745px){
+    span#closewarning {
+        margin-left: 8vw;
+    }
+}
+@media (max-width: 1670px){
+    span#closewarning {
+        margin-left: 6.5vw;
+    }
+}
+@media (max-width: 1567px){
+    span#closewarning {
+        margin-left: 5.5vw;
+    }
+}
+@media (max-width: 1500px){
+    span#closewarning {
+        margin-left: 15%;
+    }
+}
 .form-group{
     display: grid;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .form-group label{
     font-size: 16px;
     line-height: 100%;
     color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0px;
 }
 .input{
     border: none;
@@ -94,18 +129,20 @@
     font-weight: bold;
     cursor: pointer;
 }
+.submit-button:focus{
+    outline: none;
+    background-color:#0077ff;
+}
 .google-login{
     text-align: center;
 }
 .google-login-btn{
-    height: 71px;
-    border-radius: 8px;
-    border: 3px solid #0099FF;
-    background-color:#212121 ;
+    border: none;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), #212121;
     width: 100%;
     min-width: 200px;
     margin-top: 42px;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     letter-spacing: -0.48px;
     color: #0099ff;
@@ -113,25 +150,28 @@
     font-weight: bold; 
     cursor: pointer;
 }
+.google-login-btn:focus{
+    outline: none;
+}
 #google_logo{
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	margin-right: 10px;
-	
+    margin-top: -5px;
 }
 .info {
     font-family: 'Gilroy';
     font-size: 16px;
     line-height: 100%;
     color: rgba(255, 255, 255, 0.6);
-    margin-top: 51px;
+    margin-top: 20px;
     margin-bottom: 0px;
     cursor: pointer;
 }
 .or{
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -168,6 +208,8 @@ select.country-code-signup {
 select.country-code-signup:focus{
     outline: none;
 }
+
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -220,3 +262,4 @@ input[type=number] {
         font-size: 16px;
     }
 }
+

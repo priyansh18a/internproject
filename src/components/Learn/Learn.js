@@ -1,11 +1,12 @@
 //React
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 
 
 //imported the graphics
 import logo from './../../Graphics/logo.png';
 import cross from './../../Graphics/cross.png';
 import dropdown from './../../Graphics/dropdown.png'
+import learnMain from './../../Graphics/learnMain.svg'
 import gotonext from './../../Graphics/gotonext.png'
 import game from './../../Graphics/game.png'
 import vr_ar from './../../Graphics/vr_ar.png'
@@ -25,22 +26,47 @@ import youtube from './../../Graphics/youtube.svg';
 
 
 
+
 //imported the scss file
 import './learn.scss';
 // module
 import Login from '../Login-Signup/Login';
 
+const calculateTimeLeft = () => {
+    const difference = +new Date("2020-7-15") - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+
+    return timeLeft;
+  };
+
 const Learn = () => {
     const [show , setShow] = useState('');
     const [phoneNum ,setPhoneNum] = useState('');
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+    useEffect(() => {
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+     }, 1000);
+    });
 
     const openlogin = whattoshow => {
-        document.getElementById('login-container').style.display = "block";
+        document.getElementById('login-container').style.display = "flex";
         setShow(whattoshow);
         document.getElementById('sidebar').style.display = "none";
         document.getElementById('menu_icon').style.display = "block";
         document.getElementById('cross').style.display = "none";
-        // document.getElementById('backdisable').style.display = 'block';
+        document.getElementById('backdisable').style.display = 'block';
+
     }
 
      window.onscroll = () => {
@@ -50,14 +76,14 @@ const Learn = () => {
             if(window.scrollY <= 150){
               nav.className = 'header' ;
               nav.style.top = '-80px'
-              signIn.style.top = '111px'
-              signUp.style.top = '100px'
+              signIn.style.top = '100px'
+              signUp.style.top = '87px'
 
             } else if(window.scrollY >= 150){ 
                 nav.className = 'header mini' ;
-                nav.style.top = '0px'
-                signIn.style.top = '31px'
-                signUp.style.top = '20px'
+                nav.style.top = '-10px'
+                signIn.style.top = '32px'
+                signUp.style.top = '19px'
               }; 
      }
 
@@ -67,6 +93,7 @@ const Learn = () => {
 
     const closeloginsignup = () => {
         document.getElementById('login-container').style.display = "none"; 
+        document.getElementById('backdisable').style.display = 'none';
     }
     const gotonextbox = () => {
         // document.getElementById('future-depend').scrollBy(0, window.innerHeight);
@@ -87,16 +114,16 @@ const Learn = () => {
     return (
        
         <div id="learn">
-        {/* <div id="backdisable"></div> */}
+        <div id="backdisable"></div>
         <div className="container1">
             <div id="header" className="header">
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
                <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/learn'>Learn</a>
+                    <a className="link-txt" href='/learn' id="learn">Learn</a>
                 </div>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/teach'>Teach</a>
+                    <a className="link-txt" href='/teach' >Teach</a>
                 </div>
                 <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn">Sign In</p>
                 <button onClick={() => openlogin('signup')} className="sign-up-btn" id="signUp">Sign Up</button>
@@ -142,14 +169,21 @@ const Learn = () => {
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
-                    {/* <img className="l-main-learn" src={} alt="" /> */}
+                    <img className="l-main-learn" src={learnMain} alt="" />
                 </div>
               
             </div>
               <div className="goto-div"><img className="gotonextbox" src={gotonext} alt="" onClick={gotonextbox}/></div>
         </div>
         <div id="future-depend">
-          <p>The future depend on <br/> what we do in present</p>
+            <div className="date-time">
+            <div className="time-div"><p>{ Math.floor(timeLeft.days/10)}</p></div>
+            <div className="time-div mr-4" ><p>{ timeLeft.days%10}</p></div>
+            <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
+            <div className="time-div mr-4"><p>{ timeLeft.minutes%10}</p></div>
+           <div className="time-div"><p>{ Math.floor(timeLeft.seconds/10)}</p></div>
+            <div className="time-div"><p>{ timeLeft.seconds%10}</p></div>
+            </div>
         </div>
         
         <div className="learn-container">
