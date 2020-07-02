@@ -87,7 +87,7 @@ const Teach = () => {
             document.querySelector('#header').style.top = '-10px';
             document.getElementById('signIn').style.top = '32px'
             document.getElementById('signUp').style.top = '25px'
-            document.getElementById('sign-in-mobile').style.marginTop = '10px'
+            document.getElementById('sign-in-mobile').style.marginTop = '13px'
             document.getElementById('menu_icon').style.top = '21px'
             document.getElementById('sidebar').style.marginTop = '46px';
         
@@ -183,15 +183,22 @@ const Teach = () => {
               <div className="goto-div"><img className="gotonextbox" src={gotonext} alt="" onClick={gotonextbox}/></div>
         </div>
         <div id="future-depend">
-        <div className="date-time">
+            <p className="app-release">App release in</p>
+            <div className="date-time">
             <div className="time-div"><p>{ Math.floor(timeLeft.days/10)}</p></div>
-            <div className="time-div mr-4" ><p>{ timeLeft.days%10}</p></div>
+            <div className="time-div mr-4 " ><p className="different">{ timeLeft.days%10}</p></div>
             <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
-            <div className="time-div mr-4"><p>{ timeLeft.minutes%10}</p></div>
+            <div className="time-div mr-4"><p className="visualisation">{ timeLeft.minutes%10}</p></div>
            <div className="time-div"><p>{ Math.floor(timeLeft.seconds/10)}</p></div>
-            <div className="time-div"><p>{ timeLeft.seconds%10}</p></div>
+            <div className="time-div"><p className="practical">{ timeLeft.seconds%10}</p></div>
+            </div>
+            <div id="notation">
+                <p id="days">Days</p>
+                <p>Hours</p>
+                <p>Minutes</p>
             </div>
         </div>
+        
         
         <div className="learn-container">
             <div className="learn-left">

@@ -391,14 +391,19 @@ select.country-code:focus{
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 645px;
-  display: flex;
-  align-items: center;
+  text-align: center;
   overflow: hidden; 
   width: 100vw;
 }
-.date-time{
+.app-release {
+    margin-top: 180px;
+    margin-bottom: 25px;
+}
+.date-time,#notation{
     display: flex;
     margin: auto;
+    text-align: center;
+    width: 785px;
 }
 .time-div{
     background: #212121;
@@ -406,7 +411,11 @@ select.country-code:focus{
     width: 113px;
     height: 137px;
     margin-left: 10px;
-    padding: 41px 43px;
+    padding: 41px 42px;
+    text-align: center;
+}
+.right-time{
+    margin-right: 25px;
 }
 
 #future-depend p{
@@ -415,6 +424,19 @@ select.country-code:focus{
     line-height: 130%;
     letter-spacing: 0.02em;
     color: #FFFFFF;
+} 
+#notation{
+    padding-left: 4px;
+} 
+#notation p {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin: 20px 108px;
+}
+#days{
+    margin-left:100px;
+    margin-right:116px;
 }
 
 .learn-container{
@@ -544,7 +566,7 @@ select.country-code:focus{
   
 }
 .different{
-    color: #ffcc34;
+    color: #ffcc34 !important; 
 }
 
 .middle-pg1-simple{
@@ -601,7 +623,7 @@ select.country-code:focus{
 }
 
 .visualisation{
-    color: #38e2a6;
+    color: #38e2a6 !important;
 }
 .middle-pg-2-rgt > img{
     position: relative;
@@ -616,7 +638,7 @@ select.country-code:focus{
 
 //Middle Page-3//////////////////////////////
 .practical{
-    color: #08c426;
+    color: #08c426 !important;
 }
 //Middle Page-5//////////////////////////////
 .scholarship{
@@ -756,9 +778,9 @@ select.country-code:focus{
     .logo{
         height: 24.5px;
         width: 16px;
-        margin: 16px 5px 0px 45vw;
+        margin: 18px 5px 0px 45vw;
     }
-	.sign-in-btn,.homepage-head-text, .main-image-cont, .goto-div,#future-depend{
+	.sign-in-btn,.homepage-head-text, .main-image-cont, .goto-div{
         display: none;
     }
     .sign-up-btn{
@@ -815,8 +837,33 @@ select.country-code:focus{
         font-size: 16px;
         font-weight: bold;
     }
-    .privacy {
-        font-size: 12px;
+    #future-depend{
+        height: 250px;
+    }
+
+    .time-div{
+        width: 50px;
+        height: 60px;
+        margin-left: 5px;
+        padding: 18px 0px;
+     }
+    .right-time{
+        margin-right: 8px;
+    }
+    .app-release {
+        margin-top: 55px;
+        margin-bottom: 15px;
+    }
+    .date-time,#notation{
+        width: 345px;
+    }
+
+    #future-depend p {
+        font-size: 24px;
+    }
+    #notation p {
+        font-size: 14px;
+        margin: 10px 38px;
     }
     .learn-container{
         display: grid;
@@ -824,8 +871,8 @@ select.country-code:focus{
         padding-left: 7px;
         padding-bottom: 0px;
         width: 100vw;
-        height: 1000px;
-        padding-top: 250px;
+        height: 780px;
+        padding-top: 20px;
         margin-top: -1px;
     }
     .learn-left{
@@ -915,7 +962,8 @@ select.country-code:focus{
 
     .break{
         display: block;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border:none;
     }
     .footer{
         height: 240px;
