@@ -136,6 +136,7 @@ a:hover {
     color: #FFFFFF;
     font-weight: bold;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 #sidebar ul li a {
     font-size: 12px;
@@ -143,6 +144,7 @@ a:hover {
     color: #FFFFFF;
     font-weight: bold;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 
@@ -450,9 +452,10 @@ select.country-code:focus{
 }
 .learn-left{
     vertical-align: middle;
+  
 }
 .left-main-text{
-    font-size: 5.5vw;
+    font-size: 4.5vw;
     font-weight: bold;
     line-height: 100%;
     color: #FFFFFF;
@@ -600,7 +603,7 @@ select.country-code:focus{
 .middle-pg-2-lft{
     margin: auto;
     position: relative;
-    width: 40vw;
+    width: 42vw;
     height: auto;
     display: block;
 }
@@ -610,8 +613,8 @@ select.country-code:focus{
     width: 60vw;
     height: auto;
     padding-top: 100px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 7%;
+    padding-right: 3%;
 }
 
 .middle-pg-2-lft > img{
@@ -883,7 +886,9 @@ select.country-code:focus{
     }
     .left-sub-heading{
         margin-top: 15px;
-        font-size: 12px;
+        font-size: 12px;    
+        margin-right: 0px;
+
     }
     .learn-right{
         height: 608px;
@@ -950,7 +955,9 @@ select.country-code:focus{
         padding-top: 0px;
     }
     .footer-page{
-        margin-top: -1px;
+        margin-top: -1px; 
+        margin-bottom: -1px;
+
     }
     .main-content{
         background: none;

@@ -254,12 +254,32 @@ input[type=number] {
         font-size: 18px;
 
     }
+    .form-group{
+        margin-bottom: 1rem;
+    }
     .google-login-btn{
         width: auto;
         height: 50px;
         padding-left: 10px;
         padding-right: 10px;
         font-size: 16px;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .input{
+        font-size: 20px;
+        margin-top: -2px;
+    }
+    select.country-code-signup {
+        height: 46px;
+        padding-top: 10px;
+        width: 33px;
+        font-size: 20px;
+    }
+    #phonenum {
+        margin-left: -32px;
+        padding-left: 35px;
     }
 }
 

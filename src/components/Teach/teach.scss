@@ -10,10 +10,20 @@
     width: 100vw;
     display: none;
 }
+.middle-pg-1-rgt.teach-multiple {
+    margin-top: -45px;
+}
+.teach-right {
+    width: 97vw;
+}
 @media (max-width: 450px){
     #teachMainMobile {
         display: block;
         margin-left: -25px;
 
     }
+    .teach-right {
+        width: 100vw;
+    }
+
 }

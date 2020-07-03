@@ -157,7 +157,7 @@ const Teach = () => {
                 <div className="l-main-para-cont">
                     <div className="text-para">
                     <img className="l-main-learn" src={teachMain} alt="" id="teachMainMobile"/>
-                        <p className="main-para"onClick={closeloginsignup} >Better education? <br/> All you will need is your imagination.</p>
+                        <p className="main-para"onClick={closeloginsignup} >Be a<br/> teacher of<br/> the future.</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
                             <option value="+91" defaultValue>+91</option>
@@ -202,39 +202,39 @@ const Teach = () => {
         
         <div className="learn-container">
             <div className="learn-left">
-            <p className="left-main-text">Learn as you <br/> <span className="build">build</span></p>
-            <p className="left-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tellus vel id sapien bibendum turpis.</p>
+            <p className="left-main-text">Build the next <br/> <span className="build">generation of course.</span></p>
+            <p className="left-sub-heading">Express yourself in ways you had never imagined.</p>
             </div>
-            <div className="learn-right">
+            <div className="learn-right teach-right">
               <div className="type-card">
                   <img src={game} alt=""/>
                   <p className="card-head">Games</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+                  <p className="card-subhead">Create missions to challenge your learners and make learning fun</p>
              </div>
              <div className="type-card">
                   <img src={vr_ar} alt=""/>
                   <p className="card-head">AR/VR</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
-             </div> 
+                  <p className="card-subhead">Help your students visualise concept better by making augmented immersive courses</p>
+             </div>
              <div className="type-card">
                   <img src={code} alt=""/>
                   <p className="card-head">Code</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+                  <p className="card-subhead">Create and add coding challenges in your course for practical learning</p>
              </div> 
              <div className="type-card">
                   <img src={video} alt=""/>
                   <p className="card-head">Video</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+                  <p className="card-subhead">Make videos interactive and customised to engage your students better</p>
              </div> 
              <div className="type-card">
                   <img src={comics} alt=""/>
                   <p className="card-head">Comics</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+                  <p className="card-subhead">Inbuilt templates to convert your courses into interactive comics</p>
              </div> 
              <div className="type-card">
                   <img src={text} alt=""/>
                   <p className="card-head">Text</p>
-                  <p className="card-subhead">Play games to understand what it takes to grasp a subject Multiple levels and adaptive difficulty</p>
+                  <p className="card-subhead">Make concise notes for your sttudents to revise from with our inbuilt templates.</p>
              </div> 
                
             </div>
@@ -243,18 +243,17 @@ const Teach = () => {
         <div className="middle-pg-1 not-for-mobile">
              
             <div className="middle-pg-1-lft">
-                <p className="middle-pg1-head"><span className="different">Multiple learning path</span><br/>for customised education</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                <p className="middle-pg1-head"><span className="different">Multiple learning paths</span><br/>for customised education</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at his/her own pace.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We are the world's first courses making platform to offer custom learning paths for students. </p>
                 </div>
             </div>
-            <div className="middle-pg-1-rgt">
+            <div className="middle-pg-1-rgt teach-multiple">
                 <img src={multiple} alt="" />
             </div>
         </div>
@@ -266,15 +265,14 @@ const Teach = () => {
             </div>
             <div className="middle-pg-2-rgt">
     
-                <p className="middle-pg1-head"><span className="different">Multiple learning path</span><br/>for customised education</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                <p className="middle-pg1-head"><span className="different">Multiple learning paths</span><br/>for customised education</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at his/her own pace.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We are the world's first courses making platform to offer custom learning paths for students. </p>
                 </div>
             </div>
         </div>
@@ -286,14 +284,13 @@ const Teach = () => {
             <div className="middle-pg-2-rgt">
     
                 <p className="middle-pg1-head">Built-in next generation <span className="visualisation"> visualisation tools</span></p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Our platform will help you make courses more fun and immersive.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Imagine if your students could pick your content apart with their own hands and interact with it.</p>
                 </div>
             </div>
         </div>
@@ -301,14 +298,13 @@ const Teach = () => {
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
                 <p className="middle-pg1-head"><span className="practical">Individual Profile</span> for<br/>  every instructor</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Build  a following by mentoring your students one on one and helping them understand your journey so far.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We offer you an opportunity to be a life coach to all of our students.</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -323,14 +319,13 @@ const Teach = () => {
             <div className="middle-pg-2-rgt">
     
                 <p className="middle-pg1-head"><span className="practical">Individual Profile</span> for<br/>  every instructor</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Build  a following by mentoring your students one on one and helping them understand your journey so far.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We offer you an opportunity to be a life coach to all of our students.</p>
                 </div>
             </div>
         </div>
@@ -342,14 +337,13 @@ const Teach = () => {
             <div className="middle-pg-2-rgt">
     
                 <p className="middle-pg1-head"><span className="different">Course Analytics<br/></span>to stay a step ahead</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Get automated feedback metrics which help you understand how your students are faring in your courses.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We will use our intelligent systems to provide you with suggestions on how you can improve your course.</p>
                 </div>
             </div>
         </div>
@@ -357,14 +351,13 @@ const Teach = () => {
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
                 <p className="middle-pg1-head">Feynman <span className="scholarship"> network</span> for better engagement</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We will ensure that your course reaches thousand of students who are trying to learn the topics which you will be teaching.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Focus on the course, leave the marketing to us.</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -379,14 +372,13 @@ const Teach = () => {
             <div className="middle-pg-2-rgt">
     
                 <p className="middle-pg1-head">Feynman <span className="scholarship"> network</span> for better engagement</p>
-                <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">We will ensure that your course reaches thousand of students who are trying to learn the topics which you will be teaching.</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Use a variety of mediums to teach the most difficult of concepts with ease.</p>
+                    <p className="middle-pg1-simple">Focus on the course, leave the marketing to us.</p>
                 </div>
             </div>
         </div>
