@@ -178,7 +178,8 @@ const Learn = () => {
               
             </div>
               <div className="goto-div"><img className="gotonextbox" src={gotonext} alt="" onClick={gotonextbox}/>
-              <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_sBpd53.json"  background="transparent"  speed="1"  style={{width: 'Auto', height: '30px'}}  loop controls autoplay></lottie-player></div>
+              {/* <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_sBpd53.json"  background="transparent"  speed="1"  style={{width: 'Auto', height: '30px'}}  loop controls autoplay></lottie-player> */}
+              </div>
               </div>
         <div id="future-depend">
             <p className="app-release">App release in</p>

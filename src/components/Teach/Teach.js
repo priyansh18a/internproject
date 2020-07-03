@@ -154,10 +154,10 @@ const Teach = () => {
             </div>
 
             <div className="home-main" >                                                             
-                <div className="l-main-para-cont">
+                <div className="l-main-para-cont" id="teach-main-left">
                     <div className="text-para">
                     <img className="l-main-learn" src={teachMain} alt="" id="teachMainMobile"/>
-                        <p className="main-para"onClick={closeloginsignup} >Be a<br/> teacher of<br/> the future.</p>
+                        <p className="main-para" onClick={closeloginsignup} >Be a<br/> teacher of<br/> the future.</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
                             <option value="+91" defaultValue>+91</option>

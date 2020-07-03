@@ -6,6 +6,9 @@
 #teachMain{
     margin-top: -60px;
 }
+#teach-main-left{
+    align-items: center;
+}
 #teachMainMobile {
     width: 100vw;
     display: none;
@@ -15,6 +18,11 @@
 }
 .teach-right {
     width: 97vw;
+}
+@media(max-width:1600px){
+    #teach-main-left{
+        align-items: baseline; 
+    }
 }
 @media (max-width: 450px){
     #teachMainMobile {

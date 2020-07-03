@@ -43,31 +43,7 @@ span#closewarning {
     cursor: pointer;
 
 }
-@media (max-width: 1835px){
-    span#closewarning {
-        margin-left: 9vw;
-    }
-}
-@media (max-width: 1745px){
-    span#closewarning {
-        margin-left: 8vw;
-    }
-}
-@media (max-width: 1670px){
-    span#closewarning {
-        margin-left: 6.5vw;
-    }
-}
-@media (max-width: 1567px){
-    span#closewarning {
-        margin-left: 5.5vw;
-    }
-}
-@media (max-width: 1500px){
-    span#closewarning {
-        margin-left: 15%;
-    }
-}
+
 .form-group{
     display: grid;
     margin-bottom: 2rem;
@@ -222,6 +198,31 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+@media (max-width: 1835px){
+    span#closewarning {
+        margin-left: 9vw;
+    }
+}
+@media (max-width: 1745px){
+    span#closewarning {
+        margin-left: 8vw;
+    }
+}
+@media (max-width: 1670px){
+    span#closewarning {
+        margin-left: 6.5vw;
+    }
+}
+@media (max-width: 1567px){
+    span#closewarning {
+        margin-left: 5.5vw;
+    }
+}
+@media (max-width: 1500px){
+    span#closewarning {
+        margin-left: 15%;
+    }
+}
 @media (max-width: 900px){
     .login-signup{
          left:25%;
@@ -252,7 +253,10 @@ input[type=number] {
         height: 50px;
         margin-left: 17vw; 
         font-size: 18px;
-
+        margin-top: 10px;
+    }
+    .or{
+        margin-bottom: -7px;
     }
     .form-group{
         margin-bottom: 1rem;
@@ -280,6 +284,9 @@ input[type=number] {
     #phonenum {
         margin-left: -32px;
         padding-left: 35px;
+    }
+    .info{
+        margin-top: 0px;
     }
 }
 

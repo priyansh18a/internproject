@@ -221,11 +221,12 @@ a:hover {
 }
 
 .l-main-para-cont{
-    display: grid;
+    display: flex;
     width: 50vw;
     padding-left: 6.25%;
     padding-right: 11%;
     padding-top: 0px;
+
 }
 
 .main_para_cont>form{
@@ -748,6 +749,18 @@ select.country-code:focus{
        height:550px;
    }
 }
+@media(max-width:1050px){
+    .submit-btn{
+        height: 50px;
+        width: 18vw;
+    }
+}
+@media (max-width: 950px){
+    .home-main{
+       height:400px;
+   }
+ 
+}
 
 @media (max-width: 640px){
     .link-txt{
@@ -835,6 +848,7 @@ select.country-code:focus{
     .submit-btn{
         height: 44px;
         width:84vw ;
+        margin-top: 20px;
     }
     .submit-btn p {
         font-size: 16px;
@@ -842,6 +856,8 @@ select.country-code:focus{
     }
     #future-depend{
         height: 250px;
+        margin-top: -1px;
+
     }
 
     .time-div{
