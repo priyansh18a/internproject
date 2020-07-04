@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f0507fc0.chunk.css",
+    "main.js": "/static/js/main.5eca6b2d.chunk.js",
+    "main.js.map": "/static/js/main.5eca6b2d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.54fc45b5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.54fc45b5.js.map",
+    "static/js/2.fe02889d.chunk.js": "/static/js/2.fe02889d.chunk.js",
+    "static/js/2.fe02889d.chunk.js.map": "/static/js/2.fe02889d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ecaf414a13f84fdbc1cd75ad4f4e74c8.js": "/precache-manifest.ecaf414a13f84fdbc1cd75ad4f4e74c8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f0507fc0.chunk.css.map": "/static/css/main.f0507fc0.chunk.css.map",
+    "static/js/2.fe02889d.chunk.js.LICENSE.txt": "/static/js/2.fe02889d.chunk.js.LICENSE.txt",
+    "static/media/Gilroy-Bold.ttf": "/static/media/Gilroy-Bold.889a4b5c.ttf",
+    "static/media/Gilroy-Regular.ttf": "/static/media/Gilroy-Regular.22d25e11.ttf",
+    "static/media/Google.png": "/static/media/Google.4a19c891.png",
+    "static/media/add.png": "/static/media/add.93f97784.png",
+    "static/media/analytics.png": "/static/media/analytics.05724c83.png",
+    "static/media/ComingSoon.scss": "/static/media/coming.89b768c8.png",
+    "static/media/facebook.svg": "/static/media/facebook.f4fbe36e.svg",
+    "static/media/learn.scss": "/static/media/future_back.b546ee69.png",
+    "static/media/learnMain.svg": "/static/media/learnMain.9436096f.svg",
+    "static/media/multiple.png": "/static/media/multiple.c9a693a0.png",
+    "static/media/network.png": "/static/media/network.6766716f.png",
+    "static/media/path.png": "/static/media/path.67164d66.png",
+    "static/media/profile.png": "/static/media/profile.606ac9ee.png",
+    "static/media/project.png": "/static/media/project.f57f913c.png",
+    "static/media/scholarship.png": "/static/media/scholarship.ee1614cf.png",
+    "static/media/teachMain.svg": "/static/media/teachMain.7abbfadd.svg",
+    "static/media/teacher.png": "/static/media/teacher.1c3ae2ab.png",
+    "static/media/tools.png": "/static/media/tools.6eadeceb.png",
+    "static/media/visualisation.png": "/static/media/visualisation.c1f66c5f.png",
+    "static/media/youtube.svg": "/static/media/youtube.0affb902.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54fc45b5.js",
+    "static/js/2.fe02889d.chunk.js",
+    "static/css/main.f0507fc0.chunk.css",
+    "static/js/main.5eca6b2d.chunk.js"
+  ]
+}
