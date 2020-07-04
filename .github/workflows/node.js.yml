@@ -32,9 +32,11 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: build
+          name: build:  
+      - name: Set Project
+        run:  --project the-feynman-school
       - name: Deploy to Firebase
-        uses: W9jds/firebase-action@master --project the-feynman-school
+        uses: W9jds/firebase-action@master 
         with:
           args: deploy --only hosting
         env:
