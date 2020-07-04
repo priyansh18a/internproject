@@ -34,7 +34,7 @@ jobs:
         with:
           name: build
       - name: Set Project
-        run:  the-feynman-school
+        run: firebase use the-feynman-school
       - name: Deploy to Firebase
         uses: W9jds/firebase-action@master 
         with:
