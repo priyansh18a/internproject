@@ -10,6 +10,7 @@ import './App.scss';
 import Additem from './components/Additems/Additems';
 import Learn from './components/Learn/Learn'
 import Teach from './components/Teach/Teach'
+import ComingSoon from './components/ComingSoon/ComingSoon';
 
 
 
@@ -43,7 +44,10 @@ const App = () => {
         <Route path="/teach/user/:screenId" exact>
           <Additem/>
         </Route>
-        <Redirect to="/teach/user/0" />
+        <Route path="/comingsoon" exact>
+          <ComingSoon/>
+        </Route>
+        <Redirect to="/" />
     </Switch>
     );
   } else {

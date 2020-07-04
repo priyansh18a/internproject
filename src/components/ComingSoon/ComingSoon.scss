@@ -1,0 +1,31 @@
+.coming-container{
+    background-color: #212121;
+}
+.coming-soon{
+    background-image: url('./../../Graphics/coming.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 542px;
+    padding-top: 149px;
+    padding-left: 46vw;
+    padding-right: 8vw;
+}
+.coming-soon p {
+    color: white;
+    font-weight: bold;
+    font-size: 3vw;
+}
+@media (max-width: 450px){
+    .coming-soon{
+        background: none;
+        padding-left: 1vw;
+        height: 200px;
+        padding-top: 30px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .coming-soon p {
+        font-size: 20px;
+    }
+}

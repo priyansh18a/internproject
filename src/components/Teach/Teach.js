@@ -1,6 +1,6 @@
 //React
 import React, { useState,useEffect} from 'react';
-// import calculateTimeLeft from './../Learn/Learn'
+import {calculateTimeLeft} from './../Learn/Learn'
 
 
 
@@ -34,21 +34,6 @@ import './teach.scss';
 // module
 import Login from '../Login-Signup/Login';
 
-const calculateTimeLeft = () => {
-    const difference = +new Date("2020-7-15") - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
-      };
-    }
-
-    return timeLeft;
-  };
 
 const Teach = () => {
     const [show , setShow] = useState('');

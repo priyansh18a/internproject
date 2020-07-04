@@ -32,7 +32,7 @@ import './learn.scss';
 // module
 import Login from '../Login-Signup/Login';
 
-const calculateTimeLeft = () => {
+export const calculateTimeLeft = () => {
     const difference = +new Date("2020-7-15") - +new Date();
     let timeLeft = {};
 
