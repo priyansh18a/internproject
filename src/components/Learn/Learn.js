@@ -45,7 +45,7 @@ export const calculateTimeLeft = () => {
       };
     }
 
-    return timeLeft;
+    return timeLeft; 
   };
 
 const Learn = () => {
