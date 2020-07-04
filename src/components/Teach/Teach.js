@@ -157,7 +157,7 @@ const Teach = () => {
                 <div className="l-main-para-cont" id="teach-main-left">
                     <div className="text-para">
                     <img className="l-main-learn" src={teachMain} alt="" id="teachMainMobile"/>
-                        <p className="main-para" onClick={closeloginsignup} >Be a<br/> teacher of<br/> the future.</p>
+                        <p className="main-para" onClick={closeloginsignup} >Join the<br/> teachers of<br/> the future</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
                             <option value="+91" defaultValue>+91</option>
@@ -172,7 +172,7 @@ const Teach = () => {
                         
                         <input type="number" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
                         </div>
-                        <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Join Now</p></button>
+                        <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Get free demo</p></button>
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
@@ -202,7 +202,7 @@ const Teach = () => {
         
         <div className="learn-container">
             <div className="learn-left">
-            <p className="left-main-text">Build the next <br/> <span className="build">generation of course.</span></p>
+            <p className="left-main-text">Build the next <br/> <span className="build">generation of courses</span></p>
             <p className="left-sub-heading">Express yourself in ways you had never imagined.</p>
             </div>
             <div className="learn-right teach-right">
@@ -214,12 +214,12 @@ const Teach = () => {
              <div className="type-card">
                   <img src={vr_ar} alt=""/>
                   <p className="card-head">AR/VR</p>
-                  <p className="card-subhead">Help your students visualise concept better by making augmented immersive courses</p>
+                  <p className="card-subhead">Help your students visualise concepts faster by making immersive courses</p>
              </div>
              <div className="type-card">
                   <img src={code} alt=""/>
                   <p className="card-head">Code</p>
-                  <p className="card-subhead">Create and add coding challenges in your course for practical learning</p>
+                  <p className="card-subhead">Create and add coding challenges in your courses for practical learning</p>
              </div> 
              <div className="type-card">
                   <img src={video} alt=""/>
@@ -234,7 +234,7 @@ const Teach = () => {
              <div className="type-card">
                   <img src={text} alt=""/>
                   <p className="card-head">Text</p>
-                  <p className="card-subhead">Make concise notes for your sttudents to revise from with our inbuilt templates.</p>
+                  <p className="card-subhead">Make concise notes for your students to revise from so that they never forget</p>
              </div> 
                
             </div>
@@ -246,11 +246,11 @@ const Teach = () => {
                 <p className="middle-pg1-head"><span className="different">Multiple learning paths</span><br/>for customised education</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at his/her own pace.</p>
+                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at their own pace</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We are the world's first courses making platform to offer custom learning paths for students. </p>
+                    <p className="middle-pg1-simple">This is the world's first course making platform to offer custom learning paths for every student</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt teach-multiple">
@@ -268,11 +268,11 @@ const Teach = () => {
                 <p className="middle-pg1-head"><span className="different">Multiple learning paths</span><br/>for customised education</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at his/her own pace.</p>
+                    <p className="middle-pg1-simple">Create adaptive courses so that every student of yours learns at their own pace</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We are the world's first courses making platform to offer custom learning paths for students. </p>
+                    <p className="middle-pg1-simple">This is the world's first course making platform to offer custom learning paths for every student</p>
                 </div>
             </div>
         </div>
@@ -286,25 +286,25 @@ const Teach = () => {
                 <p className="middle-pg1-head">Built-in next generation <span className="visualisation"> visualisation tools</span></p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Our platform will help you make courses more fun and immersive.</p>
+                    <p className="middle-pg1-simple">Your students will be able to pick your content apart with their own hands and interact with it</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Imagine if your students could pick your content apart with their own hands and interact with it.</p>
+                    <p className="middle-pg1-simple">Our platform will help you make courses more immersive than you can ever imagine</p>
                 </div>
             </div>
         </div>
  
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
-                <p className="middle-pg1-head"><span className="practical">Individual Profile</span> for<br/>  every instructor</p>
+                <p className="middle-pg1-head"><span className="practical">Public profile</span> for<br/>  every instructor</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Build  a following by mentoring your students one on one and helping them understand your journey so far.</p>
+                    <p className="middle-pg1-simple">Build a following by mentoring your students one on one and helping them tackle the journey ahead</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We offer you an opportunity to be a life coach to all of our students.</p>
+                    <p className="middle-pg1-simple">Our tutors become life coaches to the next generation of prodigies</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -318,14 +318,14 @@ const Teach = () => {
             </div>
             <div className="middle-pg-2-rgt">
     
-                <p className="middle-pg1-head"><span className="practical">Individual Profile</span> for<br/>  every instructor</p>
+                <p className="middle-pg1-head"><span className="practical">Public profile</span> for<br/>  every instructor</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Build  a following by mentoring your students one on one and helping them understand your journey so far.</p>
+                    <p className="middle-pg1-simple">Build a following by mentoring your students one on one and helping them tackle the journey ahead</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We offer you an opportunity to be a life coach to all of our students.</p>
+                    <p className="middle-pg1-simple">Our tutors become life coaches to the next generation of prodigies</p>
                 </div>
             </div>
         </div>
@@ -336,28 +336,28 @@ const Teach = () => {
             </div>
             <div className="middle-pg-2-rgt">
     
-                <p className="middle-pg1-head"><span className="different">Course Analytics<br/></span>to stay a step ahead</p>
+                <p className="middle-pg1-head"><span className="different">Course analytics<br/></span>to stay a step ahead</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Get automated feedback metrics which help you understand how your students are faring in your courses.</p>
+                    <p className="middle-pg1-simple">Get automated feedback metrics which help you understand how your students are faring in courses</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We will use our intelligent systems to provide you with suggestions on how you can improve your course.</p>
+                    <p className="middle-pg1-simple">We use intelligent systems to provide you with suggestions on how you can improve your course</p>
                 </div>
             </div>
         </div>
 
         <div className="middle-pg-1 not-for-mobile">
             <div className="middle-pg-1-lft">
-                <p className="middle-pg1-head">Feynman <span className="scholarship"> network</span> for better engagement</p>
+                <p className="middle-pg1-head"><span className="scholarship">Feynman network</span> for better outreach</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We will ensure that your course reaches thousand of students who are trying to learn the topics which you will be teaching.</p>
+                    <p className="middle-pg1-simple">Focus on the course, leave the marketing to our expert marketing team</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Focus on the course, leave the marketing to us.</p>
+                    <p className="middle-pg1-simple">We ensure that your course reaches thousand of students who are trying to learn the topics that you are teaching</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -371,7 +371,7 @@ const Teach = () => {
             </div>
             <div className="middle-pg-2-rgt">
     
-                <p className="middle-pg1-head">Feynman <span className="scholarship"> network</span> for better engagement</p>
+                <p className="middle-pg1-head"><span className="scholarship">Feynman network</span> for better outreach</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
                     <p className="middle-pg1-simple">We will ensure that your course reaches thousand of students who are trying to learn the topics which you will be teaching.</p>
@@ -410,7 +410,7 @@ const Teach = () => {
         
         <div className="footer">
             <div className="Feynman">
-                <p className="head-text">FEYNMAN</p>
+                <p className="head-text">THE FEYNMAN SCHOOL</p>
                 <p className="Simple-Text">&copy;2010—2020</p>
                 <p className="Simple-Text mb-4">Privacy—Terms</p>
                 <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
@@ -418,15 +418,15 @@ const Teach = () => {
             </div>
             <div className="About">
                 <p className="head-text">About</p>
-                <a href="/learn"><p className="Simple-Text">Timeline</p></a>
+                <a href="/learn"><p className="Simple-Text">Blog</p></a>
+                <a href="/learn"><p className="Simple-Text">News</p></a>
                 <a href="/learn"><p className="Simple-Text">Testimonials</p></a>
-                <a href="/learn"><p className="Simple-Text">Feynman in News</p></a>
                 <a href="/learn"><p className="Simple-Text">Team</p></a>
             </div>
             <div className="Contact">
                 <p className="head-text">Contact Us</p>
-                <p className="Simple-Text">Phone: 1800 2255 02</p>
-                <p className="Simple-Text">Email: info@feynman.com</p>
+                <p className="Simple-Text">Phone: 9637842074</p>
+                <p className="Simple-Text">Email: support@thefeynmanschool.com</p>
             </div>
         </div>
         </div>

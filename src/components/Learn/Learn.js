@@ -154,7 +154,7 @@ const Learn = () => {
                 <div className="l-main-para-cont">
                     <div className="text-para">
                     <img className="l-main-learn" src={learnMain} alt="" id="learnMainMobile" />
-                        <p className="main-para"onClick={closeloginsignup} >The next generation of education is here.</p>
+                        <p className="main-para"onClick={closeloginsignup} >Bringing to you the next generation of education</p>
                         <div className="phone-num" onClick={closeloginsignup}>
                         <select className="country-code">
                             <option value="+91" defaultValue>+91</option>
@@ -169,7 +169,7 @@ const Learn = () => {
                         
                         <input type="number" className="phoneno" name="phoneno" placeholder="Phone number" onChange={phonehandleChange}/>
                         </div>
-                        <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Join Now</p></button>
+                        <button className="submit-btn"  onClick={() => openlogin('signup')}><p>Get free demo</p></button>
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
@@ -201,38 +201,38 @@ const Learn = () => {
         <div className="learn-container">
             <div className="learn-left">
             <p className="left-main-text">Learning is <br/> <span className="build">fun again</span></p>
-            <p className="left-sub-heading">Our palette of interactive media makes sure you enjoy your studies throughly.</p>
+            <p className="left-sub-heading">Our palette of interactive media makes sure you enjoy your studies</p>
             </div>
             <div className="learn-right">
               <div className="type-card">
                   <img src={game} alt=""/>
                   <p className="card-head">Games</p>
-                  <p className="card-subhead">If you can complete the missions,then you can pass the course.</p>
+                  <p className="card-subhead">If you can complete the missions, you will pass the course</p>
              </div>
              <div className="type-card">
                   <img src={vr_ar} alt=""/>
                   <p className="card-head">AR/VR</p>
-                  <p className="card-subhead">Keep forgetting the reaction? Why don't you mix the chemicals yourself?</p>
+                  <p className="card-subhead">Keep forgetting the reaction? Mix the chemicals with your own hands!</p>
              </div> 
              <div className="type-card">
                   <img src={code} alt=""/>
                   <p className="card-head">Code</p>
-                  <p className="card-subhead">Create mini-computers to automate your daily tasks.</p>
+                  <p className="card-subhead">Create mini-computers to automate your daily tasks</p>
              </div> 
              <div className="type-card">
                   <img src={video} alt=""/>
                   <p className="card-head">Video</p>
-                  <p className="card-subhead">Select your topics of interest during the video and the instructor will explain you with more details.</p>
+                  <p className="card-subhead">We bring to you videos 2.0! Better immersive videos helping you study faster </p>
              </div> 
              <div className="type-card">
                   <img src={comics} alt=""/>
                   <p className="card-head">Comics</p>
-                  <p className="card-subhead">Maybe cartoons will teach you what scientists couldn't, who knows?</p>
+                  <p className="card-subhead">Cartoons and an amazing story will teach you what scientists couldn't</p>
              </div> 
              <div className="type-card">
                   <img src={text} alt=""/>
                   <p className="card-head">Text</p>
-                  <p className="card-subhead">Skip through the details and revise with the help of short,crisp topic summaries.</p>
+                  <p className="card-subhead">Skip through the details and revise with the help of short, crisp topic summaries</p>
              </div> 
                
             </div>
@@ -243,11 +243,11 @@ const Learn = () => {
                 <p className="middle-pg1-head">Every person learns<br/> through a<span className="different"> different path</span></p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We are the world's first platform to provide customised courses for every individual.</p>
+                    <p className="middle-pg1-simple">We are the world's first platform to provide customised courses for every individual</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We understand that you are different, you are unique and you have your own way of learning.</p>
+                    <p className="middle-pg1-simple">We understand that you are different, you are unique and you have your own way of learning</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -264,11 +264,11 @@ const Learn = () => {
                 <p className="middle-pg1-head">Every person learns through a<span className="different"> different path</span></p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We are the world's first platform to provide customised courses for every individual.</p>
+                    <p className="middle-pg1-simple">We are the world's first platform to provide customised courses for every individual</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We understand that you are different, you are unique and you have your own way of learning.</p>
+                    <p className="middle-pg1-simple">We understand that you are different, you are unique and you have your own way of learning</p>
                 </div>
             </div>
         </div>
@@ -282,11 +282,11 @@ const Learn = () => {
                 <p className="middle-pg1-head">Interact with the content for <span className="visualisation">better visualisation</span></p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We don't have long boring videos and lengthy texts.</p>
+                    <p className="middle-pg1-simple">Imagine if you could dive deep into the content and explore the areas that interest you</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We have a playground where you can choose your own toys, play with them, build your own picture of how they work.</p>
+                    <p className="middle-pg1-simple">We bring to you a playground where you can choose your own toys, play with them and build your own picture of how they work</p>
                 </div>
             </div>
         </div>
@@ -296,11 +296,11 @@ const Learn = () => {
                 <p className="middle-pg1-head"><span className="practical"> Practical projects</span> for<br/>  every student</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Every course of ours helps you add a project to your portfolio which you can showcase to your employers.</p>
+                    <p className="middle-pg1-simple">The best way to learn is by implementing what you study</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We help you learn the skills for tomorrow.</p>
+                    <p className="middle-pg1-simple">Every course of ours helps you add a project to your portfolio</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -317,11 +317,11 @@ const Learn = () => {
                 <p className="middle-pg1-head"><span className="practical"> Practical projects</span> for<br/>  every student</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Every course of ours helps you add a project to your portfolio which you can showcase to your employers.</p>
+                    <p className="middle-pg1-simple">The best way to learn is by implementing what you study</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">We help you learn the skills for tomorrow.</p>
+                    <p className="middle-pg1-simple">Every course of ours helps you add a project to your portfolio</p>
                 </div>
             </div>
         </div>
@@ -335,11 +335,11 @@ const Learn = () => {
                 <p className="middle-pg1-head"><span className="different">Experienced teachers<br/></span> for perfect learning</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Our teachers are experts in their respective domains.The reason they are the best is because they have been through everything you are going through.</p>
+                    <p className="middle-pg1-simple">Our teachers, will also be your personal mentors and life coaches</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">They are more than teachers, they will be your personal mentors and life coaches.</p>
+                    <p className="middle-pg1-simple">They are the best because they have been through everything you are going through</p>
                 </div>
             </div>
         </div>
@@ -349,11 +349,11 @@ const Learn = () => {
                 <p className="middle-pg1-head">Feynman<span className="scholarship"> scholarship</span> for the brightest talents</p>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Education should be accessible to everyone , but not everyone can afford education.</p>
+                    <p className="middle-pg1-simple">Work hard, leave the finances to us. We believe that education should be accessible to everyone</p>
                 </div>
                 <div className="middle-pg1-list">
                     <img src={tick} alt="" />
-                    <p className="middle-pg1-simple">Therefore we, at the Feynman school, pay you to learn.</p>
+                    <p className="middle-pg1-simple">To promote our beliefs, we will pay our students to learn. Our scholarships let you focus on your studies</p>
                 </div>
             </div>
             <div className="middle-pg-1-rgt">
@@ -407,7 +407,7 @@ const Learn = () => {
         
         <div className="footer">
             <div className="Feynman">
-                <p className="head-text">FEYNMAN</p>
+                <p className="head-text">THE FEYNMAN SCHOOL</p>
                 <p className="Simple-Text">&copy;2010—2020</p>
                 <p className="Simple-Text mb-4">Privacy—Terms</p>
                 <a href="https://www.facebook.com/thefeynmanschool/" target="_blank" rel="noopener noreferrer"><img className="facebook" src={facebook} alt="Facebook" /></a>
@@ -415,18 +415,18 @@ const Learn = () => {
             </div>
             <div className="About">
                 <p className="head-text">About</p>
-                <a href="/learn"><p className="Simple-Text">Timeline</p></a>
+                <a href="/learn"><p className="Simple-Text">Blog</p></a>
+                <a href="/learn"><p className="Simple-Text">News</p></a>
                 <a href="/learn"><p className="Simple-Text">Testimonials</p></a>
-                <a href="/learn"><p className="Simple-Text">Feynman in News</p></a>
                 <a href="/learn"><p className="Simple-Text">Team</p></a>
             </div>
             <div className="Contact">
                 <p className="head-text">Contact Us</p>
-                <p className="Simple-Text">Phone: 1800 2255 02</p>
-                <p className="Simple-Text">Email: info@feynman.com</p>
+                <p className="Simple-Text">Phone: 9637842074</p>
+                <p className="Simple-Text">Email: support@thefeynmanschool.com</p>
             </div>
         </div>
-        </div>
+    </div>
        
     )
 
