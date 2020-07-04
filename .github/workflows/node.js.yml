@@ -34,7 +34,7 @@ jobs:
         with:
           name: build
       - name: Deploy to Firebase
-        uses: W9jds/firebase-action@master 
+        uses: W9jds/firebase-action@master --project the-feynman-school
         with:
           args: deploy --only hosting
         env:
