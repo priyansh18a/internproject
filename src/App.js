@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import { AuthContext } from './custom/auth-context';
+import React, { useContext }from 'react';
+import {AuthContext  } from "./custom/auth-context";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,21 +15,11 @@ import ComingSoon from './components/ComingSoon/ComingSoon';
 
 
 const App = () => {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage);
-
-  const login = useCallback(() => {
-    setIsLoggedIn(true);
-  }, []); 
-
-  const logout = useCallback(() => {
-    setIsLoggedIn(false);
-  }, []);
-
-
+  
+  const {currentUser} = useContext(AuthContext);
   let routes;
 
-  if (isLoggedIn) {
+  if (currentUser) {
     routes = (
    <Switch>
         <Route exact path="/" >
@@ -47,7 +37,7 @@ const App = () => {
         <Route path="/comingsoon" exact>
           <ComingSoon/>
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/comingsoon" />
     </Switch>
     );
   } else {
@@ -69,15 +59,10 @@ const App = () => {
 
   
   return (
-    <AuthContext.Provider
-      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
-    >
     <Router>
     {routes}
     </Router>
-    </AuthContext.Provider>
-  
-  );
+);
 }
 
 export default App;

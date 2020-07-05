@@ -1,10 +1,13 @@
-import React, { useState, useEffect} from 'react';
-import {calculateTimeLeft} from './../Learn/Learn'
+import React, { useState, useEffect, useContext} from 'react';
+import {calculateTimeLeft} from './../Learn/Learn';
+import { AuthContext } from '../../custom/auth-context';
+
 //imported the scss file
 import './../Learn/learn.scss';
 import './ComingSoon.scss';
 
 const ComingSoon = () => {
+    const { currentUser } = useContext(AuthContext);
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
@@ -16,7 +19,7 @@ const ComingSoon = () => {
         <div className="coming-container">
             
             <div className="coming-soon">
-                <p>Congratulations on signing up! We will personally notify you when our app launches</p>
+                <p>Congratulations {currentUser.displayName} for signing up! We will personally notify you when our app launches</p>
             </div>
             <div id="future-depend">
             <p className="app-release">App release in</p>

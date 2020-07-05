@@ -72,7 +72,7 @@ const Teach = () => {
             document.querySelector('#header').style.top = '-10px';
             document.getElementById('signIn').style.top = '32px'
             document.getElementById('signUp').style.top = '25px'
-            document.getElementById('sign-in-mobile').style.marginTop = '13px'
+            document.getElementById('sign-in-mobile').style.marginTop = '14px'
             document.getElementById('menu_icon').style.top = '21px'
             document.getElementById('sidebar').style.marginTop = '46px';
         

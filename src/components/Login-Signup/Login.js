@@ -1,6 +1,7 @@
 import React, { useState , useEffect, useContext} from 'react';
+import { useHistory } from "react-router-dom";
 import fire from '../../custom/Fire';
-import { AuthContext } from '../../custom/auth-context';
+// import { AuthContext } from '../../custom/auth-context';
 import firebase from 'firebase';
 import Google from '../../Graphics/Google.png'
 import close from '../../Graphics/close.png'
@@ -8,8 +9,9 @@ import './Login.scss'
 
 
 
-const Login = props => {
-    const auth = useContext(AuthContext);
+const Login = props=> {
+    // const { currentUser } = useContext(AuthContext);
+    const history = useHistory();
     const [email ,setEmail] = useState('');
     const [password ,setPassword] = useState('');
     const [name ,setName] = useState('');
@@ -33,44 +35,45 @@ const Login = props => {
         setPhonenum(event.target.value);
     }
     const phoneNumHandler = () => {
-      setPhonenum(props.phoneNo);
+        setPhonenum(props.phoneNo);
     }
 
- const login = e => {
-    e.preventDefault();
-    fire.auth().signInWithEmailAndPassword(email,password).then((u)=>{
-      auth.login();
-      console.log(u)
-      document.getElementById("warning").innerHTML = 'Login Successful';
-    }).catch((error) => {
-        console.log(error);
-    
-      document.getElementById("warning-msg").innerHTML = error.message;
-      document.getElementById("warning").style.display = "flex";
-      });
-  }
+    const login = e => {
+      e.preventDefault();
+      fire.auth().signInWithEmailAndPassword(email,password).then((u)=>{
+        console.log(u)
+        document.getElementById("warning").innerHTML = 'Login Successful';
+        // history.push("/comingsoon");
+      }).catch((error) => {
+          console.log(error);
+      
+        document.getElementById("warning-msg").innerHTML = error.message;
+        document.getElementById("warning").style.display = "flex";
+        });
+    }
 
-  const signup = e => {
-    e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(email,password).then((u)=>{
-      const user = firebase.auth().currentUser;
-      user.updateProfile({
-        displayName: name,
-        photoURL: phonenum    // phone num stored in phoneURL
-        }).then(function() {
-        // Update successful.
-       console.log(user.displayName);
-       console.log(user.photoURL);  
-      }).catch(function(error) {
-        // An error happened.
-      });
-     console.log(u);
-    }).catch((error) => {
-        console.log(error);
-      document.getElementById("warning-msg").innerHTML = error.message;
-      document.getElementById("warning").style.display = "flex";
-      })
-  }
+    const signup = e => {
+        e.preventDefault();
+        fire.auth().createUserWithEmailAndPassword(email,password).then((u)=>{
+          const user = firebase.auth().currentUser;
+
+          user.updateProfile({
+            displayName: name,
+            photoURL: phonenum    // phone num stored in phoneURL
+            }).then(function() {
+            // Update successful.
+          console.log(user.displayName);
+          console.log(user.photoURL);  
+          history.push("/comingsoon");
+          }).catch(function(error) {
+            // An error happened.
+          });
+        }).catch((error) => {
+            console.log(error);
+          document.getElementById("warning-msg").innerHTML = error.message;
+          document.getElementById("warning").style.display = "flex";
+          })
+      }
 
 
   const googleLogin = ()=> {
@@ -79,6 +82,7 @@ const Login = props => {
       .then (result => {
         const user = result.user;
         console.log(user.displayName);
+        history.push("/comingsoon");
     })
   }
 
