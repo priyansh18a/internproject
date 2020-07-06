@@ -31,7 +31,7 @@ const Login = props=> {
           await fire
             .auth()
             .signInWithEmailAndPassword(email.value, password.value);
-          history.push("/teach/user");
+          history.push("/comingsoon");
         } catch (error) {
           document.getElementById("warning-msg").innerHTML = error.message;
           document.getElementById("warning").style.display = "flex";

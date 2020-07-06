@@ -26,12 +26,12 @@ const App = () => {
         <Route exact path="/" >
           <Learn/>
         </Route>
-        <Route exact path='/learn'>
+        {/* <Route exact path='/learn'>
           <Learn/>
         </Route>
         <Route path='/teach' exact >
           <Teach/>
-        </Route>
+        </Route> */}
         <Route path='/teach/user' exact >
           <TeachProfile/>
         </Route>
