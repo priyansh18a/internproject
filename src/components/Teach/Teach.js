@@ -1,6 +1,8 @@
 //React
-import React, { useState,useEffect} from 'react';
+import React, { useState,useEffect,useContext} from 'react';
 import {calculateTimeLeft} from './../Learn/Learn'
+import fire from '../../custom/Fire';
+import { AuthContext } from '../../custom/auth-context';
 
 
 
@@ -36,6 +38,7 @@ import Login from '../Login-Signup/Login';
 
 
 const Teach = () => {
+    const { currentUser } = useContext(AuthContext);
     const [show , setShow] = useState('');
     const [phoneNum ,setPhoneNum] = useState('');
 
@@ -44,7 +47,7 @@ const Teach = () => {
     useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
-     }, 1000);
+     }, 60000);
     });
 
     const openlogin = whattoshow => {
@@ -72,7 +75,7 @@ const Teach = () => {
             document.querySelector('#header').style.top = '-10px';
             document.getElementById('signIn').style.top = '32px'
             document.getElementById('signUp').style.top = '25px'
-            document.getElementById('sign-in-mobile').style.marginTop = '14px'
+            document.getElementById('sign-in-mobile').style.marginTop = '11px'
             document.getElementById('menu_icon').style.top = '21px'
             document.getElementById('sidebar').style.marginTop = '46px';
         
@@ -117,9 +120,20 @@ const Teach = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach'id="teach">Teach</a>
                 </div>
+            { !currentUser && (
+                <React.Fragment>
                 <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn">Sign In</p>
-                <button onClick={() => openlogin('signup')} className="sign-up-btn" id="signUp" >Sign Up</button>
+                <button onClick={() => openlogin('signup')} className="sign-up-btn" id="signUp">Sign Up</button>
                 <button onClick={() => openlogin('login')} id="sign-in-mobile">Sign In</button>
+                </React.Fragment>
+          )}
+          { currentUser && (
+                <React.Fragment>
+                <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn" style={{display:'none'}}>Sign In</p>
+                <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
+                <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
+                </React.Fragment>
+          )}
 
             </div>
             <div  id="sidebar">
@@ -172,10 +186,10 @@ const Teach = () => {
             <div className="date-time">
             <div className="time-div"><p>{ Math.floor(timeLeft.days/10)}</p></div>
             <div className="time-div mr-4 " ><p className="different">{ timeLeft.days%10}</p></div>
-            <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
-            <div className="time-div mr-4"><p className="visualisation">{ timeLeft.minutes%10}</p></div>
-           <div className="time-div"><p>{ Math.floor(timeLeft.seconds/10)}</p></div>
-            <div className="time-div"><p className="practical">{ timeLeft.seconds%10}</p></div>
+            <div className="time-div"><p>{ Math.floor(timeLeft.hours/10)}</p></div>
+            <div className="time-div mr-4"><p className="visualisation">{ timeLeft.hours%10}</p></div>
+           <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
+            <div className="time-div"><p className="practical">{ timeLeft.minutes%10}</p></div>
             </div>
             <div id="notation">
                 <p id="days">Days</p>

@@ -1,5 +1,7 @@
 //React
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect,useContext} from 'react';
+import fire from '../../custom/Fire';
+import { AuthContext } from '../../custom/auth-context';
 
 
 //imported the graphics
@@ -49,6 +51,7 @@ export const calculateTimeLeft = () => {
   };
 
 const Learn = () => {
+    const { currentUser } = useContext(AuthContext);
     const [show , setShow] = useState('');
     const [phoneNum ,setPhoneNum] = useState('');
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -56,7 +59,7 @@ const Learn = () => {
     useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
-     }, 1000);
+     }, 60000);
     });
 
     const openlogin = whattoshow => {
@@ -83,7 +86,7 @@ const Learn = () => {
                 document.querySelector('#header').style.top = '-10px';
                 document.getElementById('signIn').style.top = '32px'
                 document.getElementById('signUp').style.top = '25px'
-                document.getElementById('sign-in-mobile').style.marginTop = '14px'
+                document.getElementById('sign-in-mobile').style.marginTop = '11px'
                 document.getElementById('menu_icon').style.top = '21px'
                 document.getElementById('sidebar').style.marginTop = '46px';
             
@@ -129,9 +132,22 @@ const Learn = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach' >Teach</a>
                 </div>
+          { !currentUser && (
+                <React.Fragment>
                 <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn">Sign In</p>
                 <button onClick={() => openlogin('signup')} className="sign-up-btn" id="signUp">Sign Up</button>
                 <button onClick={() => openlogin('login')} id="sign-in-mobile">Sign In</button>
+                </React.Fragment>
+          )}
+          { currentUser && (
+                <React.Fragment>
+                <p onClick={() => openlogin('login')} className="sign-in-btn" id="signIn" style={{display:'none'}}>Sign In</p>
+                <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
+                <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
+                </React.Fragment>
+          )}      
+
+
 
             </div>
             <div  id="sidebar">
@@ -149,7 +165,7 @@ const Learn = () => {
             <div id="login-container">
             <Login show={show} onClick={closeloginsignup} phoneNo={phoneNum}/>
             </div>
-
+        </div>
             <div className="home-main" >                                                             
                 <div className="l-main-para-cont">
                     <div className="text-para">
@@ -180,16 +196,16 @@ const Learn = () => {
               <div className="goto-div"><img className="gotonextbox" src={gotonext} alt="" onClick={gotonextbox}/>
               {/* <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_sBpd53.json"  background="transparent"  speed="1"  style={{width: 'Auto', height: '30px'}}  loop controls autoplay></lottie-player> */}
               </div>
-              </div>
+              
         <div id="future-depend">
             <p className="app-release">App release in</p>
             <div className="date-time">
             <div className="time-div"><p>{ Math.floor(timeLeft.days/10)}</p></div>
             <div className="time-div right-time" ><p className="different">{ timeLeft.days%10}</p></div>
-            <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
-            <div className="time-div right-time"><p className="visualisation">{ timeLeft.minutes%10}</p></div>
-           <div className="time-div"><p>{ Math.floor(timeLeft.seconds/10)}</p></div>
-            <div className="time-div"><p className="practical">{ timeLeft.seconds%10}</p></div>
+            <div className="time-div"><p>{ Math.floor(timeLeft.hours/10)}</p></div>
+            <div className="time-div right-time"><p className="visualisation">{ timeLeft.hours%10}</p></div>
+           <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
+            <div className="time-div"><p className="practical">{ timeLeft.minutes%10}</p></div>
             </div>
             <div id="notation">
                 <p id="days">Days</p>

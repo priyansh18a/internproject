@@ -11,6 +11,7 @@ import Additem from './components/Additems/Additems';
 import Learn from './components/Learn/Learn'
 import Teach from './components/Teach/Teach'
 import ComingSoon from './components/ComingSoon/ComingSoon';
+import TeachProfile from './components/TeachProfile/TeachProfile';
 
 
 
@@ -28,8 +29,11 @@ const App = () => {
         <Route exact path='/learn'>
           <Learn/>
         </Route>
-        <Route path='/teach'  exact >
+        <Route path='/teach' exact >
           <Teach/>
+        </Route>
+        <Route path='/teach/user' exact >
+          <TeachProfile/>
         </Route>
         <Route path="/teach/user/:screenId" exact>
           <Additem/>

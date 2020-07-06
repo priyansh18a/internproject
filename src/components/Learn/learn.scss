@@ -218,6 +218,8 @@ a:hover {
     width: 100vw;
     height: 750px;
     display: flex;
+    background-color: #212121;
+    overflow-y: hidden;
 }
 
 .l-main-para-cont{
@@ -379,9 +381,11 @@ select.country-code:focus{
 
 }
 .goto-div{
-    width: 100%;
     text-align: center;
     height: 128px;
+    width: 100vw;
+    background-color: #212121;
+    overflow-y: hidden;
 }
 
 .homepage-head-text{
