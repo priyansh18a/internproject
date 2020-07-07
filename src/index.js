@@ -9,11 +9,9 @@ import './fonts/Gilroy-Bold.ttf'
 
 
 ReactDOM.render(
-  <React.StrictMode>
     <AuthProvider>
     <App />
-    </AuthProvider>
-  </React.StrictMode>,
+    </AuthProvider>,
   document.getElementById('root')
 );
 

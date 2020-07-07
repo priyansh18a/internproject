@@ -62,7 +62,7 @@ const ComingSoon = () => {
            <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
            <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
             <div className="homepage-head-text">
-                <a className="link-txt" href='/learn' id="learn">Learn</a>
+                <a className="link-txt" href='/learn'>Learn</a>
             </div>
             <div className="homepage-head-text">
                 <a className="link-txt" href='/teach' >Teach</a>
@@ -92,10 +92,10 @@ const ComingSoon = () => {
             <div className="date-time">
             <div className="time-div"><p>{ Math.floor(timeLeft.days/10)}</p></div>
             <div className="time-div right-time" ><p className="different">{ timeLeft.days%10}</p></div>
-            <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
-            <div className="time-div right-time"><p className="visualisation">{ timeLeft.minutes%10}</p></div>
-           <div className="time-div"><p>{ Math.floor(timeLeft.seconds/10)}</p></div>
-            <div className="time-div"><p className="practical">{ timeLeft.seconds%10}</p></div>
+            <div className="time-div"><p>{ Math.floor(timeLeft.hours/10)}</p></div>
+            <div className="time-div right-time"><p className="visualisation">{ timeLeft.hours%10}</p></div>
+           <div className="time-div"><p>{ Math.floor(timeLeft.minutes/10)}</p></div>
+            <div className="time-div"><p className="practical">{ timeLeft.minutes%10}</p></div>
             </div>
             <div id="notation">
                 <p id="days">Days</p>

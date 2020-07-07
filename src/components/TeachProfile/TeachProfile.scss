@@ -25,7 +25,7 @@
 
 }
 .profile-sidebar{
-    min-width: 300px;
+    min-width: 260px;
     background: #212121;
     width: 20vw;
     text-align: center;
@@ -33,6 +33,7 @@
     margin-right: 20px;
 
 }
+
 .name{
     font-size: 28px;
     line-height: 110%;
@@ -42,7 +43,7 @@
 .profile-sidebar ul {
     list-style: none;
     margin-left: 3vw;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .profile-sidebar ul li {
     display: flex;
@@ -77,7 +78,7 @@
     
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), #212121;
     border-radius: 16px;
-    width: auto;
+    width: 72vw;
     padding: 35px;
     margin-top: 30px;
     height: 389px;
@@ -133,6 +134,13 @@
 }
 .course-card-container{
     display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.course-card-container::-webkit-scrollbar {
+    display: none;
 }
 .course-card{
     width: 196px;
@@ -149,4 +157,8 @@
     line-height: 100%;
     color: #A9A9A9;
 }
-
+@media (max-width: 1620px){
+    .profile-sidebar{
+        padding:80px 2vw ;  
+    }
+}

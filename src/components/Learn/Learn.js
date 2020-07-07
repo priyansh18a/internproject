@@ -35,7 +35,7 @@ import './learn.scss';
 import Login from '../Login-Signup/Login';
 
 export const calculateTimeLeft = () => {
-    const difference = +new Date("2020-7-15") - +new Date();
+    const difference = +new Date(2020, 6, 25, 12, 0, 0) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

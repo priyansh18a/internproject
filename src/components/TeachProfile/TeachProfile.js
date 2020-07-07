@@ -1,5 +1,6 @@
 //React
 import React, {useContext} from 'react';
+import { useHistory} from "react-router-dom";
 import fire from '../../custom/Fire';
 import { AuthContext } from '../../custom/auth-context';
 
@@ -8,7 +9,7 @@ import { AuthContext } from '../../custom/auth-context';
 import logo from './../../Graphics/logo.png';
 import cross from './../../Graphics/cross.png';
 import menu_icon from './../../Graphics/menu_icon.png'
-import profilephoto from './../../Graphics/profilephoto.svg'
+import profilephoto from './../../Graphics/profilephoto.png'
 import dashboard from './../../Graphics/dashboard.svg';
 import courses from './../../Graphics/courses.svg';
 import drafts from './../../Graphics/drafts.svg';
@@ -26,8 +27,10 @@ import '../Learn/learn.scss';
 import './TeachProfile.scss';
 
 const TeachProfile = () => {
+    const history = useHistory();
     const { currentUser } = useContext(AuthContext);
-
+    const uid = currentUser.uid;
+   
 
     window.onscroll = () => {
             if(window.scrollY <= 150){
@@ -67,10 +70,10 @@ const TeachProfile = () => {
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
                <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/learn' id="learn">Learn</a>
+                    <a className="link-txt" href='/learn' >Learn</a>
                 </div>
                 <div className="homepage-head-text">
-                    <a className="link-txt" href='/teach' >Teach</a>
+                    <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
                 </div>
                 <button onClick={() => console.log('work in progress')} id="Create">Create</button>
                 <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
@@ -80,8 +83,8 @@ const TeachProfile = () => {
             <div  id="sidebar">
                 <img src={cross} alt="" id="cross" onClick={closesidebar}/>
                 <ul>
-                    <li ><a href='/learn' style={{color:"#0099FF"}}>Learn</a></li>
-                    <li><a href='/teach'>Teach</a></li>
+                    <li ><a href='/learn'>Learn</a></li>
+                    <li><a href='/teach' style={{color:"#0099FF"}}>Teach</a></li>
                     <li>News</li>
                     <li>Blog</li>
                     <li>About us</li>
@@ -107,7 +110,7 @@ const TeachProfile = () => {
                         <p className="div-head">Create a Course</p>
                         <div className="start-creating">
                             <p>Use our dedicated interface to <br/> create intuitive and interactive <br/>courses.</p>
-                            <button>Start Creating</button>
+                            <button onClick={() => history.push(`/teach/${uid}/0`)}>Start Creating</button>
                         </div>
                     </div>
                     <div className="drafts-div">
@@ -138,6 +141,11 @@ const TeachProfile = () => {
                             <p className="course-name">The business Analyst Course</p>
                             <p className="course-author">By Nishant Soni</p>
                         </div>
+                        <div className="course-card">
+                            <img src={img3} alt=""/>
+                            <p className="course-name">The business Analyst Course</p>
+                            <p className="course-author">By Nishant Soni</p>
+                        </div>
                     </div>  
                     </div>   
                    <div className="drafts-div">
@@ -165,6 +173,11 @@ const TeachProfile = () => {
                         </div>
                         <div className="course-card">
                             <img src={img2} alt=""/>
+                            <p className="course-name">The business Analyst Course</p>
+                            <p className="course-author">By Nishant Soni</p>
+                        </div>
+                        <div className="course-card">
+                            <img src={img3} alt=""/>
                             <p className="course-name">The business Analyst Course</p>
                             <p className="course-author">By Nishant Soni</p>
                         </div>

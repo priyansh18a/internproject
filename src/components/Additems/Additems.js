@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect,useContext} from 'react';
 import SideNavButton from '../Sidenavbutton/sidenavbutton'
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
@@ -11,11 +11,14 @@ import './Additems.scss'
 import { Link, useParams } from 'react-router-dom';
 import firebase from 'firebase';
 import fire from '../../custom/Fire';
+import { AuthContext } from '../../custom/auth-context';
 
 const storage = firebase.storage()
 
 const Additem = () => {
-    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: '/user/0'}];
+    const { currentUser } = useContext(AuthContext);
+    const uid = currentUser.uid;
+    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: `/${uid}/0`}];
     const [navIsHidden, setNavIsHidden]= useState(true);
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
@@ -77,7 +80,7 @@ const Additem = () => {
             }
           };
           i++;
-          const uploadTask = storage.ref().child(`images/${screenId}/${file.name}`).put(file, metadata);
+          const uploadTask = storage.ref().child(`users/${uid}/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
                   snapshot => {
@@ -93,7 +96,7 @@ const Additem = () => {
       };
 
     const getimages = () =>{
-      const uploadTask = storage.ref().child(`images/${screenId}`);
+      const uploadTask = storage.ref().child(`users/${uid}/${screenId}`);
       uploadTask.listAll().then(res => {
         if(res.items.length === 0 ){
               // if no image found then do nothing
@@ -193,7 +196,7 @@ const Additem = () => {
     return (
         <React.Fragment>
          <div className="container-box">
-              <div className="header">
+              <div className="header-additems">
             <SideNavButton onClick={opensidenav}/>
             <SideNav 
                 isHidden={navIsHidden} 
@@ -326,16 +329,16 @@ const Additem = () => {
                 <h5>Add interaction on this image</h5>
                 <button className="btn btn-warning" onClick={showselectbox1}><img src={add} alt=''/></button>
                 <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox1" style={{display:"none"}}>
-                    <option selected>Select</option>
-                     {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                    <option defaultValue>Select</option>
+                     {storedelements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
                </select>
              </div>
              <div className="create-quest" id="interactionbox2">
                 <h5>Add interaction on this image</h5>
                 <button className="btn btn-warning" onClick={showselectbox2}><img src={add} alt=''/></button>
                 <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox2" style={{display:"none"}}>
-                    <option selected>Select</option>
-                     {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                    <option defaultValue>Select</option>
+                     {storedelements.map(element => (<option value={element.key} key={element.key} >{element.text}</option>))}
                </select>
                   
               </div>
@@ -343,24 +346,24 @@ const Additem = () => {
                   <h5>Add interaction on this image</h5>
                   <button className="btn btn-warning" onClick={showselectbox3}><img src={add} alt=''/></button>
                   <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox3" style={{display:"none"}}>
-                      <option selected>Select</option>
-                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                      <option defaultValue>Select</option>
+                      {storedelements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
                 </select>
               </div>
               <div className="create-quest" id="interactionbox4">
                   <h5>Add interaction on this image</h5>
                   <button className="btn btn-warning" onClick={showselectbox4}><img src={add} alt=''/></button>
                   <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox4" style={{display:"none"}}>
-                      <option selected>Select</option>
-                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                      <option defaultValue>Select</option>
+                      {storedelements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
                 </select>
               </div>
               <div className="create-quest" id="interactionbox5">
                   <h5>Add interaction on this image</h5>
                   <button className="btn btn-warning" onClick={showselectbox5}><img src={add} alt=''/></button>
                   <select className="custom-select mr-sm-2 form-input" onChange={setonclick1} id="selectbox5" style={{display:"none"}}>
-                      <option selected>Select</option>
-                      {storedelements.map(element => (<option value={element.key}>{element.text}</option>))}
+                      <option defaultValue>Select</option>
+                      {storedelements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
                 </select>
               </div>
              

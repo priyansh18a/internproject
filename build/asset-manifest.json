@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d8d0e51d.chunk.css",
-    "main.js": "/static/js/main.47816ffc.chunk.js",
-    "main.js.map": "/static/js/main.47816ffc.chunk.js.map",
+    "main.css": "/static/css/main.101f80fb.chunk.css",
+    "main.js": "/static/js/main.59c53c97.chunk.js",
+    "main.js.map": "/static/js/main.59c53c97.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.54fc45b5.js",
     "runtime-main.js.map": "/static/js/runtime-main.54fc45b5.js.map",
-    "static/js/2.1b2c0694.chunk.js": "/static/js/2.1b2c0694.chunk.js",
-    "static/js/2.1b2c0694.chunk.js.map": "/static/js/2.1b2c0694.chunk.js.map",
+    "static/js/2.b512d259.chunk.js": "/static/js/2.b512d259.chunk.js",
+    "static/js/2.b512d259.chunk.js.map": "/static/js/2.b512d259.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.73b5c17bedecf08110479f91078dbac6.js": "/precache-manifest.73b5c17bedecf08110479f91078dbac6.js",
+    "precache-manifest.306f55a89d52e212bc85edcdadb6ab75.js": "/precache-manifest.306f55a89d52e212bc85edcdadb6ab75.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.d8d0e51d.chunk.css.map": "/static/css/main.d8d0e51d.chunk.css.map",
-    "static/js/2.1b2c0694.chunk.js.LICENSE.txt": "/static/js/2.1b2c0694.chunk.js.LICENSE.txt",
+    "static/css/main.101f80fb.chunk.css.map": "/static/css/main.101f80fb.chunk.css.map",
+    "static/js/2.b512d259.chunk.js.LICENSE.txt": "/static/js/2.b512d259.chunk.js.LICENSE.txt",
     "static/media/Gilroy-Bold.ttf": "/static/media/Gilroy-Bold.889a4b5c.ttf",
     "static/media/Gilroy-Regular.ttf": "/static/media/Gilroy-Regular.22d25e11.ttf",
     "static/media/Google.png": "/static/media/Google.4a19c891.png",
@@ -33,7 +33,6 @@
     "static/media/path.png": "/static/media/path.67164d66.png",
     "static/media/profile.png": "/static/media/profile.606ac9ee.png",
     "static/media/profile.svg": "/static/media/profile.c799472b.svg",
-    "static/media/profilephoto.svg": "/static/media/profilephoto.5c9c2d23.svg",
     "static/media/project.png": "/static/media/project.f57f913c.png",
     "static/media/scholarship.png": "/static/media/scholarship.ee1614cf.png",
     "static/media/settings.svg": "/static/media/settings.981201b8.svg",
@@ -45,8 +44,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.54fc45b5.js",
-    "static/js/2.1b2c0694.chunk.js",
-    "static/css/main.d8d0e51d.chunk.css",
-    "static/js/main.47816ffc.chunk.js"
+    "static/js/2.b512d259.chunk.js",
+    "static/css/main.101f80fb.chunk.css",
+    "static/js/main.59c53c97.chunk.js"
   ]
 }
