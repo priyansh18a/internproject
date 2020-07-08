@@ -1,9 +1,9 @@
 //React
-import React, {useContext} from 'react';
+import React, {useState , useContext, useEffect} from 'react';
 import { useHistory} from "react-router-dom";
 import fire from '../../custom/Fire';
 import { AuthContext } from '../../custom/auth-context';
-
+import firebase from 'firebase';
 
 //imported the graphics
 import logo from './../../Graphics/logo.png';
@@ -25,12 +25,17 @@ import img3 from './../../Graphics/img3.png';
 //  imported scss
 import '../Learn/learn.scss';
 import './TeachProfile.scss';
+import AddCourseName from '../AddCourseName/AddCourseName';
+
+const storage = firebase.storage();
 
 const TeachProfile = () => {
-    const history = useHistory();
     const { currentUser } = useContext(AuthContext);
-    const uid = currentUser.uid;
+    const history = useHistory();
+    const [course, setCourse] = useState([]);
+    // console.log(course)
    
+    useEffect(() => { fetchcourse() }, [] );
 
     window.onscroll = () => {
             if(window.scrollY <= 150){
@@ -63,9 +68,34 @@ const TeachProfile = () => {
         document.getElementById('menu_icon').style.display = "block";
         document.getElementById('cross').style.display = "none";
     }
+
+    const fetchcourse = () => {
+            const listRef = storage.ref().child(`users/${currentUser.displayName}`);
+            // Find all the prefixes and items.
+            listRef.listAll().then(function(res) {
+                res.prefixes.forEach(function(folderRef) {
+                 setCourse(prevState => [...prevState , folderRef]);
+                });
+            }).catch(function(error) {
+                console.log(error);
+            });
+        
+    }
+    const showCreateCourse = () => {
+        document.getElementById('login-container').style.display = "flex";
+        document.getElementById('backdisable').style.display = 'block';
+    }
+
+    const closeCreateCourse = () => {
+        document.getElementById('login-container').style.display = "none";
+        document.getElementById('backdisable').style.display = 'none';
+    }
+
+
     
     return (
         <div className="teachprofile">
+            <div id="backdisable"></div>
             <div id="header" className="header">
                <a href="/"><img className="logo" src={logo} alt="Feynman School" /></a> 
                <img src={menu_icon} alt="" id="menu_icon" onClick={opensidebar}/>
@@ -75,7 +105,7 @@ const TeachProfile = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
                 </div>
-                <button onClick={() => console.log('work in progress')} id="Create">Create</button>
+                <button onClick={showCreateCourse} id="Create">Create</button>
                 <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
                 <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
 
@@ -92,6 +122,9 @@ const TeachProfile = () => {
 
             </div>
             <div className="profile-main">
+                   <div id="login-container">
+                        <AddCourseName onClick={closeCreateCourse}/>
+                    </div>
                 <div className="profile-sidebar">
                     <img src={profilephoto} alt=""/>
                     <p className="name">{currentUser.displayName}</p>
@@ -106,46 +139,24 @@ const TeachProfile = () => {
                 </div>
                 <div className="profile-main-content">
                     <p className="profile-main-text">Dashboard</p>
+                    
                     <div id="create-course" className="drafts-div">
                         <p className="div-head">Create a Course</p>
                         <div className="start-creating">
                             <p>Use our dedicated interface to <br/> create intuitive and interactive <br/>courses.</p>
-                            <button onClick={() => history.push(`/teach/${uid}/0`)}>Start Creating</button>
+                            <button onClick={showCreateCourse}>Start Creating</button>
                         </div>
                     </div>
                     <div className="drafts-div">
                         <p className="div-head">Drafts</p>
                         <div className="course-card-container">
-                        <div className="course-card">
+                        {course.map(element => (
+                        <div className="course-card" key={element.name} onClick={() => history.push(`/teach/${currentUser.displayName}/${element.name}/0`)}>
                             <img src={img1} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
+                            <p className="course-name">{element.name}</p>
+                            <p className="course-author">By {element.parent.name}</p>
                         </div>
-                        <div className="course-card">
-                            <img src={img2} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img3} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img1} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img2} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img3} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
+                        ))}
                     </div>  
                     </div>   
                    <div className="drafts-div">
@@ -183,9 +194,6 @@ const TeachProfile = () => {
                         </div>
                     </div>  
                     </div>
-
-                    
-
                 </div>
             </div>
 

@@ -144,7 +144,8 @@
 }
 .course-card{
     width: 196px;
-    margin-right: 25px;    
+    margin-right: 25px;
+    overflow: hidden;    
 }
 .course-name{
     font-size: 20px;
@@ -156,6 +157,13 @@
     font-size: 12px;
     line-height: 100%;
     color: #A9A9A9;
+}
+#newcoursename{
+    display: none;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    
 }
 @media (max-width: 1620px){
     .profile-sidebar{

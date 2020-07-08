@@ -17,17 +17,20 @@ const storage = firebase.storage()
 
 const Additem = () => {
     const { currentUser } = useContext(AuthContext);
-    const uid = currentUser.uid;
-    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: `/${uid}/0`}];
+    const courseName = useParams().courseName;
+    const screenId = useParams().screenId;
+   
+    const storedelements = JSON.parse(localStorage.getItem('elements')) || [{key:"0", text: 'Screen 0', href: `/${currentUser.displayName}/${courseName}/0`}];
     const [navIsHidden, setNavIsHidden]= useState(true);
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
     const [onclick, setOnclick] = useState([]);
-    const screenId = useParams().screenId;
+   
     let i = 1;
 
     useEffect(() => { getimages() }, [] );
     // useEffect(() => { uploadfilehandler() }, [files] );
+   
 
     const closesidenav = () => {
       setNavIsHidden(true)
@@ -80,7 +83,7 @@ const Additem = () => {
             }
           };
           i++;
-          const uploadTask = storage.ref().child(`users/${uid}/${screenId}/${file.name}`).put(file, metadata);
+          const uploadTask = storage.ref().child(`users/${currentUser.displayName}/${courseName}/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
                   snapshot => {
@@ -96,7 +99,7 @@ const Additem = () => {
       };
 
     const getimages = () =>{
-      const uploadTask = storage.ref().child(`users/${uid}/${screenId}`);
+      const uploadTask = storage.ref().child(`users/${currentUser.displayName}/${courseName}/${screenId}`);
       uploadTask.listAll().then(res => {
         if(res.items.length === 0 ){
               // if no image found then do nothing
@@ -122,7 +125,6 @@ const Additem = () => {
           });
       }
 
-    
 
     const addtext = () =>{
         document.getElementById("hide").style.display ="none";

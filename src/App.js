@@ -32,10 +32,10 @@ const App = () => {
         <Route path='/teach' exact >
           <Teach/>
         </Route> */}
-        <Route path='/teach/:uid' exact >
+        <Route path='/teach/:authorName' exact >
           <TeachProfile/>
         </Route>
-        <Route path="/teach/:uid/:screenId" exact>
+        <Route path="/teach/:authorName/:courseName/:screenId" exact>
           <Additem/>
         </Route>
         <Route path="/comingsoon" exact>
