@@ -411,6 +411,23 @@ const Additem = () => {
             </ul>
            </div>
          </div>
+
+         <div id="header" className="header" style={{display:"none"}}>
+         <a href="/"><img className="logo" src={eye} alt="Feynman School" /></a> 
+               <img src={eye} alt="" id="menu_icon"/>
+                <div className="homepage-head-text">
+                    <a className="link-txt" href='/learn' >Learn</a>
+                </div>
+                <div className="homepage-head-text">
+                    <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
+                </div>
+                <button id="Create">Create</button>
+                <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
+                <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
+                <div  id="sidebar">
+
+            </div>
+        </div>
          
     </div>
     </React.Fragment>
