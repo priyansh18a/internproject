@@ -148,7 +148,7 @@ const TeachProfile = () => {
                         </div>
                     </div>
                     <div className="drafts-div">
-                        <p className="div-head">Drafts</p>
+                        <p className="div-head">Your Courses</p>
                         <div className="course-card-container">
                         {course.map(element => (
                         <div className="course-card" key={element.name} onClick={() => history.push(`/teach/${currentUser.displayName}/${element.name}/0`)}>
@@ -159,41 +159,6 @@ const TeachProfile = () => {
                         ))}
                     </div>  
                     </div>   
-                   <div className="drafts-div">
-                        <p className="div-head">My Created Courses</p>
-                        <div className="course-card-container">
-                        <div className="course-card">
-                            <img src={img1} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img2} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img3} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img1} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img2} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                        <div className="course-card">
-                            <img src={img3} alt=""/>
-                            <p className="course-name">The business Analyst Course</p>
-                            <p className="course-author">By Nishant Soni</p>
-                        </div>
-                    </div>  
-                    </div>
                 </div>
             </div>
 
