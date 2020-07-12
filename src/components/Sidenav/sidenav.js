@@ -44,23 +44,20 @@ export default function SideNav(props) {
     
     const getscreenlist = () => {
         const listRef = storage.ref().child(`users/${currentUser.displayName}/${courseName}`);
-        // Find all the prefixes and items.
         localStorage.clear();
         listRef.listAll().then(function(res){
             if(res.items.length === 0){
-                console.log('else work');
                 var newElement = {key: 0, text: 'Screen 0', href: `/teach/${currentUser.displayName}/${courseName}/0`}
                 updateElements(elements=>([...elements, newElement]));
                 elementCount++;
                 localStorage.setItem('elementCount',elementCount);
             }res.prefixes.forEach(function(folderRef) {
-                    console.log('if work');
                     var newElement = {key: `${elementCount}`, text: `Screen ${elementCount}`, href: `/teach/${currentUser.displayName}/${courseName}/${elementCount}`}
                     updateElements(elements=>([...elements, newElement]));
                     elementCount++;
                     localStorage.setItem('elementCount',elementCount);
                 });
-        }).catch(function(error) {
+        }).catch(function(error){
             console.log(error);
         });
     }

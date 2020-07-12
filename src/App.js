@@ -12,6 +12,7 @@ import Learn from './components/Learn/Learn'
 import Teach from './components/Teach/Teach'
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import TeachProfile from './components/TeachProfile/TeachProfile';
+import AddCourseDetails from './components/AddCourseDetails/AddCourseDetails';
 
 
 
@@ -34,6 +35,9 @@ const App = () => {
         </Route> */}
         <Route path='/teach/:authorName' exact >
           <TeachProfile/>
+        </Route>
+        <Route path='/teach/:authorName/course' exact >
+          <AddCourseDetails/>
         </Route>
         <Route path="/teach/:authorName/:courseName/:screenId" exact>
           <Additem/>

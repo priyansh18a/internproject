@@ -25,7 +25,6 @@ import img3 from './../../Graphics/img3.png';
 //  imported scss
 import '../Learn/learn.scss';
 import './TeachProfile.scss';
-import AddCourseName from '../AddCourseName/AddCourseName';
 
 const storage = firebase.storage();
 
@@ -37,32 +36,12 @@ const TeachProfile = () => {
    
     useEffect(() => { fetchcourse() }, [] );
 
-    window.onscroll = () => {
-            if(window.scrollY <= 150){
-              document.querySelector('#header').className = 'header' ;
-              document.querySelector('#header').style.top = '-80px';
-              document.getElementById('Create').style.top = '92px';
-              document.getElementById('signUp').style.top = '96px'
-              document.getElementById('sign-in-mobile').style.marginTop = '79px'
-              document.getElementById('menu_icon').style.top = '90px'
-              document.getElementById('sidebar').style.marginTop = '-82px';
-            } else if(window.scrollY >= 150){ 
-                document.querySelector('#header').className = 'header mini' ;
-                document.querySelector('#header').style.top = '-10px';
-                document.getElementById('Create').style.top = '20px'
-                document.getElementById('signUp').style.top = '25px'
-                document.getElementById('sign-in-mobile').style.marginTop = '14px'
-                document.getElementById('menu_icon').style.top = '21px'
-                document.getElementById('sidebar').style.marginTop = '46px';
-            
-              }; 
-     }
-
     const opensidebar = () => {
         document.getElementById('sidebar').style.display = "block";
         document.getElementById('menu_icon').style.display = "none";
         document.getElementById('cross').style.display = "block";
     }
+
     const closesidebar = () => {
         document.getElementById('sidebar').style.display = "none";
         document.getElementById('menu_icon').style.display = "block";
@@ -79,19 +58,7 @@ const TeachProfile = () => {
             }).catch(function(error) {
                 console.log(error);
             });
-        
     }
-    const showCreateCourse = () => {
-        document.getElementById('login-container').style.display = "flex";
-        document.getElementById('backdisable').style.display = 'block';
-    }
-
-    const closeCreateCourse = () => {
-        document.getElementById('login-container').style.display = "none";
-        document.getElementById('backdisable').style.display = 'none';
-    }
-
-
     
     return (
         <div className="teachprofile">
@@ -105,7 +72,7 @@ const TeachProfile = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
                 </div>
-                <button onClick={showCreateCourse} id="Create">Create</button>
+                <button onClick={() => history.push(`/teach/${currentUser.displayName}/course`)} id="Create">Create</button>
                 <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
                 <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
 
@@ -122,9 +89,7 @@ const TeachProfile = () => {
 
             </div>
             <div className="profile-main">
-                   <div id="login-container">
-                        <AddCourseName onClick={closeCreateCourse}/>
-                    </div>
+                   
                 <div className="profile-sidebar">
                     <img src={profilephoto} alt=""/>
                     <p className="name">{currentUser.displayName}</p>
@@ -144,7 +109,7 @@ const TeachProfile = () => {
                         <p className="div-head">Create a Course</p>
                         <div className="start-creating">
                             <p>Use our dedicated interface to <br/> create intuitive and interactive <br/>courses.</p>
-                            <button onClick={showCreateCourse}>Start Creating</button>
+                            <button onClick={() => history.push(`/teach/${currentUser.displayName}/course`)}>Start Creating</button>
                         </div>
                     </div>
                     <div className="drafts-div">

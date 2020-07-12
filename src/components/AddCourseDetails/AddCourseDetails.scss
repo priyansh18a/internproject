@@ -1,0 +1,181 @@
+.Course-details{
+    background: #121212;
+    color: white;
+    margin-top: -80px;
+    padding: 40px 14vw;
+}
+.create-a-course{
+    font-size: 36px;
+    font-weight: bold;
+}
+.view-all{
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.12em;
+    color: #FFCC34;
+    float: right;
+    margin-top: -45px;
+}
+.course-heads p {
+    font-weight: bold;
+    font-size: 24px;
+}
+.course-heads button{
+    width: 190px;
+    height: 36px;
+    background: #0099FF;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    border: none;
+    font-weight: 600;
+    float: right;
+    margin-top: -52px;  
+}
+.break{
+    border-top:  1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+    margin-bottom: 40px;
+}
+.course-center{
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 30px;
+    display: flex;
+}
+.course-center-left{
+    width: 264px;
+    padding: 36px 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.edit{
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.12em;
+    color: #38E2A6;
+    margin-bottom: 30px;
+
+}
+.active{
+    background: #003321;
+    border-radius: 4px;
+    width: 216px;
+    height: 44px;
+}
+.course-info{
+    font-size: 20px;
+    padding-left: 16px;
+    padding-top: 8px;
+}
+.course-center-right{
+    background: #212121;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    border-radius: 0px 4px 4px 0px;
+    padding: 36px;
+    display: grid;
+    width: 100%;
+}
+.course-info-head{
+    font-size: 24px;
+    font-weight: bold;
+}
+.add-course-info{
+    font-size: 16px;
+}
+.courseInput{
+    background: #1C1B1B;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.course-label{
+    margin-top: 22px;
+    margin-bottom: 10px;
+
+}
+.course-label img {
+    float: right;
+    cursor: pointer;
+}
+#courseTitle,#courseTags{
+    height: 45px;
+}
+
+#courseImage {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#courseImage + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.add-media{
+    background: #1C1B1B;
+    border-radius: 4px;
+    width: 184px;
+    height: 172px;
+    margin-bottom: 0px;
+    align-items: center;
+    cursor: pointer;
+}
+.upload-media{
+    opacity: 0.8;
+    border: 0.4px dashed rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 4px;
+    width: 123px;
+    height: 110px;
+    margin: auto;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.upload-media img {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.upload-media p {
+    font-size: 12px;
+    line-height: 100%;
+}
+.tags-list{
+    display: flex;
+}
+.tags-list div{
+    width: 62px;
+    height: 20px;
+    background: #003321;
+    border-radius: 2px;
+    padding: 5px 17px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+.tags-list div p {
+    font-size: 12px;
+    line-height: 100%;
+    color: #38E2A6;
+    margin: auto;
+}
+/* Change the white to any color ;) */
+.courseInput:-webkit-autofill,
+.courseInput:-webkit-autofill:hover, 
+.courseInput:-webkit-autofill:focus, 
+.courseInput:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px  #1C1B1B inset !important;
+    
+}
+/*Change text in autofill textbox*/
+.courseInput:-webkit-autofill {
+    -webkit-text-fill-color :white!important;
+}
+
