@@ -9,7 +9,7 @@ export default function AddSideNavListElement(props) {
             onClick={props.onClick}
             className="navscreenaddbutton"
             >
-            +
+            <span className="plus-scene"> + </span> <p>Add new scene</p>
             </Link>
         )
 }

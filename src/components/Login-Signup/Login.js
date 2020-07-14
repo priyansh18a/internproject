@@ -1,6 +1,6 @@
 import React, { useCallback, useState , useEffect} from 'react';
 import { useHistory } from "react-router-dom";
-import fire from '../../custom/Fire';
+import fire , {db}from '../../custom/Fire';
 // import { AuthContext } from '../../custom/auth-context';
 import firebase from 'firebase';
 import Google from '../../Graphics/Google.png'
@@ -22,6 +22,7 @@ const Login = props=> {
     const phoneNumHandler = () => {
         setPhonenum(props.phoneNo);
     }
+
     
     const login = useCallback(
       async event => {
@@ -47,16 +48,18 @@ const Login = props=> {
         await fire
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value);
-        const user = firebase.auth().currentUser;
-        user.updateProfile({
-          displayName: name.value,
-          photoURL: phonenum.value    // phone num stored in phoneURL
-          }).then(function() {
-          // Update successful.
-        console.log(user.displayName); 
-        history.push("/comingsoon");
+       const user = firebase.auth().currentUser.uid;
+       db.collection("users").add({
+            displayName: name.value,
+            phoneNo:  phonenum.value,
+            email:email.value,
+            uid:user
         })
-      } catch (error) {
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            history.push("/comingsoon");
+        })
+       } catch (error) {
         document.getElementById("warning-msg").innerHTML = error.message;
         document.getElementById("warning").style.display = "flex";
       }

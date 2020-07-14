@@ -4,6 +4,8 @@ import { useHistory} from "react-router-dom";
 import fire from '../../custom/Fire';
 import { AuthContext } from '../../custom/auth-context';
 import firebase from 'firebase';
+import {db} from '../../custom/Fire';
+
 
 //imported the graphics
 import logo from './../../Graphics/logo.png';
@@ -17,8 +19,7 @@ import analytics from './../../Graphics/analytics.svg';
 import profile from './../../Graphics/profile.svg';
 import settings from './../../Graphics/settings.svg';
 import img1 from './../../Graphics/img1.png';
-import img2 from './../../Graphics/img2.png';
-import img3 from './../../Graphics/img3.png';
+
 
 
 
@@ -30,11 +31,27 @@ const storage = firebase.storage();
 
 const TeachProfile = () => {
     const { currentUser } = useContext(AuthContext);
+    const uid = currentUser.uid;
     const history = useHistory();
     const [course, setCourse] = useState([]);
+    const [displayName, setDisplayName] = useState('');
     // console.log(course)
    
     useEffect(() => { fetchcourse() }, [] );
+    useEffect(() => { getuserdetails() }, [] );
+
+    const getuserdetails = () => {
+    db.collection("users").where("uid", "==", uid )
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                setDisplayName(doc.data().displayName);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+    }
 
     const opensidebar = () => {
         document.getElementById('sidebar').style.display = "block";
@@ -49,15 +66,17 @@ const TeachProfile = () => {
     }
 
     const fetchcourse = () => {
-            const listRef = storage.ref().child(`users/${currentUser.displayName}`);
-            // Find all the prefixes and items.
-            listRef.listAll().then(function(res) {
-                res.prefixes.forEach(function(folderRef) {
-                 setCourse(prevState => [...prevState , folderRef]);
-                });
-            }).catch(function(error) {
-                console.log(error);
+        db.collection("courses").where("authoruid", "==", uid )
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                setCourse(prevState => [...prevState , doc.data()]);
+                console.log(course);
             });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
     }
     
     return (
@@ -72,7 +91,7 @@ const TeachProfile = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
                 </div>
-                <button onClick={() => history.push(`/teach/${currentUser.displayName}/course`)} id="Create">Create</button>
+                <button onClick={() => history.push(`/teach/${uid}/course`)} id="Create">Create</button>
                 <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
                 <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
 
@@ -92,7 +111,7 @@ const TeachProfile = () => {
                    
                 <div className="profile-sidebar">
                     <img src={profilephoto} alt=""/>
-                    <p className="name">{currentUser.displayName}</p>
+                    <p className="name">{displayName}</p>
                     <ul>
                         <li><img src={dashboard} alt=""/><p  className="selected">Dashboard</p></li>
                         <li><img src={courses} alt=""/><p>Courses</p></li>
@@ -109,7 +128,7 @@ const TeachProfile = () => {
                         <p className="div-head">Create a Course</p>
                         <div className="start-creating">
                             <p>Use our dedicated interface to <br/> create intuitive and interactive <br/>courses.</p>
-                            <button onClick={() => history.push(`/teach/${currentUser.displayName}/course`)}>Start Creating</button>
+                            <button onClick={() => history.push(`/teach/${uid}/course`)}>Start Creating</button>
                         </div>
                     </div>
                     <div className="drafts-div">
@@ -117,9 +136,9 @@ const TeachProfile = () => {
                         <div className="course-card-container">
                         {course.map(element => (
                         <div className="course-card" key={element.name} onClick={() => history.push(`/teach/${currentUser.displayName}/${element.name}/0`)}>
-                            <img src={img1} alt=""/>
+                            <img src={element.thumbnail} alt=""/>
                             <p className="course-name">{element.name}</p>
-                            <p className="course-author">By {element.parent.name}</p>
+                            <p className="course-author">By {element.authorname}</p>
                         </div>
                         ))}
                     </div>  

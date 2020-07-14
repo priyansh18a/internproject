@@ -39,7 +39,7 @@ const App = () => {
         <Route path='/teach/:authorName/course' exact >
           <AddCourseDetails/>
         </Route>
-        <Route path="/teach/:authorName/:courseName/:screenId" exact>
+        <Route path="/teach/:authorName/:courseId/:screenId" exact>
           <Additem/>
         </Route>
         <Route path="/comingsoon" exact>

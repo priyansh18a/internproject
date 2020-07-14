@@ -1,10 +1,18 @@
 .navscreenaddbutton {
     top: 0;
-    font-size: 36px;
-    padding: 8px 8px 8px 8px;
+    padding: 18px 8px 0px 26px;
     display: block;
-    background-color: #111;
+    background:none;
     text-decoration: none;
-    color: grey; /* Black*/
-    border:none;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: #FFCC34; /* Black*/
+    border-top: 1px solid #4C4C4C;
+    border-bottom: 1px solid #4C4C4C;
+    display: flex;
+}
+.plus-scene{
+    font-size: 36px !important;
+    margin-right: 10px;
 }

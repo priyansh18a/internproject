@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext} from 'react';
 import {calculateTimeLeft} from './../Learn/Learn';
-import fire from '../../custom/Fire';
+import fire,{db} from '../../custom/Fire';
 
 import { AuthContext } from '../../custom/auth-context';
 
@@ -14,13 +14,34 @@ import menu_icon from './../../Graphics/menu_icon.png'
 
 const ComingSoon = () => {
     const { currentUser } = useContext(AuthContext);
+    const uid = currentUser.uid;
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    const [displayName, setDisplayName] = useState('');
+
+
+    useEffect(() => { getuserdetails() }, [] );
+
+    const getuserdetails = () => {
+    db.collection("users").where("uid", "==", uid )
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                setDisplayName(doc.data().displayName);
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+    }
+    
 
     useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
      }, 60000);
     });
+
+   
 
     window.onscroll = () => {
         if(window.scrollY <= 150){
@@ -85,7 +106,7 @@ const ComingSoon = () => {
         </div>
             
             <div className="coming-soon">
-                <p>Congratulations {currentUser.displayName} for signing up! We will personally notify you when our app launches</p>
+                <p>Congratulations {displayName} for signing up! We will personally notify you when our app launches</p>
             </div>
             <div id="future-depend">
             <p className="app-release">App release in</p>
