@@ -91,7 +91,7 @@ const TeachProfile = () => {
                 <div className="homepage-head-text">
                     <a className="link-txt" href='/teach' style={{color:"#0099FF"}}>Teach</a>
                 </div>
-                <button onClick={() => history.push(`/teach/${uid}/course`)} id="Create">Create</button>
+                <button onClick={() => history.push(`/teach/${uid}/newcourse`)} id="Create">Create</button>
                 <button onClick={() => fire.auth().signOut()} className="sign-up-btn" id="signUp">Sign Out</button>
                 <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
 
@@ -128,14 +128,14 @@ const TeachProfile = () => {
                         <p className="div-head">Create a Course</p>
                         <div className="start-creating">
                             <p>Use our dedicated interface to <br/> create intuitive and interactive <br/>courses.</p>
-                            <button onClick={() => history.push(`/teach/${uid}/course`)}>Start Creating</button>
+                            <button onClick={() => history.push(`/teach/${uid}/newcourse`)}>Start Creating</button>
                         </div>
                     </div>
                     <div className="drafts-div">
                         <p className="div-head">Your Courses</p>
                         <div className="course-card-container">
                         {course.map(element => (
-                        <div className="course-card" key={element.name} onClick={() => history.push(`/teach/${currentUser.displayName}/${element.name}/0`)}>
+                        <div className="course-card" key={element.name} onClick={() => history.push(`/teach/${uid}/${element.courseid}/0`)}>
                             <img src={element.thumbnail} alt=""/>
                             <p className="course-name">{element.name}</p>
                             <p className="course-author">By {element.authorname}</p>

@@ -9,6 +9,36 @@
   height: 68px;
   padding: 23px 36px;
   border-bottom: 1px solid #3C3C3C;
+  transition: 0.5;
+}
+#hidden-menu{
+  top: 51px;
+  width: 200px;
+  height: 120px;
+  position: absolute;
+  background: #212121;
+  z-index: 10;
+  padding: 20px;
+  border: 1px solid darkolivegreen;
+  left: 39px;
+  border-radius: 0px 0px 8px 0px;
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+#hidden-menu p{
+  cursor: pointer;
+}
+
+#hidden-menu p:hover{
+  color:rgb(176, 221, 109);
+} 
+
+.header-additems img{
+  margin-right: 10px;
+  height: 30px;
+  margin-top: -4px;
+  cursor: pointer;
 }
 .course-num{
   font-size: 20px;
@@ -449,4 +479,48 @@ a:hover {
 }
 .btn{
   margin-bottom: 10px;
+}
+.mobile-alert{
+  background: #212121;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  padding: 20px;
+}
+.go-back {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+
+}
+.go-back:focus{
+  color: rgb(179, 179, 130);
+}
+.mobile-alert div{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+.mobile-alert div p {
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (max-width: 750px){
+
+
+  .header-additems{
+    display:none;
+  }
+  .add-item-main{
+    display: none;
+  }
+  .mobile-alert{
+    display: block;
+
+
+  }
+
+
 }

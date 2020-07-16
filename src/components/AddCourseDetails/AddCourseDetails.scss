@@ -2,7 +2,7 @@
     background: #121212;
     color: white;
     margin-top: -80px;
-    padding: 40px 14vw;
+    padding: 40px 20vw;
 }
 .create-a-course{
     font-size: 36px;
@@ -109,7 +109,6 @@
 
 #courseImage {
 	width: 0.1px;
-	height: 0.1px;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -170,7 +169,7 @@
 }
 .thumbnail{
     width: 184px;
-    height: 180px;
+    height: 172px;
     z-index: 10;
     margin-top: -42px;
 
@@ -187,4 +186,24 @@
 .courseInput:-webkit-autofill {
     -webkit-text-fill-color :white!important;
 }
-
+@media (max-width: 450px){
+    .Course-details{
+        padding: 20px 6vw;
+    }
+    .create-a-course{
+        font-size: 25px;
+    }
+    .view-all{
+        display: none;
+    }
+    .course-heads p {
+        font-size: 20px;
+    }
+    .course-heads button{
+        width: 154px;
+        font-size: 14px;
+    }
+    .course-center-right{
+        padding: 20px;
+    }
+}

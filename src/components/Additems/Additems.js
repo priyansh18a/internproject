@@ -1,8 +1,10 @@
 import React, { useState , useEffect,useContext} from 'react';
+import { useHistory} from "react-router-dom";
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
 import eye from '../../Graphics/eye.png';
-import add from '../../Graphics/add.png';
+import menu_icon from '../../Graphics/menu_icon.png';
+import close from '../../Graphics/close.png';
 import save from '../../Graphics/save.png';
 import Delete from '../../Graphics/delete.png'
 import code_add from '../../Graphics/code_add.png'
@@ -17,13 +19,15 @@ import { AuthContext } from '../../custom/auth-context';
 const storage = firebase.storage()
 
 const Additem = () => {
+    const history = useHistory();
     const { currentUser } = useContext(AuthContext);
+    const uid = currentUser.uid;
     const courseId = useParams().courseId;
     const screenId = useParams().screenId;
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
     const [onclick, setOnclick] = useState([]);
-    const [elements, updateElements] = useState([]);
+    const [elements, updateElements] = useState([{key: 0, text: 'Scene 0', href: `/teach/${currentUser.uid}/${courseId}/0`}]);
    
     let i = 1;
 
@@ -166,7 +170,12 @@ const Additem = () => {
        const  onclickon1 = e.target.value;
        setOnclick(prevState => [...prevState , onclickon1]);
     }
-  
+    const opensidemenu = () => {
+       document.getElementById('hidden-menu').style.display = "block";
+     }
+    const closesidemenu = () => {
+      document.getElementById('hidden-menu').style.display = "none";
+    }
          
 
     // const Rndcount  =  [{ id: 'resize1', number: 1 },{ id: 'resize2', number: 2 },{ id: 'resize3', number: 3  },{ id: 'resize4' , number: 4 },{ id:'resize5', number: 5 }];
@@ -175,6 +184,8 @@ const Additem = () => {
         <React.Fragment>
          <div className="container-box">
               <div className="header-additems">
+              <img src={menu_icon} alt="" onClick={opensidemenu}/>
+              
               <p className="course-num">My course</p>
               <div className="headercenter"><p>Scene {screenId}</p></div>
               <button className="save-course" onClick={uploadfilehandler}><img src={save} alt=""/>Save Course </button>
@@ -184,6 +195,11 @@ const Additem = () => {
             </div>
             <div className="add-item-main">
             <SideNav elements={elements} updateElements={updateElements}/>
+            <div id="hidden-menu">
+                <p onClick={closesidemenu} className="closeloginsignup">&times;</p>
+                <p onClick={() => history.push(`/teach/${uid}/${courseId}`)}>Course Details</p>
+                <p onClick={() => history.push(`/teach/${uid}`)}>Back</p>
+              </div>
             <div className="row-div">
            <div className="course-screen" id="parents">
               <form method="post" action="#" id="#">
@@ -410,10 +426,11 @@ const Additem = () => {
             </ul>
            </div>
          </div>
-
-         
-         </div>
-  
+      </div>
+      <div className="mobile-alert">
+        <p onClick={() => history.push(`/teach/${uid}`)} className="go-back">Go Back</p>
+        <div><p>This Page is not compatible with mobile screen. Open it in Laptop to create/edit course.</p></div>
+      </div>
          
     </div>
     </React.Fragment>

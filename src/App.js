@@ -13,7 +13,7 @@ import Teach from './components/Teach/Teach'
 import ComingSoon from './components/ComingSoon/ComingSoon';
 import TeachProfile from './components/TeachProfile/TeachProfile';
 import AddCourseDetails from './components/AddCourseDetails/AddCourseDetails';
-
+import ReviewCourseDetails from './components/ReviewCourseDetails/ReviewCourseDetails';
 
 
 const App = () => {
@@ -36,8 +36,11 @@ const App = () => {
         <Route path='/teach/:authorName' exact >
           <TeachProfile/>
         </Route>
-        <Route path='/teach/:authorName/course' exact >
+        <Route path='/teach/:authorName/newcourse' exact >
           <AddCourseDetails/>
+        </Route>
+        <Route path='/teach/:authorName/:courseId' exact >
+          <ReviewCourseDetails/>
         </Route>
         <Route path="/teach/:authorName/:courseId/:screenId" exact>
           <Additem/>

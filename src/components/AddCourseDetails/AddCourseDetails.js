@@ -58,7 +58,8 @@ const AddCourseDetails = () => {
         document.getElementById('cross').style.display = "none";
     }
 
-    const createnewcourse = () => {
+    const createnewcourse = event => {
+        event.preventDefault();
         coursesRef.doc(courseId).set({
                 name: courseName ,
                 courseid:courseId ,
@@ -152,17 +153,12 @@ const AddCourseDetails = () => {
                 <p className="create-a-course">Create a course</p>
                 <p className="view-all">VIEW ALL DRAFTS </p>
                 <hr className="break"/>
+                <form onSubmit={createnewcourse} >
                 <div className="course-heads">
                     <p>My course</p>
-                    <button onClick={createnewcourse}>Proceed to Course</button>
+                    <button type="submit">Proceed to Course</button>
                 </div>
                  <div className="course-center">
-                <div className="course-center-left">
-                <p className="edit">EDIT</p>
-                <p className="course-info active">Course Info</p>
-                <p className="course-info">Course Lab</p>
-                <p className="edit" style={{marginTop: '50px'}}>HELP</p>
-                </div>
                 <div className="course-center-right">
                     <p className="course-info-head">Course Info</p>
                     <p className="add-course-info">Add course information to help students better discover your course</p>
@@ -175,7 +171,7 @@ const AddCourseDetails = () => {
                         <label htmlFor="courseImage" className="upload-media">
                         <img src={scene} alt=""/><p>Add Media</p>
                         </label>
-                        <input type="file" name="courseImage" className="courseInput " id="courseImage" onChange={updatecoursethumbnail}/>
+                        <input type="file" name="courseImage" className="courseInput " id="courseImage" onChange={updatecoursethumbnail} required/>
                     </div>
                     <label htmlFor="courseTags" className="course-label">COURSE TAGS<img src={question} alt=""/></label>
                     <input type="text" name="courseTags" className="courseInput" id="courseTags" onChange={updatecoursetags}/>
@@ -186,6 +182,7 @@ const AddCourseDetails = () => {
                     </div>
                </div>
           </div>
+          </form>
       </div>
     </div>  
     );

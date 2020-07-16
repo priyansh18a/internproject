@@ -174,3 +174,53 @@
         padding:80px 2vw ;  
     }
 }
+@media (max-width: 450px){
+    #Create{
+        display: none;
+    }
+    .profile-sidebar{
+        display: none;
+    }
+    .drafts-div{
+        width: 92vw;
+        height: auto;
+        padding: 25px;
+        margin-top: 0px;
+    }
+    .course-card-container{
+        display:grid;
+    }
+    #create-course{
+        width: 92vw;
+        height: 228px;
+        margin-bottom: 20px;
+    }
+    .profile-main-content {
+        padding: 30px 4vw;
+    }
+    .profile-main-text{
+        font-size: 25px;
+    }
+    .div-head{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .start-creating{
+        width: auto;
+        height: 136px;
+    }
+    .start-creating button{
+        width: 50vw;
+        height: 40px;
+    }
+    .course-card{
+        width: 230px;
+        margin: auto;
+        margin-bottom: 20px !important;
+    }
+    .course-card img {
+        width: 222px;
+        height: 180px;
+    }
+}
