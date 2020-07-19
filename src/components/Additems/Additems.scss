@@ -52,6 +52,7 @@
   height: 46px;
   text-align: center;
   width: 77%;
+  z-index: 2;
 }
 .headercenter p {
   font-size: 20px;
@@ -72,6 +73,7 @@
   top: 16px;
   right: 150px;
   cursor: pointer;
+  z-index: 3;
 }
 .save-course{
   width: 157px;
@@ -88,6 +90,7 @@
   top: 16px;
   right: 330px;
   cursor: pointer;
+  z-index: 3;
 }
 .save-course img {
   margin-right: 9px;
@@ -295,7 +298,7 @@ button.add.last-btn {
   border-radius: 8px;
   border: none;
   box-sizing: border-box;
-  height: 105px;
+  height: 145px;
   width: 20vw;
   padding: 20px 35px;
   margin-bottom: 10px;
@@ -519,6 +522,7 @@ a:hover {
 }
 #textinputstyle div{
   display: flex;
+  flex-wrap: wrap;
 }
 #textinputstyle p {
   font-size: 16px;

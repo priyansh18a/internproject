@@ -69,8 +69,9 @@ const Additem = () => {
     } 
 
     const uploadfilehandler = () => {
+         const inputText =  document.getElementById('inputText').style;
          files.forEach(file => {
-          const myEl = document.getElementById(`resize${i}`);
+         const myEl = document.getElementById(`resize${i}`);
          const transformation = window.getComputedStyle(myEl).getPropertyValue("transform").match(/(-?[0-9\.]+)/g);
          const top = ((transformation[5]-68)/600)*100;
          const left = ((transformation[4]-250)/(0.64*window.innerWidth))*100; 
@@ -102,17 +103,20 @@ const Additem = () => {
                       // Handle unsuccessful uploads
                     }, function() {
                       // Handle successful uploads on complete
-                    alert('Upload complete')
+                    alert(`${file.name} upload complete`)
                     });
                 });
           coursesRef.doc(courseId).collection('text').doc().set({
                   data: textcontent ,
-                  courseid:courseId 
-                  
-          }).catch(function(error){
+                  courseid:courseId ,
+                  left:inputText.left,
+                  top:inputText.top,
+                  fontSize:inputText.fontSize
+          }).then(function(result){
+              alert('Text Upload Complete')
+        }).catch(function(error){
               console.log(error);
           });
-          alert('Upload complete')  
         }
 
     const getimages = () => {
@@ -174,14 +178,8 @@ const Additem = () => {
 
     const textcontenthandler = event => {
       setTextcontent(event.target.value);
-     
     }
-
-
-    const addOptions = () => {
-            // complete it later
-    }
-   
+    
     const interactionbox1 = () => {
      document.getElementById('interactionbox1').style.display ="block";
     }
@@ -211,7 +209,7 @@ const Additem = () => {
     const IncreaseTextsize = event => {
       event.preventDefault();
       if (document.getElementById("inputText").style.fontSize === "") {
-        document.getElementById('inputText').style.fontSize = "1.0em";
+        document.getElementById('inputText').style.fontSize = "2.0em";
       }
       document.getElementById('inputText').style.fontSize = parseFloat(document.getElementById('inputText').style.fontSize) + ( 1* 0.2) + "em";
     }
@@ -219,7 +217,7 @@ const Additem = () => {
     const DecreaseTextsize = event => {
       event.preventDefault();
       if (document.getElementById("inputText").style.fontSize === "") {
-        document.getElementById('inputText').style.fontSize = "1.0em";
+        document.getElementById('inputText').style.fontSize = "2.0em";
       }
       document.getElementById('inputText').style.fontSize = parseFloat(document.getElementById('inputText').style.fontSize) + ( -1* 0.2) + "em";
     }
@@ -238,7 +236,11 @@ const Additem = () => {
       event.preventDefault();
       document.getElementById('inputText').style.color = "yellow";
     }
-         
+    
+    const changecolordarkgreen = event => {
+      event.preventDefault();
+      document.getElementById('inputText').style.color = "yellow";
+    }
 
     // const Rndcount  =  [{ id: 'resize1', number: 1 },{ id: 'resize2', number: 2 },{ id: 'resize3', number: 3  },{ id: 'resize4' , number: 4 },{ id:'resize5', number: 5 }];
 
@@ -478,12 +480,15 @@ const Additem = () => {
                 </div>
              </div>
              <div id="textinputstyle">
-             <div > <button id="sizeUp" onClick={IncreaseTextsize} type="button" className="btn btn-light">Font Size Up </button>
-              <button id="sizeDown" onClick={DecreaseTextsize} type="button" className="btn btn-light">Font Size down</button></div>
+             <p>Font Size:</p>
+             <div > <button id="sizeUp" onClick={IncreaseTextsize} type="button" className="btn btn-light">Increase</button>
+              <button id="sizeDown" onClick={DecreaseTextsize} type="button" className="btn btn-light">Decrease</button></div>
               <p>Font Color:</p>
               <div > <button onClick={changecolorwhite} type="button" className="color-text" style={{background:"white"}}></button>
               <button onClick={changecolorblack} type="button" className="color-text" style={{background:"black"}}></button>
-              <button onClick={changecoloryellow} type="button" className="color-text" style={{background:"yellow"}}></button></div>
+              <button onClick={changecoloryellow} type="button" className="color-text" style={{background:"yellow"}}></button>
+              <button onClick={changecolordarkgreen} type="button" className="color-text" style={{background:"darkgreen"}}></button></div>
+
         </div>
         </div>
       </div>
@@ -498,7 +503,7 @@ const Additem = () => {
             <ul>
               <li>Option 1</li>
               <li>Option 2</li>
-              <Link to="" className="add-option" href={addOptions}> <span style={{ fontSize : '20px',marginRight:'5px'}}> + </span> Add options</Link>
+              <Link to="" className="add-option" > <span style={{ fontSize : '20px',marginRight:'5px'}}> + </span> Add options</Link>
             </ul>
            </div>
          </div>

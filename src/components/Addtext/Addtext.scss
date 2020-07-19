@@ -1,15 +1,15 @@
 #textinputdiv{
   width:64vw;
   height: 600px;
+  overflow: hidden;
 }
-
 #inputText {
     background: none;
     border:none;
 }
-
-
-
+#inputText:focus {
+    outline :2px dashed gray;
+}
 .color-text{
   border-radius: 50%;
   width: 40px;
