@@ -52,7 +52,7 @@ const Addtext = props => {
 
 return (
     <div id="textinputdiv">
-    <input type="text" id="inputText" onMouseDown={mousedown}  onDragEnter={ondragstart} autoComplete="off" onChange={props.textchange}/>
+    <input type="text" id="inputText" onMouseDown={mousedown}  onDragEnter={ondragstart} autoComplete="off" onChange={props.textchange} placeholder="Write Your Text Here"/>
    
     </div>
 );

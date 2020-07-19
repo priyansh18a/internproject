@@ -472,11 +472,12 @@ const Additem = () => {
                 </div>
              </div>
              <div id="textinputstyle">
-             <button id="sizeUp" onClick={IncreaseTextsize} type="button" className="btn btn-light">Font Size Up </button>
-              <button id="sizeDown" onClick={DecreaseTextsize} type="button" className="btn btn-light">Font Size down</button>
-              <button onClick={changecolorwhite} type="button" className="color-text" style={{background:"white"}}></button>
+             <div > <button id="sizeUp" onClick={IncreaseTextsize} type="button" className="btn btn-light">Font Size Up </button>
+              <button id="sizeDown" onClick={DecreaseTextsize} type="button" className="btn btn-light">Font Size down</button></div>
+              <p>Font Color:</p>
+              <div > <button onClick={changecolorwhite} type="button" className="color-text" style={{background:"white"}}></button>
               <button onClick={changecolorblack} type="button" className="color-text" style={{background:"black"}}></button>
-              <button onClick={changecoloryellow} type="button" className="color-text" style={{background:"yellow"}}></button>
+              <button onClick={changecoloryellow} type="button" className="color-text" style={{background:"yellow"}}></button></div>
         </div>
         </div>
       </div>

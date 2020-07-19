@@ -513,7 +513,25 @@ a:hover {
 #textinputstyle{
   display: none;
 }
+#textinputstyle div{
+  display: flex;
+}
+#textinputstyle p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+#sizeUp{
+  margin-right: 20px;
+}
+#sizeUp, #sizeDown{
+  font-weight: bold;
+}
+.color-text{
+  margin-right: 20px;
+}
 @media (max-width: 750px){
 
 

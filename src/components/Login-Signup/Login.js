@@ -69,7 +69,7 @@ const Login = props=> {
 
   const googleSignup = ()=> {
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithRedirect(provider)
       .then (result => {
         const user = result.user;
         db.collection("users").add({
@@ -90,7 +90,7 @@ const Login = props=> {
 
   const googleLogin = ()=> {
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithRedirect(provider)
       .then (result => {
         const user = result.user;
         db.collection("users").where("uid", "==", user.uid )
