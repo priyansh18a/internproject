@@ -4,7 +4,6 @@ import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
 import eye from '../../Graphics/eye.png';
 import menu_icon from '../../Graphics/menu_icon.png';
-import close from '../../Graphics/close.png';
 import save from '../../Graphics/save.png';
 import Delete from '../../Graphics/delete.png'
 import code_add from '../../Graphics/code_add.png'
@@ -13,8 +12,9 @@ import Arrowdown from '../../Graphics/arrowdown.png'
 import './Additems.scss'
 import { Link, useParams } from 'react-router-dom';
 import firebase from 'firebase';
-import fire from '../../custom/Fire';
+import fire, {db} from '../../custom/Fire';
 import { AuthContext } from '../../custom/auth-context';
+import Addtext from '../Addtext/Addtext';
 
 const storage = firebase.storage()
 
@@ -24,11 +24,13 @@ const Additem = () => {
     const uid = currentUser.uid;
     const courseId = useParams().courseId;
     const screenId = useParams().screenId;
+    const coursesRef = db.collection("courses");
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
     const [onclick, setOnclick] = useState([]);
     const [elements, updateElements] = useState([{key: 0, text: 'Scene 0', href: `/teach/${currentUser.uid}/${courseId}/0`}]);
-   
+    const [textcontent, setTextcontent] = useState('');
+
     let i = 1;
 
     useEffect(() => { getimages() }, [] );
@@ -52,6 +54,7 @@ const Additem = () => {
       console.log(imagecount);
       const img = document.createElement("img");
       img.classList.add("obj");
+      img.setAttribute("title", `Image ${imagecount}`);
       img.file = file;
       document.getElementById(`resizediv${imagecount}`).style.display = "inline-block";  
       const preview = document.getElementById(`resize${imagecount}`)
@@ -67,16 +70,23 @@ const Additem = () => {
 
     const uploadfilehandler = () => {
          files.forEach(file => {
+          const myEl = document.getElementById(`resize${i}`);
+         const transformation = window.getComputedStyle(myEl).getPropertyValue("transform").match(/(-?[0-9\.]+)/g);
+         const top = ((transformation[5]-68)/600)*100;
+         const left = ((transformation[4]-250)/(0.64*window.innerWidth))*100; 
          const imgwidth = document.getElementById(`resize${i}`).style.width;
-          console.log(imgwidth);
-          console.log(onclick[i-1]);
-          const metadata = {
+         const imgheight = document.getElementById(`resize${i}`).style.height;
+         const metadata = {
             customMetadata: {
               'resizeWidth': imgwidth,
-              'onclick': onclick[i-1],
+              'resizeHeight': imgheight,
+              'onClick': onclick[i-1],
+              'Left' : left,
+              'Top' : top,
             }
           };
           i++;
+          console.log(i);
           const uploadTask = storage.ref().child(`courses/${courseId}/${screenId}/${file.name}`).put(file, metadata);
             uploadTask.on(
                   firebase.storage.TaskEvent.STATE_CHANGED,
@@ -86,28 +96,42 @@ const Additem = () => {
                       if (snapshot.state === firebase.storage.TaskState.RUNNING) {
                         console.log(`Progress: ${progress}%`);
                       }
-                    },
-                    error => console.log(error.code)
-                  );
-            });
-    };
+                    }, function(error) {
+                      // Handle unsuccessful uploads
+                    }, function() {
+                      // Handle successful uploads on complete
+                    alert('Upload complete')
+                    });
+                });
+          coursesRef.doc(courseId).collection('text').doc().set({
+                  data: textcontent ,
+                  courseid:courseId 
+                  
+          }).catch(function(error){
+              console.log(error);
+          });
+          alert('Upload complete')  
+        }
 
-    const getimages = () =>{
+    const getimages = () => {
       const uploadTask = storage.ref().child(`courses/${courseId}/${screenId}`);
       uploadTask.listAll().then(res => {
         if(res.items.length === 0 ){
               // if no image found then do nothing
         }else{
-          console.log(res);
           res.items.forEach(itemRef => {
             itemRef.getMetadata().then(metadata => {
-             var  fetchimagewidth  = metadata.customMetadata.resizeWidth;
+             const  fetchimagewidth  = metadata.customMetadata.resizeWidth;
+             const  fetchimageheight  = metadata.customMetadata.resizeHeight || '400px';
+             const top = ((metadata.customMetadata.Top*6) + 68) + 'px' || '200px';
+             const left = ((metadata.customMetadata.Left*0.0064*window.innerWidth) + 250) + 'px' || '400px';
              itemRef.getDownloadURL().then(url => {
               document.getElementById(`resizediv${i}`).style.display = "inline-block";  
-              document.getElementById(`resize${i}`).innerHTML +=   '<img src=" '+ url +'" alt="not found"/>  ';
-              console.log(fetchimagewidth);
-              document.getElementById(`resize${i}`).style.width = fetchimagewidth;
-              document.getElementById('resize1').style.height = '600px';
+              const div =  document.getElementById(`resize${i}`);
+              div.innerHTML +=   '<img src=" '+ url +'" alt="not found" title="Image ' + i + ' " />  ';
+              div.style.height = fetchimageheight;
+              div.style.width = fetchimagewidth;
+              div.style.transform =  'translate(' + left + ',' + top + ')';
               i++;
             })
           })
@@ -121,14 +145,14 @@ const Additem = () => {
       }
 
 
-    const addtext = () =>{
+    const addtext = () => {
         document.getElementById("hide").style.display ="none";
-        document.getElementById("preview").style.display ="block"; 
-        const resize1 = document.getElementById("resize1");
-          resize1.innerHTML= document.getElementById("text").innerHTML;
-     } 
+        document.getElementById("preview").style.display ="block";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("textinputstyle").style.display = "block";
+    } 
 
-    const addquestion = () =>{
+    const addquestion = () => {
         document.getElementById("hide").style.display ="none";
         document.getElementById("preview").style.display ="block"; 
         // document.getElementsByClassName("create-quest").style.display ="none";
@@ -144,6 +168,12 @@ const Additem = () => {
         // document.getElementsByClassName("create-quest").style.display ="block";
         document.getElementById("option-redirect").style.display ="none"; 
         document.getElementById("question").style.display = "none";
+       
+    }
+
+    const textcontenthandler = event => {
+      setTextcontent(event.target.value);
+     
     }
 
 
@@ -152,7 +182,7 @@ const Additem = () => {
     }
    
     const interactionbox1 = () => {
-        document.getElementById('interactionbox1').style.display ="block";
+     document.getElementById('interactionbox1').style.display ="block";
     }
     const interactionbox2 = () => {
       document.getElementById('interactionbox2').style.display ="block";
@@ -176,6 +206,37 @@ const Additem = () => {
     const closesidemenu = () => {
       document.getElementById('hidden-menu').style.display = "none";
     }
+
+    const IncreaseTextsize = event => {
+      event.preventDefault();
+      if (document.getElementById("inputText").style.fontSize === "") {
+        document.getElementById('inputText').style.fontSize = "1.0em";
+      }
+      document.getElementById('inputText').style.fontSize = parseFloat(document.getElementById('inputText').style.fontSize) + ( 1* 0.2) + "em";
+    }
+    
+    const DecreaseTextsize = event => {
+      event.preventDefault();
+      if (document.getElementById("inputText").style.fontSize === "") {
+        document.getElementById('inputText').style.fontSize = "1.0em";
+      }
+      document.getElementById('inputText').style.fontSize = parseFloat(document.getElementById('inputText').style.fontSize) + ( -1* 0.2) + "em";
+    }
+    
+    const changecolorwhite = event => {
+      event.preventDefault();
+      document.getElementById('inputText').style.color = "white";
+    }
+    
+    const changecolorblack = event => {
+      event.preventDefault();
+      document.getElementById('inputText').style.color = "black";
+    }
+    
+    const changecoloryellow = event => {
+      event.preventDefault();
+      document.getElementById('inputText').style.color = "yellow";
+    }
          
 
     // const Rndcount  =  [{ id: 'resize1', number: 1 },{ id: 'resize2', number: 2 },{ id: 'resize3', number: 3  },{ id: 'resize4' , number: 4 },{ id:'resize5', number: 5 }];
@@ -188,7 +249,7 @@ const Additem = () => {
               
               <p className="course-num">My course</p>
               <div className="headercenter"><p>Scene {screenId}</p></div>
-              <button className="save-course" onClick={uploadfilehandler}><img src={save} alt=""/>Save Course </button>
+              <button className="save-course" onClick={uploadfilehandler}><img src={save} alt=""/>Save Scene</button>
               <button className="preview-course"><img src={eye} alt=""/> Preview</button>
               <button onClick={() => fire.auth().signOut()} className="sign-out-add" id="signUp">Sign Out</button>
               <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
@@ -211,6 +272,9 @@ const Additem = () => {
                 </div>
                 
               <div  id="preview" className="imagebox">
+              <div id="text">
+                <Addtext textchange={textcontenthandler}/>
+              </div>
                   <div id= "resizediv5"><Rnd
                        id="resize5"
                        onClick={interactionbox5}
@@ -298,6 +362,7 @@ const Additem = () => {
                    </Rnd></div>
                 </div>
               </form>
+
               <div className="add-media-div">
               <div className="type-box">
                 <button className="add" onClick={addtext} style={{fontWeight:"bold"}}>T</button>
@@ -323,12 +388,13 @@ const Additem = () => {
               </div>
             </div>
             </div>
+
             <div className="interactions-div">
             <div className="interactions-head">  <p id="interaction">INTERACTIONS </p> <p id="plus">+</p></div>
             <div className="image-head">  <p>Image</p><img src={Delete} alt=""/></div>
               <div className="create-quest" id="interactionbox1">
                 <div className="create-question-main">
-                <p>On Click</p>
+                <p>On Click Image 1</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox1">
                     <option defaultValue>Select</option>
                     {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -339,7 +405,7 @@ const Additem = () => {
              </div>
              <div className="create-quest" id="interactionbox2">
                 <div className="create-question-main">
-                <p>On Click</p>
+                <p>On Click Image 2</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox2">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -350,7 +416,7 @@ const Additem = () => {
              </div>
              <div className="create-quest" id="interactionbox3">
                 <div className="create-question-main">
-                <p>On Click</p>
+                <p>On Click Image 3</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox3">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -361,7 +427,7 @@ const Additem = () => {
              </div>
              <div className="create-quest" id="interactionbox4">
                 <div className="create-question-main">
-                <p>On Click</p>
+                <p>On Click Image 4</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox4">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -372,7 +438,7 @@ const Additem = () => {
              </div>
              <div className="create-quest" id="interactionbox5">
                 <div className="create-question-main">
-                <p>On Click</p>
+                <p>On Click Image 5</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox5">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -404,16 +470,19 @@ const Additem = () => {
                   <p>Option 4</p>
                   <Link to="" className="add-option-dest"><img src={Arrowdown} alt=''/><p> ADD</p></Link>
                 </div>
-              </div>
-            </div>
-             
-            </div>
-              
-          <div id="text">
-            <label>Text 1</label>
-            <textarea type="text" className="text-input" rows="6" />
-         </div>
-         <div  id="question">
+             </div>
+             <div id="textinputstyle">
+             <button id="sizeUp" onClick={IncreaseTextsize} type="button" className="btn btn-light">Font Size Up </button>
+              <button id="sizeDown" onClick={DecreaseTextsize} type="button" className="btn btn-light">Font Size down</button>
+              <button onClick={changecolorwhite} type="button" className="color-text" style={{background:"white"}}></button>
+              <button onClick={changecolorblack} type="button" className="color-text" style={{background:"black"}}></button>
+              <button onClick={changecoloryellow} type="button" className="color-text" style={{background:"yellow"}}></button>
+        </div>
+        </div>
+      </div>
+     
+
+      <div  id="question">
           <p className="question-num">Question 1</p>
           <div className="question-num-div">
             <p>QUESTION</p>
@@ -427,6 +496,7 @@ const Additem = () => {
            </div>
          </div>
       </div>
+
       <div className="mobile-alert">
         <p onClick={() => history.push(`/teach/${uid}`)} className="go-back">Go Back</p>
         <div><p>This Page is not compatible with mobile screen. Open it in Laptop to create/edit course.</p></div>

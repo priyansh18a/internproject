@@ -175,7 +175,7 @@ const Teach = () => {
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
-                    <img className="l-main-learn" src={teachMain} alt="" id="teachMain"/>
+                    <img className="l-main-learn" src={teachMain} alt="img not loaded" id="teachMain"/>
                 </div>
               
             </div>

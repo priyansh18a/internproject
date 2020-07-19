@@ -9,7 +9,8 @@
   height: 68px;
   padding: 23px 36px;
   border-bottom: 1px solid #3C3C3C;
-  transition: 0.5;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
 }
 #hidden-menu{
   top: 51px;
@@ -47,7 +48,7 @@
   font-weight: bold;
 }
 .headercenter{
-  height: 68px;
+  height: 46px;
   text-align: center;
   width: 77%;
 }
@@ -374,6 +375,7 @@ button.add.last-btn {
   border-radius: 4px;
   width: 100%;
   color: black;
+  height: 88%;
 }
 #question{
   display: none;
@@ -409,8 +411,10 @@ button.add.last-btn {
   color: #16852E;
   font-size: 14px;
   margin-left: -20px;
+} 
+#addtext {
+  margin-top: 20px;
 }
-
 
 a:hover {
   color: #0056b3;
@@ -418,33 +422,31 @@ a:hover {
 }
 #option-redirect{
   display: none;
-  border: 3px solid #C7EACF;
   box-sizing: border-box;
   border-radius: 8px;
   width: 20vw;
   height: 175px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)), #212121;;
 }
 .question-header{
-  background: #C7EACF;
+  background: #212121;
   border-radius: 3px 3px 0px 0px;
   width: 100%;
   height: 40px;
-  padding: 0 16px;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 .question-header p {
-  font-weight: 500;
   font-size: 16px;
-  line-height: 100%;
-  color: #1C632C;
+  margin-bottom: 0px;
+  font-weight: bold;
   margin-top: 11px;
 
 }
 .question-header img {
   position: absolute;
-  right: 50px;
+  right: 13px;
 
 }
 .options{
@@ -457,7 +459,7 @@ a:hover {
 .options >p {
   font-size: 12px;
   line-height: 100%;
-  color: #212121;
+  color: rgba(255, 255, 255, 0.6);
 }
 .add-option-dest{
   display: flex;
@@ -475,7 +477,7 @@ a:hover {
   line-height: 100%;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #1C632C;
+  color: white;
 }
 .btn{
   margin-bottom: 10px;
@@ -507,6 +509,11 @@ a:hover {
   font-size: 20px;
   font-weight: bold;
 }
+
+#textinputstyle{
+  display: none;
+}
+
 @media (max-width: 750px){
 
 

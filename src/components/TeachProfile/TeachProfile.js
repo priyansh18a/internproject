@@ -18,8 +18,6 @@ import drafts from './../../Graphics/drafts.svg';
 import analytics from './../../Graphics/analytics.svg';
 import profile from './../../Graphics/profile.svg';
 import settings from './../../Graphics/settings.svg';
-import img1 from './../../Graphics/img1.png';
-
 
 
 
@@ -71,7 +69,6 @@ const TeachProfile = () => {
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 setCourse(prevState => [...prevState , doc.data()]);
-                console.log(course);
             });
         })
         .catch(function(error) {

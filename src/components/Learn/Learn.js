@@ -189,7 +189,7 @@ const Learn = () => {
                     </div>
                 </div>
                 <div className="main-image-cont" onClick={closeloginsignup}>
-                    <img className="l-main-learn" src={learnMain} alt="" id="learnMain" />
+                    <img className="l-main-learn" src={learnMain} alt="img not loaded" id="learnMain" />
                 </div>
               
             </div>

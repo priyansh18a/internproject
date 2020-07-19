@@ -67,18 +67,45 @@ const Login = props=> {
 
 
 
+  const googleSignup = ()=> {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+      .then (result => {
+        const user = result.user;
+        db.collection("users").add({
+          displayName: user.displayName,
+          email:user.email,
+          uid:user.uid
+      }).then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          history.push("/comingsoon");
+      }).catch((error) => {
+        document.getElementById("warning-msg").innerHTML = error.message;
+        document.getElementById("warning").style.display = "flex";
+    });
+  });
+
+}
+
+
   const googleLogin = ()=> {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then (result => {
         const user = result.user;
-        console.log(user.displayName);
-        history.push("/comingsoon");
-    }).catch((error) => {
-      console.log(error);
+        db.collection("users").where("uid", "==", user.uid )
+          .get()
+          .then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                history.push("/comingsoon"); 
+              });
+          })
+          .catch(function(error) {
+            document.getElementById("warning-msg").innerHTML = error.message;
+            document.getElementById("warning").style.display = "flex";
+          });
+      });
     }
-    );
-  }
     // const passwordreset = () => {
     //   fire.auth().sendPasswordResetEmail(email);
     // }
@@ -174,7 +201,7 @@ const Login = props=> {
     </form>
       <p className="or">Or</p>
       <div className="google-login">
-      <button className="google-login-btn" type="button" onClick={googleLogin}>
+      <button className="google-login-btn" type="button" onClick={googleSignup}>
       <img id="google_logo" src={Google}  alt="noimage"/>
         Signup with Google
       </button>

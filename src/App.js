@@ -24,10 +24,10 @@ const App = () => {
   if (currentUser) {
     routes = (
    <Switch>
-        <Route exact path="/" >
+        {/* <Route exact path="/" >
           <Learn/>
         </Route>
-        {/* <Route exact path='/learn'>
+        <Route exact path='/learn'>
           <Learn/>
         </Route>
         <Route path='/teach' exact >
