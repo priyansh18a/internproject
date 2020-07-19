@@ -1,6 +1,7 @@
 .container-box{
   color: white;
   background:#212121;
+  overflow: hidden;
 }
 .header-additems{
   display: flex;
@@ -10,7 +11,7 @@
   padding: 23px 36px;
   border-bottom: 1px solid #3C3C3C;
   transition: 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 #hidden-menu{
   top: 51px;
@@ -37,7 +38,7 @@
 
 .header-additems img{
   margin-right: 10px;
-  height: 30px;
+  height: 25px;
   margin-top: -4px;
   cursor: pointer;
 }
@@ -252,6 +253,7 @@ button.add.last-btn {
   background:#212121;
   box-sizing: border-box;
   padding: 20px;
+  z-index: 2;
 }
 
 .interactions-div > p{
@@ -296,11 +298,13 @@ button.add.last-btn {
   height: 105px;
   width: 20vw;
   padding: 20px 35px;
-  text-align: center;
   margin-bottom: 10px;
   display: none;
 
  
+}
+.create-quest > p{
+  font-weight: bold;
 }
 .create-question-main{
   display: flex;
@@ -336,7 +340,7 @@ button.add.last-btn {
   position: absolute;
   color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
-  right: 85px;
+  right: 4vw;
   outline: none;
   
 }
@@ -532,6 +536,22 @@ a:hover {
 .color-text{
   margin-right: 20px;
 }
+
+@media (max-width:1300px){
+  .create-quest{
+    padding: 15px 10px;
+  }
+  .image-head img {
+
+    margin-right: 4px;
+  }
+  .create-question-main span {
+    right: 22px;
+  }
+  .interactions-div {
+    padding: 15px;
+  }
+}
 @media (max-width: 750px){
 
 
@@ -543,8 +563,6 @@ a:hover {
   }
   .mobile-alert{
     display: block;
-
-
   }
 
 

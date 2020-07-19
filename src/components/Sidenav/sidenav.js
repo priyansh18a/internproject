@@ -15,7 +15,7 @@ export default function SideNav(props) {
     const courseId = useParams().courseId;
     const elements = props.elements;
     
-    let elementCount = '1' ||localStorage.getItem('elementCount');
+    let elementCount = '0' ||localStorage.getItem('elementCount');
 
     useEffect(() => { getscreenlist() }, [] );
 
@@ -23,13 +23,11 @@ export default function SideNav(props) {
     const getscreenlist = () => {
         const listRef = storage.ref().child(`courses/${courseId}`);
         localStorage.removeItem('elementCount');
+        var newElement = {key: 0, text: 'Scene 0', href: `/teach/${currentUser.uid}/${courseId}/0`}
+            props.updateElements(elements=>([...elements, newElement]));
+            elementCount++;
+            localStorage.setItem('elementCount',elementCount);
         listRef.listAll().then(function(res){
-            // if(res.items.length === 0){
-            //     var newElement = {key: 0, text: 'Scene 0', href: `/teach/${currentUser.uid}/${courseId}/0`}
-            //     props.updateElements(elements=>([...elements, newElement]));
-            //     elementCount++;
-            //     localStorage.setItem('elementCount',elementCount);
-            // }
             res.prefixes.forEach(function(folderRef) {
                     var newElement = {key: `${elementCount}`, text: `Scene ${elementCount}`, href: `/teach/${currentUser.uid}/${courseId}/${elementCount}`}
                     props.updateElements(elements=>([...elements, newElement]));

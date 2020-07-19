@@ -1,20 +1,15 @@
+#textinputdiv{
+  width:64vw;
+  height: 600px;
+}
+
 #inputText {
     background: none;
     border:none;
 }
 
-  /* Change the white to any color ;) */
-#inputText:-webkit-autofill,
-#inputText:-webkit-autofill:hover, 
-#inputText:-webkit-autofill:focus, 
-#inputText:-webkit-autofill:active{
-  -webkit-box-shadow: 0 0 0 100px rgb(235,235,235) inset !important;
-    
-}
-/*Change text in autofill textbox*/
-#inputText:-webkit-autofill {
-    -webkit-text-fill-color: black !important;
-}
+
+
 .color-text{
   border-radius: 50%;
   width: 40px;

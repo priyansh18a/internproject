@@ -2,9 +2,9 @@ import React, { useState , useEffect,useContext} from 'react';
 import { useHistory} from "react-router-dom";
 import SideNav from '../Sidenav/sidenav' ;
 import {Rnd} from 'react-rnd';
-import eye from '../../Graphics/eye.png';
+import eye from '../../Graphics/eye.svg';
 import menu_icon from '../../Graphics/menu_icon.png';
-import save from '../../Graphics/save.png';
+import save from '../../Graphics/save.svg';
 import Delete from '../../Graphics/delete.png'
 import code_add from '../../Graphics/code_add.png'
 import image_add from '../../Graphics/image_add.png'
@@ -28,7 +28,7 @@ const Additem = () => {
     const [imagecount, setImagecount] = useState(1);
     const [files, setFiles] = useState([]);
     const [onclick, setOnclick] = useState([]);
-    const [elements, updateElements] = useState([{key: 0, text: 'Scene 0', href: `/teach/${currentUser.uid}/${courseId}/0`}]);
+    const [elements, updateElements] = useState([]);
     const [textcontent, setTextcontent] = useState('');
 
     let i = 1;
@@ -94,7 +94,9 @@ const Additem = () => {
                     const progress = 
                       ((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
                       if (snapshot.state === firebase.storage.TaskState.RUNNING) {
-                        console.log(`Progress: ${progress}%`);
+                        console.log(`Prog // if(res.items.length === 0){
+                          //     
+                          // }ress: ${progress}%`);
                       }
                     }, function(error) {
                       // Handle unsuccessful uploads
@@ -138,7 +140,9 @@ const Additem = () => {
         });
           document.getElementById("hide").style.display ="none";
           document.getElementById("preview").style.display ="block";  
-          }
+          } // if(res.items.length === 0){
+            //     
+            // }
           }).catch( error => {
             console.log(error);
           });
@@ -162,9 +166,6 @@ const Additem = () => {
     } 
 
     const addimage = () => {
-        // document.getElementById("resize1").innerHTML = '';
-        document.getElementById("hide").style.display ="block";
-        document.getElementById("preview").style.display ="none"; 
         // document.getElementsByClassName("create-quest").style.display ="block";
         document.getElementById("option-redirect").style.display ="none"; 
         document.getElementById("question").style.display = "none";
@@ -372,7 +373,7 @@ const Additem = () => {
                 <div id="after-upload">
                       <input type="file" name="file" id="file2" className="inputfile" multiple onChange={fileuploadhandler}/>
                       <label htmlFor="file2" id="image-add">
-                      <div className="add btn" id="add-image" onClick={addimage}><img src={image_add} alt=""/></div>
+                      <div className="add btn" id="add-image" onClick={addimage} ><img src={image_add} alt=""/></div>
                     </label>
                 </div>
                 <p>Image</p>
@@ -393,8 +394,9 @@ const Additem = () => {
             <div className="interactions-head">  <p id="interaction">INTERACTIONS </p> <p id="plus">+</p></div>
             <div className="image-head">  <p>Image</p><img src={Delete} alt=""/></div>
               <div className="create-quest" id="interactionbox1">
+              <p>Image 1 interaction</p>
                 <div className="create-question-main">
-                <p>On Click Image 1</p>
+                <p>On Click</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox1">
                     <option defaultValue>Select</option>
                     {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -404,8 +406,9 @@ const Additem = () => {
                <div className="interaction-type"><span>+</span><p>Add Interaction</p></div>
              </div>
              <div className="create-quest" id="interactionbox2">
+             <p>Image 2 interaction</p>
                 <div className="create-question-main">
-                <p>On Click Image 2</p>
+                <p>On Click</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox2">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -415,8 +418,9 @@ const Additem = () => {
                <div className="interaction-type"><span>+</span><p>Add Interaction</p></div>
              </div>
              <div className="create-quest" id="interactionbox3">
+             <p>Image 3 interaction</p>
                 <div className="create-question-main">
-                <p>On Click Image 3</p>
+                <p>On Click</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox3">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -426,8 +430,9 @@ const Additem = () => {
                <div className="interaction-type"><span>+</span><p>Add Interaction</p></div>
              </div>
              <div className="create-quest" id="interactionbox4">
+             <p>Image 4 interaction</p>
                 <div className="create-question-main">
-                <p>On Click Image 4</p>
+                <p>On Click</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox4">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}
@@ -437,8 +442,9 @@ const Additem = () => {
                <div className="interaction-type"><span>+</span><p>Add Interaction</p></div>
              </div>
              <div className="create-quest" id="interactionbox5">
+             <p>Image 5 interaction</p>
                 <div className="create-question-main">
-                <p>On Click Image 5</p>
+                <p>On Click</p>
                 <select className="cust-select form-input" onChange={setonclick1} id="selectbox5">
                     <option defaultValue>Select</option>
                      {elements.map(element => (<option value={element.key} key={element.key}>{element.text}</option>))}

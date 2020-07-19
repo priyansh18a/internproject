@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.aec80d2d.chunk.css",
-    "main.js": "/static/js/main.2db61287.chunk.js",
-    "main.js.map": "/static/js/main.2db61287.chunk.js.map",
+    "main.css": "/static/css/main.afcda105.chunk.css",
+    "main.js": "/static/js/main.86f85c50.chunk.js",
+    "main.js.map": "/static/js/main.86f85c50.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.54fc45b5.js",
     "runtime-main.js.map": "/static/js/runtime-main.54fc45b5.js.map",
     "static/js/2.4b729f23.chunk.js": "/static/js/2.4b729f23.chunk.js",
     "static/js/2.4b729f23.chunk.js.map": "/static/js/2.4b729f23.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.eff251dd6e3db5a6217823af43ec7867.js": "/precache-manifest.eff251dd6e3db5a6217823af43ec7867.js",
+    "precache-manifest.e77e1139776c1cd1b400a07617b729e9.js": "/precache-manifest.e77e1139776c1cd1b400a07617b729e9.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.aec80d2d.chunk.css.map": "/static/css/main.aec80d2d.chunk.css.map",
+    "static/css/main.afcda105.chunk.css.map": "/static/css/main.afcda105.chunk.css.map",
     "static/js/2.4b729f23.chunk.js.LICENSE.txt": "/static/js/2.4b729f23.chunk.js.LICENSE.txt",
     "static/media/Gilroy-Bold.ttf": "/static/media/Gilroy-Bold.889a4b5c.ttf",
     "static/media/Gilroy-Regular.ttf": "/static/media/Gilroy-Regular.22d25e11.ttf",
@@ -21,6 +21,7 @@
     "static/media/courses.svg": "/static/media/courses.4c23f59e.svg",
     "static/media/dashboard.svg": "/static/media/dashboard.748bc50f.svg",
     "static/media/drafts.svg": "/static/media/drafts.cba2cb5b.svg",
+    "static/media/eye.svg": "/static/media/eye.f372b949.svg",
     "static/media/facebook.svg": "/static/media/facebook.f4fbe36e.svg",
     "static/media/learn.scss": "/static/media/future_back.b546ee69.png",
     "static/media/learnMain.svg": "/static/media/learnMain.9436096f.svg",
@@ -30,6 +31,7 @@
     "static/media/profile.png": "/static/media/profile.606ac9ee.png",
     "static/media/profile.svg": "/static/media/profile.c799472b.svg",
     "static/media/project.png": "/static/media/project.f57f913c.png",
+    "static/media/save.svg": "/static/media/save.ee907adf.svg",
     "static/media/scholarship.png": "/static/media/scholarship.ee1614cf.png",
     "static/media/settings.svg": "/static/media/settings.981201b8.svg",
     "static/media/teachMain.svg": "/static/media/teachMain.7abbfadd.svg",
@@ -41,7 +43,7 @@
   "entrypoints": [
     "static/js/runtime-main.54fc45b5.js",
     "static/js/2.4b729f23.chunk.js",
-    "static/css/main.aec80d2d.chunk.css",
-    "static/js/main.2db61287.chunk.js"
+    "static/css/main.afcda105.chunk.css",
+    "static/js/main.86f85c50.chunk.js"
   ]
 }

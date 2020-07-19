@@ -99,7 +99,7 @@ const AddCourseDetails = () => {
             uploadTask.on('state_changed', function(snapshot){
                 const progress = 
                       ((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                preview.innerHTML = '<p>Uploading '+  progress + '% </p>';
+                preview.innerHTML = '<p>Uploading '+  Math.floor(progress) + '% </p>';
          }, function(error) {
             preview.innerHTML = '<p>Uploading Fail Try Again by refreshing page and uploading again</p>';
         }, function() {
