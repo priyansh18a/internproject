@@ -14,6 +14,7 @@ import ComingSoon from './components/ComingSoon/ComingSoon';
 import TeachProfile from './components/TeachProfile/TeachProfile';
 import AddCourseDetails from './components/AddCourseDetails/AddCourseDetails';
 import ReviewCourseDetails from './components/ReviewCourseDetails/ReviewCourseDetails';
+import Test from './components/Test';
 
 
 const App = () => {
@@ -47,6 +48,9 @@ const App = () => {
         </Route>
         <Route path="/comingsoon" exact>
           <ComingSoon/>
+        </Route>
+        <Route path="/test" exact>
+          <Test/>
         </Route>
         <Redirect to="/comingsoon" />
     </Switch>

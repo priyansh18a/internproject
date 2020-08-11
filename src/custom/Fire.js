@@ -15,6 +15,7 @@ const firebaseConfig = {
 const fire  = firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
 firebase.analytics();
-
+// Initialize Cloud Functions through Firebase
+export const functions = firebase.functions();
 
 export default fire;
