@@ -197,14 +197,14 @@ const Teach = () => {
                 <p>Minutes</p>
             </div>
         </div>
-        
-        
-        <div className="learn-container">
+
+
+	<div className="learn-container">
             <div className="learn-left">
             <p className="left-main-text">Build the next <br/> <span className="build">generation of courses</span></p>
             <p className="left-sub-heading">Express yourself in ways you had never imagined.</p>
             </div>
-            <div className="learn-right teach-right">
+            <div className="learn-right">
               <div className="type-card">
                   <img src={game} alt=""/>
                   <p className="card-head">Games</p>
@@ -214,7 +214,7 @@ const Teach = () => {
                   <img src={vr_ar} alt=""/>
                   <p className="card-head">AR/VR</p>
                   <p className="card-subhead">Help your students visualise concepts faster by making immersive courses</p>
-             </div>
+             </div> 
              <div className="type-card">
                   <img src={code} alt=""/>
                   <p className="card-head">Code</p>
