@@ -248,14 +248,17 @@ const Additem = () => {
         <React.Fragment>
          <div className="container-box">
               <div className="header-additems">
-              <img src={menu_icon} alt="" onClick={opensidemenu}/>
-              
-              <p className="course-num">My course</p>
-              <div className="headercenter"><p>Scene {screenId}</p></div>
-              <button className="save-course" onClick={uploadfilehandler}><img src={save} alt=""/>Save Scene</button>
-              <button className="preview-course"><img src={eye} alt=""/> Preview</button>
-              <button onClick={() => fire.auth().signOut()} className="sign-out-add" id="signUp">Sign Out</button>
-              <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
+                <div style="width:30%">
+                  <img src={menu_icon} alt="" onClick={opensidemenu}/>
+                  <span className="course-num">My course</span>
+                </div>
+                <div className="headercenter" style="width:30%"><p>Scene {screenId}</p></div>
+                <div style="width:40%">
+                  <button className="save-course" onClick={uploadfilehandler}><img src={save} alt=""/>Save Scene</button>
+                  <button className="preview-course"><img src={eye} alt=""/> Preview</button>
+                  <button onClick={() => fire.auth().signOut()} className="sign-out-add" id="signUp">Sign Out</button>
+                  <button onClick={() => fire.auth().signOut()} id="sign-in-mobile">Sign Out</button>
+                </div>
             </div>
             <div className="add-item-main">
             <SideNav elements={elements} updateElements={updateElements}/>
