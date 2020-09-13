@@ -12,6 +12,7 @@
   border-bottom: 1px solid #3C3C3C;
   transition: 0.5s ease-in-out;
   z-index: 2;
+  flex-direction:row;
 }
 #hidden-menu{
   top: 51px;
@@ -568,6 +569,26 @@ a:hover {
   .mobile-alert{
     display: block;
   }
-
-
 }
+ @media (max-width:900px){
+     .save-course{
+         width:120px !important;
+         margin-right:-20px !important;
+    }
+     .preview-course{
+         width:120px !important;
+         margin-right:20px !important;
+        
+        }
+       .sign-out-add{
+           width:120px !important;
+        }
+        .headercenter p{
+            padding-right:120px !important;
+        }
+        #interaction{
+        font-size:15px !important;
+        }
+    }
+   
+    }

@@ -366,7 +366,7 @@ select.country-code:focus{
 .l-main-learn{
     position: relative;
     width: 39vw;
-    margin-top: -35px;
+    margin-top: -10px;
 }
 
 #learnMain{
@@ -1023,10 +1023,24 @@ select.country-code:focus{
     .mb-4{
         margin-bottom: 10px !important;
     }
-   
-    
-
-
-
+   }
+@media (min-width:450px) and (max-width:768px){
+ #future-depend{height:350px;margin-top:-1px}
+ .time-div{width:60px;height:90px;margin-left:10x;padding:18px 0}
+ .right-time{margin-right:10px}
+ .app-release{margin-top:65px;margin-bottom:15px}
+ #notation,.date-time{width:440px;justify-content:center;}
+ #future-depend p{font-size:42px}
+ #notation p{font-size:26px;margin:12px 20px 10px 50px;padding:5px;justify-content:center;}
+ }
+ @media (min-width:768px) and (max-width:900px){
+ #future-depend{height:450px;margin-top:-1px}
+ .time-div{width:90px;height:120px;margin-left:15x;padding:34px 0}
+ .right-time{margin-right:18px}
+ .app-release{margin-top:105px;margin-bottom:35px}
+ #notation,.date-time{width:640px;justify-content:center;}
+ #future-depend p{font-size:42px}
+ #notation p{font-size:26px;margin:12px 50px 10px 90px;padding:5px;justify-content:center;}
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
