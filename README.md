@@ -1,6 +1,7 @@
 
 
-## the feynmanschool  respositary
+## The Feynman School Website Code Base - www.thefeynmanschool.com
+
 
 
 
